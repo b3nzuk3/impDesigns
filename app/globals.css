@@ -1,0 +1,65 @@
+@import "tailwindcss";
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+  }
+  body {
+    background-color: #fbfaf7;
+    color: #111111;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+}
+
+/* Serrated cutter teeth for tape ends */
+.tape-serrated-edge-right {
+  clip-path: polygon(
+    0% 0%,
+    100% 0%,
+    98.5% 10%, 100% 20%, 98.5% 30%, 100% 40%, 98.5% 50%,
+    100% 60%, 98.5% 70%, 100% 80%, 98.5% 90%, 100% 100%,
+    0% 100%
+  );
+}
+
+.tape-serrated-edge-left {
+  clip-path: polygon(
+    1.5% 0%, 100% 0%, 100% 100%, 1.5% 100%,
+    0% 90%, 1.5% 80%, 0% 70%, 1.5% 60%, 0% 50%,
+    1.5% 40%, 0% 30%, 1.5% 20%, 0% 10%, 1.5% 0%
+  );
+}
+
+.tape-serrated-edge-both {
+  clip-path: polygon(
+    1.5% 0%, 98.5% 0%,
+    100% 10%, 98.5% 20%, 100% 30%, 98.5% 40%, 100% 50%,
+    98.5% 60%, 100% 70%, 98.5% 80%, 100% 90%, 98.5% 100%,
+    1.5% 100%,
+    0% 90%, 1.5% 80%, 0% 70%, 1.5% 60%, 0% 50%,
+    1.5% 40%, 0% 30%, 1.5% 20%, 0% 10%, 1.5% 0%
+  );
+}
+
+/* Subtle packaging tape glossy sheen */
+.tape-sheen {
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.28) 0%,
+    rgba(255, 255, 255, 0.08) 35%,
+    rgba(0, 0, 0, 0.04) 65%,
+    rgba(0, 0, 0, 0.12) 100%
+  );
+}
+
+/* Kraft paper pattern background */
+.bg-kraft-cardboard {
+  background-color: #d8be9b;
+  background-image: radial-gradient(rgba(104, 76, 44, 0.08) 1px, transparent 0);
+  background-size: 8px 8px;
+}
