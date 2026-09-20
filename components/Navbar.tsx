@@ -47,7 +47,7 @@ export const Navbar: React.FC = () => {
                 <span className="font-mono text-xl font-black tracking-tighter text-neutral-900 leading-none">
                   IMPACT CREATIVE DESIGNS
                 </span>
-                <span className="font-mono text-[9px] tracking-[0.25em] text-neutral-500 uppercase leading-tight mt-0.5">
+                <span className="font-mono text-[10px] tracking-[0.16em] text-neutral-500 uppercase leading-tight mt-0.5">
                   BRANDED TAPES & TAGS • KENYA
                 </span>
               </div>
@@ -61,7 +61,7 @@ export const Navbar: React.FC = () => {
                   <Link
                     key={link.name}
                     href={link.href}
-                    className={`px-3 py-2 text-xs lg:text-sm font-mono uppercase tracking-wider transition-colors ${
+                    className={`px-3 py-2 text-[13px] lg:text-sm font-mono uppercase tracking-wide transition-colors ${
                       isActive
                         ? 'text-neutral-950 font-bold border-b-2 border-red-600'
                         : 'text-neutral-600 hover:text-neutral-950 font-medium'
@@ -79,7 +79,7 @@ export const Navbar: React.FC = () => {
                 href="https://wa.me/254722404647?text=Hello%20Impact%20Creative%20Designs%20Kenya,%20I%20would%20like%20to%20inquire%20about%20custom%20branded%20tapes%20and%20tags."
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-1.5 text-xs font-mono font-bold text-neutral-800 hover:text-green-700 transition-colors"
+                className="flex items-center gap-1.5 text-sm font-mono font-bold text-neutral-800 hover:text-green-700 transition-colors"
                 title="Direct WhatsApp Chat"
               >
                 <MessageCircle className="w-4 h-4 text-green-600 fill-green-600" />
@@ -89,7 +89,7 @@ export const Navbar: React.FC = () => {
               <button
                 type="button"
                 onClick={() => setQuoteModalOpen(true)}
-                className="inline-flex items-center justify-center bg-neutral-900 hover:bg-red-700 text-white font-mono text-xs font-bold uppercase tracking-wider py-3 px-6 border-2 border-neutral-900 transition-all shadow-[2px_2px_0px_#111111]"
+                className="inline-flex items-center justify-center bg-neutral-900 hover:bg-red-700 text-white font-mono text-sm font-bold uppercase tracking-wide py-3 px-6 border-2 border-neutral-900 transition-all shadow-[2px_2px_0px_#111111]"
               >
                 <span>GET A QUOTE</span>
               </button>

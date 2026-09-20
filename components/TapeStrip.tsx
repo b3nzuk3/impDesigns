@@ -57,7 +57,7 @@ export const TapeStrip: React.FC<TapeStripProps> = ({
   };
 
   const py = compact ? 'py-1.5' : 'py-2.5';
-  const fontSize = compact ? 'text-[11px]' : 'text-xs md:text-sm';
+  const fontSize = compact ? 'text-[11px] sm:text-xs' : 'text-xs md:text-sm';
 
   return (
     <div
@@ -72,7 +72,7 @@ export const TapeStrip: React.FC<TapeStripProps> = ({
       {sheen && <div className="tape-sheen absolute inset-0 pointer-events-none" />}
 
       {/* Repeating printed brand copy */}
-      <div className={`flex items-center tracking-[0.2em] font-mono uppercase whitespace-nowrap font-bold ${py} ${fontSize}`}>
+      <div className={`flex items-center tracking-[0.14em] font-mono uppercase whitespace-nowrap font-bold ${py} ${fontSize}`}>
         <span className="px-4">{text}</span>
         <span className="px-4">{text}</span>
         <span className="px-4">{text}</span>

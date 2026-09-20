@@ -51,7 +51,7 @@ export default function ContactPage() {
               </h2>
             </div>
 
-            <div className="space-y-4 font-mono text-xs">
+            <div className="space-y-4 font-mono text-sm">
               <div className="flex items-start gap-3 p-3 bg-neutral-50 border border-neutral-200">
                 <MapPin className="w-5 h-5 text-red-700 shrink-0 mt-0.5" />
                 <div>
@@ -136,7 +136,7 @@ export default function ContactPage() {
                 </p>
               </div>
             ) : (
-              <form onSubmit={handleSubmit} className="space-y-4 font-mono text-xs">
+              <form onSubmit={handleSubmit} className="space-y-4 font-mono text-sm">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
                     <label className="block font-bold uppercase mb-1">Your Full Name</label>
@@ -146,7 +146,7 @@ export default function ContactPage() {
                       value={name}
                       onChange={(e) => setName(e.target.value)}
                       placeholder="e.g. Grace Wanjiku"
-                      className="w-full px-3 py-2.5 border border-neutral-300 focus:border-neutral-950 focus:outline-none"
+                      className="w-full px-3 py-2.5 border border-neutral-300 placeholder:text-neutral-500 focus:border-neutral-950 focus:outline-none"
                     />
                   </div>
                   <div>
@@ -157,7 +157,7 @@ export default function ContactPage() {
                       value={company}
                       onChange={(e) => setCompany(e.target.value)}
                       placeholder="e.g. Rift Valley Roasters"
-                      className="w-full px-3 py-2.5 border border-neutral-300 focus:border-neutral-950 focus:outline-none"
+                      className="w-full px-3 py-2.5 border border-neutral-300 placeholder:text-neutral-500 focus:border-neutral-950 focus:outline-none"
                     />
                   </div>
                 </div>
@@ -171,7 +171,7 @@ export default function ContactPage() {
                       value={phone}
                       onChange={(e) => setPhone(e.target.value)}
                       placeholder="0722404647"
-                      className="w-full px-3 py-2.5 border border-neutral-300 focus:border-neutral-950 focus:outline-none"
+                      className="w-full px-3 py-2.5 border border-neutral-300 placeholder:text-neutral-500 focus:border-neutral-950 focus:outline-none"
                     />
                   </div>
                   <div>
@@ -180,14 +180,14 @@ export default function ContactPage() {
                       type="text"
                       required
                       placeholder="e.g. Nairobi, Mombasa, Nakuru"
-                      className="w-full px-3 py-2.5 border border-neutral-300 focus:border-neutral-950 focus:outline-none"
+                      className="w-full px-3 py-2.5 border border-neutral-300 placeholder:text-neutral-500 focus:border-neutral-950 focus:outline-none"
                     />
                   </div>
                 </div>
 
                 <div>
                   <label className="block font-bold uppercase mb-1">Sample Materials Desired</label>
-                  <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 font-mono text-[11px] pt-1">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 font-mono text-xs pt-1">
                     {[
                       '48mm BOPP Tape',
                       'Eco Kraft Tape',
@@ -196,9 +196,9 @@ export default function ContactPage() {
                       '0.8mm Heavy Aluminium Tags',
                       'Barcode Asset Tags',
                     ].map((item, idx) => (
-                      <label key={idx} className="flex items-center gap-2 p-2 bg-neutral-50 border border-neutral-200 cursor-pointer">
+                      <label key={idx} className="flex items-start gap-2 p-2 bg-neutral-50 border border-neutral-200 cursor-pointer leading-snug">
                         <input type="checkbox" defaultChecked={idx < 4} className="accent-neutral-950" />
-                        <span className="truncate">{item}</span>
+                        <span>{item}</span>
                       </label>
                     ))}
                   </div>
@@ -211,13 +211,13 @@ export default function ContactPage() {
                     value={message}
                     onChange={(e) => setMessage(e.target.value)}
                     placeholder="Tell us about your estimated roll counts or tag quantities..."
-                    className="w-full px-3 py-2.5 border border-neutral-300 focus:border-neutral-950 focus:outline-none font-sans"
+                    className="w-full px-3 py-2.5 border border-neutral-300 placeholder:text-neutral-500 focus:border-neutral-950 focus:outline-none font-sans"
                   />
                 </div>
 
                 <button
                   type="submit"
-                  className="w-full bg-neutral-950 hover:bg-neutral-800 text-white font-mono font-bold text-xs uppercase py-4 px-8 border-2 border-neutral-950 transition-colors shadow-[3px_3px_0px_#b91c1c]"
+                  className="w-full bg-neutral-950 hover:bg-neutral-800 text-white font-mono font-bold text-sm uppercase py-4 px-8 border-2 border-neutral-950 transition-colors shadow-[3px_3px_0px_#b91c1c]"
                 >
                   Request Sample Pack Dispatch
                 </button>
