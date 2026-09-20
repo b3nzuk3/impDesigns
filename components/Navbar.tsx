@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
+import { createPortal } from 'react-dom';
 import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
@@ -161,7 +162,12 @@ export const Navbar: React.FC = () => {
       </header>
 
       {/* Global Quote Modal */}
-      <QuoteModal isOpen={quoteModalOpen} onClose={() => setQuoteModalOpen(false)} />
+      {quoteModalOpen && typeof document !== 'undefined'
+        ? createPortal(
+            <QuoteModal isOpen={quoteModalOpen} onClose={() => setQuoteModalOpen(false)} />,
+            document.body,
+          )
+        : null}
     </>
   );
 };
