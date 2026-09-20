@@ -57,7 +57,7 @@ export const TapeStrip: React.FC<TapeStripProps> = ({
   };
 
   const py = compact ? 'py-1.5' : 'py-2.5';
-  const fontSize = compact ? 'text-[11px] sm:text-xs' : 'text-xs md:text-sm';
+  const fontSize = compact ? 'text-xs' : 'text-xs sm:text-sm';
 
   return (
     <div

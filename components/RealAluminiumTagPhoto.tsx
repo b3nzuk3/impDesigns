@@ -33,12 +33,12 @@ export const RealAluminiumTagPhoto: React.FC<RealAluminiumTagPhotoProps> = ({
           sizes="(max-width: 768px) 100vw, 50vw"
           className={isCloseup ? 'object-cover' : 'object-contain'}
         />
-        <span className="absolute left-2 top-2 bg-neutral-950/90 px-2 py-1 font-mono text-[9px] font-bold uppercase tracking-[0.14em] text-white">
+        <span className="absolute left-2 top-2 bg-neutral-950/90 px-2 py-1 font-mono text-[10px] sm:text-[9px] font-bold uppercase tracking-[0.1em] text-white">
           {label}
         </span>
       </div>
       {caption && (
-        <figcaption className="border-t border-neutral-300 px-3 py-2 font-mono text-[10px] uppercase tracking-wider text-neutral-600">
+        <figcaption className="border-t border-neutral-300 px-3 py-2 font-mono text-[11px] sm:text-[10px] uppercase tracking-[0.08em] text-neutral-700">
           {caption}
         </figcaption>
       )}

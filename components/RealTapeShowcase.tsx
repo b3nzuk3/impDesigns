@@ -28,7 +28,7 @@ export const RealTapeShowcase: React.FC<RealTapeShowcaseProps> = ({
     >
       <div className="relative z-10 mb-4 flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
         <div>
-          <p className="font-mono text-[10px] font-bold uppercase tracking-[0.2em] text-red-400">
+          <p className="font-mono text-xs sm:text-[10px] font-bold uppercase tracking-[0.1em] text-red-300">
             Physical tape references
           </p>
           <h2
@@ -55,12 +55,12 @@ export const RealTapeShowcase: React.FC<RealTapeShowcaseProps> = ({
               className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
             />
             <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent p-3 pt-10">
-              <span className="font-mono text-[10px] font-bold uppercase tracking-[0.16em] text-white">
+              <span className="font-mono text-[11px] sm:text-[10px] font-bold uppercase tracking-[0.1em] text-white">
                 Printed tape roll samples
               </span>
             </div>
           </div>
-          <figcaption className="border-t border-neutral-800 px-3 py-2 font-mono text-[10px] uppercase tracking-wider text-neutral-400">
+          <figcaption className="border-t border-neutral-800 px-3 py-2 font-mono text-[11px] sm:text-[10px] uppercase tracking-[0.08em] text-neutral-300">
             Logo repeats, ink coverage, and core finish
           </figcaption>
         </figure>
@@ -76,12 +76,12 @@ export const RealTapeShowcase: React.FC<RealTapeShowcaseProps> = ({
               className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
             />
             <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent p-3 pt-10">
-              <span className="font-mono text-[10px] font-bold uppercase tracking-[0.16em] text-white">
+              <span className="font-mono text-[11px] sm:text-[10px] font-bold uppercase tracking-[0.1em] text-white">
                 Tape in use
               </span>
             </div>
           </div>
-          <figcaption className="border-t border-neutral-800 px-3 py-2 font-mono text-[10px] uppercase tracking-wider text-neutral-400">
+          <figcaption className="border-t border-neutral-800 px-3 py-2 font-mono text-[11px] sm:text-[10px] uppercase tracking-[0.08em] text-neutral-300">
             Branded seal applied to a shipping carton
           </figcaption>
         </figure>

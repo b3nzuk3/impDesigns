@@ -86,7 +86,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body suppressHydrationWarning className="min-h-screen flex flex-col selection:bg-red-700 selection:text-white pb-14 md:pb-0">
+      <body suppressHydrationWarning className="min-h-screen flex flex-col selection:bg-red-700 selection:text-white pb-20 md:pb-0">
         <NavScrollWrapper>
           <Navbar />
         </NavScrollWrapper>

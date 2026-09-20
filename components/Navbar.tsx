@@ -47,7 +47,7 @@ export const Navbar: React.FC = () => {
                 <span className="font-mono text-xl font-black tracking-tighter text-neutral-900 leading-none">
                   IMPACT CREATIVE DESIGNS
                 </span>
-                <span className="font-mono text-[10px] tracking-[0.16em] text-neutral-500 uppercase leading-tight mt-0.5">
+                <span className="font-mono text-xs sm:text-[10px] tracking-[0.1em] text-neutral-700 uppercase leading-tight mt-0.5">
                   BRANDED TAPES & TAGS • KENYA
                 </span>
               </div>

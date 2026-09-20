@@ -117,7 +117,7 @@ export default function CustomTagsPage() {
       {/* Top Tape Strip */}
       <TapeStrip
         variant="red"
-        text="CUSTOM ALUMINIUM TAGS KENYA • 0.5MM & 0.8MM ANODIZED ALUMINIUM • BARCODE ASSET PLATES •"
+        text="ALUMINIUM TAGS • 0.5MM / 0.8MM"
         sheen={true}
         compact={true}
       />
@@ -156,7 +156,7 @@ export default function CustomTagsPage() {
           {/* Physical Tag Object Gallery Display */}
           <div className="mt-12 bg-[#ebe5db] border-2 border-neutral-900 p-8 sm:p-12 shadow-[8px_8px_0px_#111111] relative overflow-hidden">
             <div className="text-center max-w-xl mx-auto mb-10">
-              <div className="font-mono text-xs font-bold text-neutral-600 uppercase mb-1">
+              <div className="font-mono text-[13px] sm:text-xs font-bold text-neutral-700 uppercase mb-1">
                 PHYSICAL TACTILE OBJECTS
               </div>
               <h2 className="text-2xl sm:text-3xl font-black font-mono uppercase text-neutral-950">

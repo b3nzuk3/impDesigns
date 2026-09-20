@@ -96,23 +96,23 @@ export const QuoteModal: React.FC<QuoteModalProps> = ({
 
   return (
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/75 backdrop-blur-sm overflow-y-auto"
+      className="fixed inset-0 z-50 flex items-start sm:items-center justify-center p-3 sm:p-4 bg-black/75 backdrop-blur-sm overflow-y-auto overscroll-contain"
       role="dialog"
       aria-modal="true"
       aria-labelledby="quote-modal-title"
     >
-      <div className="relative w-full max-w-3xl my-8 bg-[#ffffff] border-2 border-neutral-900 shadow-2xl p-6 md:p-8 text-neutral-900">
+      <div className="relative w-full max-w-3xl my-3 sm:my-8 max-h-[calc(100dvh-1.5rem)] sm:max-h-[calc(100vh-4rem)] flex flex-col overflow-hidden bg-[#ffffff] border-2 border-neutral-900 shadow-2xl p-4 sm:p-6 md:p-8 text-neutral-900">
         {/* Close Button */}
         <button
           onClick={onClose}
-          className="absolute top-4 right-4 p-2 text-neutral-500 hover:text-neutral-900 bg-neutral-100 hover:bg-neutral-200 transition-colors"
+          className="absolute top-3 right-3 z-10 inline-flex min-h-11 min-w-11 items-center justify-center p-2 text-neutral-500 hover:text-neutral-900 bg-neutral-100 hover:bg-neutral-200 transition-colors"
           aria-label="Close quote modal"
         >
           <X className="w-5 h-5" />
         </button>
 
         {/* Modal Header */}
-        <div className="border-b border-neutral-200 pb-4 mb-6">
+        <div className="shrink-0 border-b border-neutral-200 pb-4 mb-4 sm:mb-6 pr-12">
           <h2 id="quote-modal-title" className="text-2xl md:text-3xl font-black font-mono uppercase tracking-tight">
             REQUEST A DIRECT FACTORY QUOTE
           </h2>
@@ -121,8 +121,9 @@ export const QuoteModal: React.FC<QuoteModalProps> = ({
           </p>
         </div>
 
-        {/* Product Type Toggle */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 border-2 border-neutral-900 mb-6">
+        <div className="min-h-0 flex-1 overflow-y-auto overscroll-contain pr-1 -mr-1">
+          {/* Product Type Toggle */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 border-2 border-neutral-900 mb-6">
           <button
             type="button"
             onClick={() => setProductType('tape')}
@@ -449,6 +450,7 @@ export const QuoteModal: React.FC<QuoteModalProps> = ({
               <span>Submit Inquiry</span>
             </button>
           </div>
+        </div>
         </div>
       </div>
     </div>
