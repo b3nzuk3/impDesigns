@@ -89,8 +89,8 @@ export default function HomePage() {
               {/* Key Industrial Specs (Pure facts, no badges) */}
               <div className="pt-4 grid grid-cols-3 gap-4 border-t border-neutral-300 text-neutral-800 font-mono text-xs">
                 <div>
-                  <div className="font-black text-neutral-950 text-base">36 ROLLS</div>
-                  <div className="text-neutral-500 text-[11px]">Low Minimums</div>
+                  <div className="font-black text-neutral-950 text-base">360 ROLLS</div>
+                  <div className="text-neutral-500 text-[11px]">Factory MOQ</div>
                 </div>
                 <div>
                   <div className="font-black text-neutral-950 text-base">3-5 DAYS</div>
@@ -194,7 +194,7 @@ export default function HomePage() {
                 </div>
                 <div>
                   <span className="text-neutral-500 block">MINIMUM ORDER:</span>
-                  <span className="font-bold text-neutral-900">Starting from 36 Rolls</span>
+                  <span className="font-bold text-neutral-900">360 Rolls per design</span>
                 </div>
                 <div>
                   <span className="text-neutral-500 block">ROLL LENGTHS:</span>
