@@ -1,6 +1,8 @@
 {
-  "name": "Impact Designs - Custom Branded Tapes & Tags Kenya",
+  "name": "Impact Creative Designs - Custom Branded Tapes & Tags Kenya",
   "description": "Kenya's specialized manufacturer of custom printed packaging tapes and anodized aluminium product tags. Durable branding for parcels, cartons, equipment, and products in Nairobi and nationwide.",
   "requestFramePermissions": [],
-  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
 }

@@ -13,7 +13,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: 'Impact Designs - Custom Branded Tapes & Tags Kenya',
+  title: 'Impact Creative Designs - Custom Branded Tapes & Tags Kenya',
   description:
     "Kenya's specialized manufacturer of custom printed packaging tapes and anodized aluminium product tags. Durable branding for parcels, cartons, equipment, and products in Nairobi and nationwide.",
   keywords: [
@@ -31,16 +31,16 @@ export const metadata: Metadata = {
     'Custom aluminium tags Kenya',
   ],
   openGraph: {
-    title: 'Impact Designs - Custom Branded Tapes & Tags Kenya',
+    title: 'Impact Creative Designs - Custom Branded Tapes & Tags Kenya',
     description:
       "Kenya's specialized manufacturer of custom printed packaging tapes and anodized aluminium product tags. Durable branding for parcels, cartons, equipment, and products in Nairobi and nationwide.",
     type: 'website',
     locale: 'en_KE',
-    siteName: 'Impact Designs Kenya',
+    siteName: 'Impact Creative Designs Kenya',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Impact Designs - Custom Branded Tapes & Tags Kenya',
+    title: 'Impact Creative Designs - Custom Branded Tapes & Tags Kenya',
     description:
       "Kenya's specialized manufacturer of custom printed packaging tapes and anodized aluminium product tags. Durable branding for parcels, cartons, equipment, and products in Nairobi and nationwide.",
   },
@@ -50,7 +50,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'LocalBusiness',
-    name: 'Impact Designs Kenya',
+    name: 'Impact Creative Designs Kenya',
     description:
       'Kenya specialized manufacturer of custom printed packaging tapes and anodized aluminium product tags.',
     url: 'https://impactdesigns.co.ke',
