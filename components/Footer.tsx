@@ -12,7 +12,7 @@ export const Footer: React.FC = () => {
       {/* Top Tape Divider running across full width */}
       <TapeStrip
         variant="red"
-        text="IMPACT CREATIVE DESIGNS • INDUSTRIAL AREA NAIROBI • CUSTOM BRANDED TAPES • ALUMINIUM TAGS • DOOR TO DOOR DELIVERY KENYA •"
+        text="IMPACT CREATIVE DESIGNS • KAI PLAZA NAIROBI • CUSTOM BRANDED TAPES • ALUMINIUM TAGS • DOOR TO DOOR DELIVERY KENYA •"
         sheen={true}
         shadow={false}
       />
@@ -127,7 +127,7 @@ export const Footer: React.FC = () => {
             <ul className="space-y-3 font-mono text-xs text-neutral-400">
               <li className="flex items-start gap-2.5">
                 <MapPin className="w-4 h-4 text-orange-400 shrink-0 mt-0.5" />
-                <span>Enterprise Road, Industrial Area, Nairobi, Kenya</span>
+                <span>Kai Plaza, 6 Tom Mboya St, Nairobi, Kenya</span>
               </li>
               <li className="flex items-center gap-2.5">
                 <Phone className="w-4 h-4 text-green-500 shrink-0" />
@@ -135,7 +135,7 @@ export const Footer: React.FC = () => {
               </li>
               <li className="flex items-center gap-2.5">
                 <Mail className="w-4 h-4 text-neutral-400 shrink-0" />
-                <span>orders@impactdesigns.co.ke</span>
+                <span>impactcreativedesigns@gmail.com</span>
               </li>
               <li className="flex items-center gap-2.5">
                 <Clock className="w-4 h-4 text-neutral-400 shrink-0" />

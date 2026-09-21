@@ -20,7 +20,7 @@ export default function ContactPage() {
     <div className="bg-[#fbfaf7] text-neutral-900">
       <TapeStrip
         variant="black"
-        text="IMPACT CREATIVE DESIGNS • NAIROBI KENYA • ENTERPRISE ROAD INDUSTRIAL AREA • DIRECT FACTORY CONTACT •"
+        text="IMPACT CREATIVE DESIGNS • NAIROBI KENYA • KAI PLAZA, TOM MBOYA STREET • DIRECT FACTORY CONTACT •"
         sheen={true}
         compact={true}
       />
@@ -32,7 +32,7 @@ export default function ContactPage() {
               CONNECT WITH US
             </h1>
             <p className="text-base sm:text-lg text-neutral-700 font-sans leading-relaxed">
-              Visit our manufacturing facility in Nairobi’s Industrial Area, request physical sample swatches of our tapes and tags, or reach our sales desk directly via WhatsApp.
+              Visit our facility at Kai Plaza, Tom Mboya Street in Nairobi, request physical sample swatches of our tapes and tags, or reach our sales desk directly via WhatsApp.
             </p>
           </div>
         </div>
@@ -57,8 +57,8 @@ export default function ContactPage() {
                 <div>
                   <div className="font-bold text-neutral-900 uppercase">FACTORY LOCATION</div>
                   <div className="text-neutral-600 mt-0.5">
-                    Enterprise Road, Off Likoni Road<br />
-                    Industrial Area, Nairobi, Kenya
+                    Kai Plaza, 6 Tom Mboya St<br />
+                    Nairobi, Kenya
                   </div>
                 </div>
               </div>
@@ -78,8 +78,7 @@ export default function ContactPage() {
                 <div>
                   <div className="font-bold text-neutral-900 uppercase">EMAIL INQUIRIES</div>
                   <div className="text-neutral-600 mt-0.5">
-                    orders@impactdesigns.co.ke<br />
-                    info@impactdesigns.co.ke
+                    impactcreativedesigns@gmail.com
                   </div>
                 </div>
               </div>

@@ -57,15 +57,15 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     telephone: '+254722404647',
     address: {
       '@type': 'PostalAddress',
-      streetAddress: 'Enterprise Road, Industrial Area',
+      streetAddress: 'Kai Plaza, 6 Tom Mboya St',
       addressLocality: 'Nairobi',
       addressRegion: 'Nairobi County',
       addressCountry: 'KE',
     },
     geo: {
       '@type': 'GeoCoordinates',
-      latitude: -1.3032,
-      longitude: 36.8521,
+      latitude: -1.2847,
+      longitude: 36.8248,
     },
     openingHoursSpecification: [
       {
