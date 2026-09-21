@@ -1,9 +1,10 @@
 import Image from 'next/image';
 import React from 'react';
+import { tapePhoto } from '@/lib/media';
 
 interface RealTapeProductPhotoProps {
   image?: 'rolls' | 'application';
-  alt: string;
+  alt?: string;
   label: string;
   caption?: string;
   className?: string;
@@ -19,16 +20,14 @@ export const RealTapeProductPhoto: React.FC<RealTapeProductPhotoProps> = ({
   className = '',
   aspect = 'aspect-[16/9]',
 }) => {
-  const src = image === 'application'
-    ? '/images/branded-tape-application.jpg'
-    : '/images/branded-tape-rolls.jpg';
+  const src = image === 'application' ? tapePhoto(17) : tapePhoto(1);
 
   return (
     <figure className={`overflow-hidden border border-neutral-300 bg-neutral-100 ${className}`}>
       <div className={`relative ${aspect}`}>
         <Image
           src={src}
-          alt={alt}
+          alt={alt ?? 'Real branded packaging tape produced by Impact Designs'}
           fill
           loading="lazy"
           sizes="(max-width: 768px) 100vw, 50vw"

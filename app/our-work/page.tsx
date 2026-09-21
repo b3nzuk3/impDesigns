@@ -116,7 +116,7 @@ export default function OurWorkPage() {
       />
 
       <section className="pt-12 pb-16 border-b-2 border-neutral-900">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-[88rem] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl space-y-4">
             <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black font-mono tracking-tight uppercase text-neutral-950 leading-tight">
               SEE YOUR BRAND LIKE THIS.
@@ -138,7 +138,7 @@ export default function OurWorkPage() {
                   onClick={() => setFilter(b.id as any)}
                   className={`py-2.5 px-5 border-2 transition-all ${
                     filter === b.id
-                      ? 'bg-neutral-950 text-white border-neutral-950 shadow-[2px_2px_0px_#b91c1c]'
+                      ? 'bg-neutral-950 text-white border-neutral-950 shadow-[2px_2px_0px_#ea580c]'
                       : 'bg-white text-neutral-700 border-neutral-300 hover:border-neutral-950'
                   }`}
                 >
@@ -151,7 +151,7 @@ export default function OurWorkPage() {
       </section>
 
       {/* Projects Showcase Grid */}
-      <section className="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-16 max-w-[88rem] mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {filtered.map((item, idx) => (
             <div
@@ -207,7 +207,7 @@ export default function OurWorkPage() {
                         serialNumber={`ID-${idx + 1}TAG`}
                         barcodeType="code128"
                         logoType={item.category === 'tags' ? 'crest' : 'cargo'}
-                        logoColor={item.category === 'tags' ? '#b91c1c' : '#1d4ed8'}
+                        logoColor={item.category === 'tags' ? '#ea580c' : '#1d4ed8'}
                         logoAccent="#d4af37"
                         thickness={idx % 2 === 0 ? '0.8mm' : '0.5mm'}
                         mountingHoles={item.category !== 'tags'}
@@ -220,7 +220,7 @@ export default function OurWorkPage() {
                   </div>
                 </div>
 
-                <div className="font-mono text-xs text-red-700 font-bold uppercase mb-1">
+                <div className="font-mono text-xs text-orange-600 font-bold uppercase mb-1">
                   {item.type}
                 </div>
                 <h3 className="text-xl font-black font-mono uppercase text-neutral-950">
@@ -236,7 +236,7 @@ export default function OurWorkPage() {
                 <button
                   type="button"
                   onClick={() => setQuoteOpen(true)}
-                  className="font-bold text-neutral-900 hover:text-red-700 transition-colors uppercase"
+                  className="font-bold text-neutral-900 hover:text-orange-600 transition-colors uppercase"
                 >
                   Quote Similar →
                 </button>
@@ -246,7 +246,7 @@ export default function OurWorkPage() {
         </div>
 
         {/* Bottom CTA Banner */}
-        <div className="mt-16 p-8 sm:p-12 bg-neutral-950 text-white border-2 border-neutral-900 shadow-[8px_8px_0px_#b91c1c] flex flex-col md:flex-row items-center justify-between gap-6">
+        <div className="mt-16 p-8 sm:p-12 bg-neutral-950 text-white border-2 border-neutral-900 shadow-[8px_8px_0px_#ea580c] flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="space-y-2">
             <h2 className="text-2xl sm:text-3xl font-black font-mono uppercase text-white">
               WANT TO SEE YOUR BRAND ON OUR PRESSES?
@@ -259,7 +259,7 @@ export default function OurWorkPage() {
           <button
             type="button"
             onClick={() => setQuoteOpen(true)}
-            className="bg-red-700 hover:bg-red-600 text-white font-mono text-xs sm:text-sm font-bold uppercase py-4 px-8 border border-red-500 transition-colors shrink-0"
+            className="bg-orange-600 hover:bg-orange-500 text-white font-mono text-xs sm:text-sm font-bold uppercase py-4 px-8 border border-orange-400 transition-colors shrink-0"
           >
             REQUEST FREE DIGITAL PROOF
           </button>

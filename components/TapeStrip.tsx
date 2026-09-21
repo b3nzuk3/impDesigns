@@ -28,7 +28,7 @@ export const TapeStrip: React.FC<TapeStripProps> = ({
   const getVariantStyles = () => {
     switch (variant) {
       case 'red':
-        return 'bg-[#b91c1c] text-white border-y border-[#991b1b]';
+        return 'bg-[#ea580c] text-white border-y border-[#c2410c]';
       case 'green':
         return 'bg-[#15803d] text-white border-y border-[#166534]';
       case 'kraft':

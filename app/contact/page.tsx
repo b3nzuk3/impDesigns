@@ -26,7 +26,7 @@ export default function ContactPage() {
       />
 
       <section className="pt-12 pb-16 border-b-2 border-neutral-900">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-[88rem] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl space-y-4">
             <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black font-mono tracking-tight uppercase text-neutral-950 leading-tight">
               CONNECT WITH US
@@ -38,12 +38,12 @@ export default function ContactPage() {
         </div>
       </section>
 
-      <section className="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-16 max-w-[88rem] mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
           {/* Contact Details & Factory Info (Col 5) */}
           <div className="lg:col-span-5 space-y-8 bg-white border-2 border-neutral-900 p-8 shadow-[6px_6px_0px_#111111]">
             <div>
-              <div className="font-mono text-xs font-bold text-red-700 uppercase mb-1">
+              <div className="font-mono text-xs font-bold text-orange-600 uppercase mb-1">
                 MANUFACTURING FACILITY
               </div>
               <h2 className="text-2xl font-black font-mono uppercase text-neutral-950">
@@ -53,7 +53,7 @@ export default function ContactPage() {
 
             <div className="space-y-4 font-mono text-sm">
               <div className="flex items-start gap-3 p-3 bg-neutral-50 border border-neutral-200">
-                <MapPin className="w-5 h-5 text-red-700 shrink-0 mt-0.5" />
+                <MapPin className="w-5 h-5 text-orange-600 shrink-0 mt-0.5" />
                 <div>
                   <div className="font-bold text-neutral-900 uppercase">FACTORY LOCATION</div>
                   <div className="text-neutral-600 mt-0.5">
@@ -217,7 +217,7 @@ export default function ContactPage() {
 
                 <button
                   type="submit"
-                  className="w-full bg-neutral-950 hover:bg-neutral-800 text-white font-mono font-bold text-sm uppercase py-4 px-8 border-2 border-neutral-950 transition-colors shadow-[3px_3px_0px_#b91c1c]"
+                  className="w-full bg-neutral-950 hover:bg-neutral-800 text-white font-mono font-bold text-sm uppercase py-4 px-8 border-2 border-neutral-950 transition-colors shadow-[3px_3px_0px_#ea580c]"
                 >
                   Request Sample Pack Dispatch
                 </button>

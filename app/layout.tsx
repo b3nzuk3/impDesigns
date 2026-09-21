@@ -1,9 +1,16 @@
+import { Inter } from 'next/font/google';
 import type { Metadata } from 'next';
 import './globals.css';
 import { Navbar } from '@/components/Navbar';
 import { NavScrollWrapper } from '@/components/NavScrollWrapper';
 import { Footer } from '@/components/Footer';
 import { MobileStickyBar } from '@/components/MobileStickyBar';
+
+const inter = Inter({
+  subsets: ['latin'],
+  variable: '--font-inter',
+  display: 'swap',
+});
 
 export const metadata: Metadata = {
   title: 'Impact Designs - Custom Branded Tapes & Tags Kenya',
@@ -86,7 +93,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body suppressHydrationWarning className="min-h-screen flex flex-col selection:bg-red-700 selection:text-white pb-20 md:pb-0">
+      <body suppressHydrationWarning className={`${inter.variable} font-sans min-h-screen flex flex-col selection:bg-orange-600 selection:text-white pb-20 md:pb-0`}>
         <NavScrollWrapper>
           <Navbar />
         </NavScrollWrapper>

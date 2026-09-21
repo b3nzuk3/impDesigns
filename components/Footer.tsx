@@ -17,7 +17,7 @@ export const Footer: React.FC = () => {
         shadow={false}
       />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <div className="max-w-[88rem] mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           {/* Brand & Factory Summary */}
           <div>
@@ -126,7 +126,7 @@ export const Footer: React.FC = () => {
             </h4>
             <ul className="space-y-3 font-mono text-xs text-neutral-400">
               <li className="flex items-start gap-2.5">
-                <MapPin className="w-4 h-4 text-red-500 shrink-0 mt-0.5" />
+                <MapPin className="w-4 h-4 text-orange-400 shrink-0 mt-0.5" />
                 <span>Enterprise Road, Industrial Area, Nairobi, Kenya</span>
               </li>
               <li className="flex items-center gap-2.5">
@@ -155,7 +155,7 @@ export const Footer: React.FC = () => {
             <span className="text-neutral-700">|</span>
             <Link href="/branded-tapes" className="hover:text-white">Tape Specs</Link>
             <Link href="/custom-tags" className="hover:text-white">Tag Specs</Link>
-            <Link href="/quote" className="text-red-500 hover:underline">Instant Quote</Link>
+            <Link href="/quote" className="text-orange-400 hover:underline">Instant Quote</Link>
           </div>
         </div>
       </div>

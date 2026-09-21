@@ -23,7 +23,7 @@ export const MobileStickyBar: React.FC = () => {
         <button
           type="button"
           onClick={() => setModalOpen(true)}
-          className="flex-1 inline-flex items-center justify-center gap-2 bg-red-700 text-white font-mono font-bold text-xs uppercase py-3 px-6 shadow-sm select-none"
+          className="flex-1 inline-flex items-center justify-center gap-2 bg-orange-600 text-white font-mono font-bold text-xs uppercase py-3 px-6 shadow-sm select-none"
         >
           <FileText className="w-4 h-4" />
           <span>Get Quote</span>

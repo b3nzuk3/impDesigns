@@ -54,7 +54,7 @@ export const ProcessTapeFlow: React.FC = () => {
         />
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="relative z-10 max-w-[88rem] mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-2xl mb-12">
           <h2 className="text-3xl md:text-5xl font-black uppercase tracking-tight text-neutral-900 font-mono">
             HOW CUSTOM TAPE IS MADE
@@ -72,12 +72,12 @@ export const ProcessTapeFlow: React.FC = () => {
               className="bg-white border-2 border-neutral-900 shadow-[4px_4px_0px_#111111] p-6 flex flex-col justify-between relative group hover:-translate-y-1 transition-transform"
             >
               {/* Tape swatch on top edge */}
-              <div className="absolute -top-3 left-4 right-4 bg-red-700 text-white font-mono text-[9px] tracking-widest font-bold py-0.5 px-2 text-center uppercase shadow-sm truncate">
+              <div className="absolute -top-3 left-4 right-4 bg-orange-600 text-white font-mono text-[9px] tracking-widest font-bold py-0.5 px-2 text-center uppercase shadow-sm truncate">
                 {item.tapeDetail}
               </div>
 
               <div>
-                <div className="text-3xl md:text-4xl font-black font-mono text-neutral-300 group-hover:text-red-600 transition-colors mt-2 mb-3">
+                <div className="text-3xl md:text-4xl font-black font-mono text-neutral-300 group-hover:text-orange-500 transition-colors mt-2 mb-3">
                   {item.step}
                 </div>
                 <h3 className="text-base md:text-lg font-bold font-mono text-neutral-900 tracking-tight uppercase leading-snug">

@@ -38,14 +38,14 @@ export default function HomePage() {
           />
         </div>
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="max-w-[88rem] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-center">
             {/* Left Column: Bold Editorial Headline & Conversion */}
             <div className="lg:col-span-6 space-y-6">
               <h1 className="text-4xl sm:text-6xl lg:text-7xl font-black font-mono tracking-tight text-neutral-950 uppercase leading-[0.95]">
                 YOUR BRAND.
                 <br />
-                <span className="text-red-700">ON EVERY</span>
+                <span className="text-orange-600">ON EVERY</span>
                 <br />
                 PACKAGE.
               </h1>
@@ -59,7 +59,7 @@ export default function HomePage() {
                 <button
                   type="button"
                   onClick={() => openQuoteFor('tape')}
-                  className="inline-flex items-center justify-center bg-neutral-950 hover:bg-neutral-800 text-white font-mono text-sm font-bold uppercase tracking-wider py-4 px-8 border-2 border-neutral-950 shadow-[4px_4px_0px_#b91c1c] transition-all"
+                  className="inline-flex items-center justify-center bg-neutral-950 hover:bg-neutral-800 text-white font-mono text-sm font-bold uppercase tracking-wider py-4 px-8 border-2 border-neutral-950 shadow-[4px_4px_0px_#ea580c] transition-all"
                 >
                   <span>GET A QUOTE</span>
                   <ArrowRight className="w-4 h-4 ml-2" />
@@ -115,7 +115,7 @@ export default function HomePage() {
       {/* REAL PRINTED TAPE REFERENCE STRIP                              */}
       {/* ------------------------------------------------------------- */}
       <div className="px-4 py-10 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-7xl">
+        <div className="mx-auto max-w-[88rem]">
           <RealTapeShowcase id="reference-real-tape-showcase" compact />
         </div>
       </div>
@@ -125,12 +125,12 @@ export default function HomePage() {
       {/* Statement: WE PUT YOUR BRAND ON THE THINGS PEOPLE NOTICE.     */}
       {/* The Two Core Product Families: BRANDED TAPES & ALUMINIUM TAGS */}
       {/* ------------------------------------------------------------- */}
-      <section className="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-20 max-w-[88rem] mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl mb-14">
           <h2 className="text-3xl sm:text-5xl lg:text-6xl font-black font-mono tracking-tight text-neutral-950 uppercase leading-none">
             WE PUT YOUR BRAND
             <br />
-            <span className="text-red-700">ON THE THINGS</span> PEOPLE NOTICE.
+            <span className="text-orange-600">ON THE THINGS</span> PEOPLE NOTICE.
           </h2>
           <p className="mt-4 text-base sm:text-lg text-neutral-600 leading-relaxed font-sans">
             Generic boxes and blank packaging waste your most valuable customer touchpoint. We specialize strictly in the two physical products that seal and identify your inventory.
@@ -151,7 +151,7 @@ export default function HomePage() {
                 <span className="font-mono text-2xl font-black text-neutral-950 uppercase">
                   CUSTOM BRANDED TAPES
                 </span>
-                <Box className="w-6 h-6 text-red-700" />
+                <Box className="w-6 h-6 text-orange-600" />
               </div>
 
               <p className="text-sm text-neutral-600 leading-relaxed mb-6 font-sans">
@@ -213,7 +213,7 @@ export default function HomePage() {
               <button
                 type="button"
                 onClick={() => openQuoteFor('tape')}
-                className="inline-flex items-center justify-center bg-red-700 hover:bg-red-800 text-white font-mono text-xs font-bold uppercase py-3.5 px-6 transition-colors"
+                className="inline-flex items-center justify-center bg-orange-600 hover:bg-orange-700 text-white font-mono text-xs font-bold uppercase py-3.5 px-6 transition-colors"
               >
                 Quote Tape
               </button>
@@ -223,7 +223,7 @@ export default function HomePage() {
           {/* PRODUCT FAMILY 2: ALUMINIUM TAGS (Physical Object Composition) */}
           <div className="bg-white border-2 border-neutral-900 shadow-[6px_6px_0px_#111111] p-8 flex flex-col justify-between relative group hover:-translate-y-1 transition-transform">
             {/* Top architectural accent */}
-            <div className="absolute -top-3 left-6 right-6 bg-[#b91c1c] text-white font-mono text-[10px] font-bold tracking-[0.2em] py-0.5 px-3 uppercase text-center truncate">
+            <div className="absolute -top-3 left-6 right-6 bg-[#ea580c] text-white font-mono text-[10px] font-bold tracking-[0.2em] py-0.5 px-3 uppercase text-center truncate">
               SPECIALTY 02 • CUSTOM ALUMINIUM TAGS
             </div>
 
@@ -232,7 +232,7 @@ export default function HomePage() {
                 <span className="font-mono text-2xl font-black text-neutral-950 uppercase">
                   CUSTOM ALUMINIUM TAGS
                 </span>
-                <Tag className="w-6 h-6 text-red-700" />
+                <Tag className="w-6 h-6 text-orange-600" />
               </div>
 
               <p className="text-sm text-neutral-600 leading-relaxed mb-6 font-sans">
@@ -300,7 +300,7 @@ export default function HomePage() {
               <button
                 type="button"
                 onClick={() => openQuoteFor('aluminium')}
-                className="inline-flex items-center justify-center bg-red-700 hover:bg-red-800 text-white font-mono text-xs font-bold uppercase py-3.5 px-6 transition-colors"
+                className="inline-flex items-center justify-center bg-orange-600 hover:bg-orange-700 text-white font-mono text-xs font-bold uppercase py-3.5 px-6 transition-colors"
               >
                 Quote Aluminium Tags
               </button>
@@ -321,7 +321,7 @@ export default function HomePage() {
       {/* EDITORIAL PRODUCT SHOWCASE                                    */}
       {/* Asymmetric layouts, oversized typography, material details     */}
       {/* ------------------------------------------------------------- */}
-      <section className="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-b-2 border-neutral-900">
+      <section className="py-20 max-w-[88rem] mx-auto px-4 sm:px-6 lg:px-8 border-b-2 border-neutral-900">
         <div className="max-w-2xl mb-14">
           <h2 className="text-3xl sm:text-5xl font-black font-mono tracking-tight text-neutral-950 uppercase leading-none">
             ENGINEERED PACKAGING MATERIALS
@@ -338,7 +338,7 @@ export default function HomePage() {
             <div>
               <div className="flex justify-between items-start mb-6">
                 <div>
-                  <span className="font-mono text-xs text-red-700 font-bold block mb-1">
+                  <span className="font-mono text-xs text-orange-600 font-bold block mb-1">
                     MOST POPULAR
                   </span>
                   <h3 className="text-2xl sm:text-3xl font-black font-mono uppercase text-neutral-900">
@@ -384,7 +384,7 @@ export default function HomePage() {
             <div className="mt-8 pt-4 border-t border-neutral-200 flex justify-between items-center">
               <Link
                 href="/branded-tapes"
-                className="font-mono text-xs font-bold uppercase text-neutral-900 hover:text-red-700 flex items-center gap-1"
+                className="font-mono text-xs font-bold uppercase text-neutral-900 hover:text-orange-600 flex items-center gap-1"
               >
                 <span>View Full Tape Specifications</span>
                 <ArrowRight className="w-3.5 h-3.5" />
@@ -392,7 +392,7 @@ export default function HomePage() {
               <button
                 type="button"
                 onClick={() => openQuoteFor('tape')}
-                className="bg-neutral-900 text-white font-mono text-xs font-bold uppercase py-2.5 px-5 hover:bg-red-700 transition-colors"
+                className="bg-neutral-900 text-white font-mono text-xs font-bold uppercase py-2.5 px-5 hover:bg-orange-600 transition-colors"
               >
                 Quote 48mm
               </button>
@@ -400,7 +400,7 @@ export default function HomePage() {
           </div>
 
           {/* Card 2: Anodized Aluminium Branded Tags (Span 5) */}
-          <div className="md:col-span-5 bg-[#171717] text-white border-2 border-neutral-900 p-8 shadow-[6px_6px_0px_#b91c1c] flex flex-col justify-between">
+          <div className="md:col-span-5 bg-[#171717] text-white border-2 border-neutral-900 p-8 shadow-[6px_6px_0px_#ea580c] flex flex-col justify-between">
             <div>
               <div className="flex justify-between items-start mb-6">
                 <div>
@@ -458,7 +458,7 @@ export default function HomePage() {
               <button
                 type="button"
                 onClick={() => openQuoteFor('aluminium')}
-                className="bg-red-700 hover:bg-red-600 text-white font-mono text-xs font-bold uppercase py-2.5 px-5 transition-colors"
+                className="bg-orange-600 hover:bg-orange-500 text-white font-mono text-xs font-bold uppercase py-2.5 px-5 transition-colors"
               >
                 Quote Aluminium Tags
               </button>
@@ -526,7 +526,7 @@ export default function HomePage() {
               <button
                 type="button"
                 onClick={() => openQuoteFor('tape')}
-                className="bg-neutral-900 text-white font-mono text-xs font-bold uppercase py-2 px-4 hover:bg-red-700 transition-colors"
+                className="bg-neutral-900 text-white font-mono text-xs font-bold uppercase py-2 px-4 hover:bg-orange-600 transition-colors"
               >
                 Inquire Clear
               </button>
@@ -569,7 +569,7 @@ export default function HomePage() {
                 serialNumber="PST-1823-NB"
                 barcodeType="code128"
                 logoType="shield"
-                logoColor="#b91c1c"
+                logoColor="#ea580c"
                 logoAccent="#1e3a8a"
                 thickness="0.8mm"
                 mountingHoles={false}
@@ -605,7 +605,7 @@ export default function HomePage() {
       {/* OUR WORK SECTION: "SEE YOUR BRAND LIKE THIS."                  */}
       {/* Real completed client packaging across Kenya                  */}
       {/* ------------------------------------------------------------- */}
-      <section className="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-t-2 border-neutral-900" id="our-work">
+      <section className="py-20 max-w-[88rem] mx-auto px-4 sm:px-6 lg:px-8 border-t-2 border-neutral-900" id="our-work">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-14 gap-4">
           <div className="max-w-2xl">
             <h2 className="text-3xl sm:text-5xl font-black font-mono tracking-tight text-neutral-950 uppercase leading-none">
@@ -618,7 +618,7 @@ export default function HomePage() {
 
           <Link
             href="/our-work"
-            className="inline-flex items-center gap-2 font-mono text-xs font-bold uppercase text-neutral-950 hover:text-red-700 transition-colors border-b-2 border-neutral-950 pb-1 self-start md:self-auto"
+            className="inline-flex items-center gap-2 font-mono text-xs font-bold uppercase text-neutral-950 hover:text-orange-600 transition-colors border-b-2 border-neutral-950 pb-1 self-start md:self-auto"
           >
             <span>View Full Portfolio Showcase</span>
             <ArrowRight className="w-4 h-4" />
@@ -672,7 +672,7 @@ export default function HomePage() {
                       serialNumber="KER-012"
                       barcodeType="code128"
                       logoType="crest"
-                      logoColor="#b91c1c"
+                      logoColor="#ea580c"
                       logoAccent="#1e3a8a"
                       thickness="0.5mm"
                       mountingHoles={false}
@@ -685,7 +685,7 @@ export default function HomePage() {
                 </div>
               </div>
 
-              <div className="font-mono text-xs text-red-700 font-bold mb-1">
+              <div className="font-mono text-xs text-orange-600 font-bold mb-1">
                 SPECIALTY COFFEE • ROASTERY PACKAGING
               </div>
               <h3 className="text-xl font-bold font-mono uppercase text-neutral-950">
@@ -760,7 +760,7 @@ export default function HomePage() {
                 </div>
               </div>
 
-              <div className="font-mono text-xs text-red-700 font-bold mb-1">
+              <div className="font-mono text-xs text-orange-600 font-bold mb-1">
                 CONTEMPORARY FASHION • E-COMMERCE
               </div>
               <h3 className="text-xl font-bold font-mono uppercase text-neutral-950">
@@ -835,7 +835,7 @@ export default function HomePage() {
                 </div>
               </div>
 
-              <div className="font-mono text-xs text-red-700 font-bold mb-1">
+              <div className="font-mono text-xs text-orange-600 font-bold mb-1">
                 LAST-MILE LOGISTICS • SECURITY
               </div>
               <h3 className="text-xl font-bold font-mono uppercase text-neutral-950">
@@ -872,7 +872,7 @@ export default function HomePage() {
             <button
               type="button"
               onClick={() => openQuoteFor('tape')}
-              className="w-full sm:w-auto bg-red-700 hover:bg-red-600 text-white font-mono font-bold text-xs uppercase py-4 px-8 border border-red-500 shadow-md transition-colors"
+              className="w-full sm:w-auto bg-orange-600 hover:bg-orange-500 text-white font-mono font-bold text-xs uppercase py-4 px-8 border border-orange-400 shadow-md transition-colors"
             >
               REQUEST A FACTORY QUOTE
             </button>

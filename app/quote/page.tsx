@@ -87,7 +87,7 @@ export default function QuotePage() {
       />
 
       <section className="pt-12 pb-16 border-b-2 border-neutral-900">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-[88rem] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl space-y-4">
             <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black font-mono tracking-tight uppercase text-neutral-950 leading-tight">
               FACTORY QUOTE CALCULATOR
@@ -99,7 +99,7 @@ export default function QuotePage() {
         </div>
       </section>
 
-      <section className="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-16 max-w-[88rem] mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
           {/* Left / Main Configurator (Col 8) */}
           <div className="lg:col-span-8 bg-white border-2 border-neutral-900 p-6 sm:p-8 shadow-[6px_6px_0px_#111111] space-y-8">
@@ -114,7 +114,7 @@ export default function QuotePage() {
                   onClick={() => setProductType('tape')}
                   className={`p-4 text-left border-2 transition-all ${
                     productType === 'tape'
-                      ? 'border-neutral-950 bg-neutral-950 text-white shadow-[3px_3px_0px_#b91c1c]'
+                      ? 'border-neutral-950 bg-neutral-950 text-white shadow-[3px_3px_0px_#ea580c]'
                       : 'border-neutral-300 hover:border-neutral-950 bg-neutral-50 text-neutral-900'
                   }`}
                 >
@@ -128,7 +128,7 @@ export default function QuotePage() {
                   onClick={() => setProductType('aluminium')}
                   className={`p-4 text-left border-2 transition-all ${
                     productType === 'aluminium'
-                      ? 'border-neutral-950 bg-neutral-950 text-white shadow-[3px_3px_0px_#b91c1c]'
+                      ? 'border-neutral-950 bg-neutral-950 text-white shadow-[3px_3px_0px_#ea580c]'
                       : 'border-neutral-300 hover:border-neutral-950 bg-neutral-50 text-neutral-900'
                   }`}
                 >
@@ -408,9 +408,9 @@ export default function QuotePage() {
           </div>
 
           {/* Right / Live Quote Summary (Col 4) */}
-          <div className="lg:col-span-4 bg-neutral-950 text-white border-2 border-neutral-900 p-6 sm:p-8 shadow-[6px_6px_0px_#b91c1c] space-y-6 sticky top-28">
+          <div className="lg:col-span-4 bg-neutral-950 text-white border-2 border-neutral-900 p-6 sm:p-8 shadow-[6px_6px_0px_#ea580c] space-y-6 sticky top-28">
             <div className="border-b border-neutral-800 pb-4">
-              <span className="font-mono text-xs text-red-500 font-bold uppercase block mb-1">
+              <span className="font-mono text-xs text-orange-400 font-bold uppercase block mb-1">
                 LIVE CALCULATION
               </span>
               <h2 className="text-xl font-black font-mono uppercase text-white">

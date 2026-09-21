@@ -47,7 +47,7 @@ export const BeforeAfterBox: React.FC = () => {
               }}
               className={`px-4 py-2 text-xs font-mono font-bold uppercase transition-colors ${
                 sliderPos > 80
-                  ? 'bg-red-700 text-white border border-red-600'
+                  ? 'bg-orange-600 text-white border border-orange-500'
                   : 'text-neutral-400 hover:text-white bg-black/40 border border-neutral-800'
               }`}
             >
@@ -95,10 +95,10 @@ export const BeforeAfterBox: React.FC = () => {
 
                 {/* HEAVY DUTY IMPACT BRANDED TAPE SEALING THE BOX */}
                 <div className="absolute inset-x-0 top-1/2 -translate-y-1/2 z-20">
-                  <div className="relative bg-[#111111] text-white py-3.5 px-4 font-mono text-xs font-bold tracking-[0.25em] uppercase border-y-2 border-red-600 shadow-2xl flex items-center justify-between">
+                  <div className="relative bg-[#111111] text-white py-3.5 px-4 font-mono text-xs font-bold tracking-[0.25em] uppercase border-y-2 border-orange-500 shadow-2xl flex items-center justify-between">
                     <div className="tape-sheen absolute inset-0 pointer-events-none" />
                     <span className="truncate">KILIMA APPAREL • NAIROBI • VERIFIED SEAL</span>
-                    <span className="bg-red-600 text-white px-2 py-0.5 text-[9px] font-bold tracking-widest shrink-0 ml-2">
+                    <span className="bg-orange-500 text-white px-2 py-0.5 text-[9px] font-bold tracking-widest shrink-0 ml-2">
                       DO NOT ACCEPT IF BROKEN
                     </span>
                   </div>
@@ -163,7 +163,7 @@ export const BeforeAfterBox: React.FC = () => {
             Packages look vulnerable in transit across Nairobi and county couriers. No brand recall upon unboxing.
           </div>
           <div>
-            <span className="text-red-400 font-bold block mb-1">WITH IMPACT BRANDED TAPE & TAGS:</span>
+            <span className="text-orange-300 font-bold block mb-1">WITH IMPACT BRANDED TAPE & TAGS:</span>
             Instant brand authority, tamper-evident security sealing, and unboxing customer retention at zero advertising cost.
           </div>
         </div>

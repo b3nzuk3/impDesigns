@@ -1,5 +1,9 @@
 import Image from 'next/image';
 import React from 'react';
+import { MEDIA_BASE } from '@/lib/media';
+
+/** URL for an aluminium-tag photo uploaded to R2 (tag-01..tag-32). */
+export const tagPhoto = (n: number) => `${MEDIA_BASE}/aluminium-tags/tag-${String(n).padStart(2, '0')}.webp`;
 
 interface RealAluminiumTagPhotoProps {
   image?: 'range' | 'closeup';
@@ -18,9 +22,7 @@ export const RealAluminiumTagPhoto: React.FC<RealAluminiumTagPhotoProps> = ({
   className = '',
 }) => {
   const isCloseup = image === 'closeup';
-  const src = isCloseup
-    ? '/images/aluminium-tag-brushed-closeup.jpg'
-    : '/images/aluminium-tags-range.png';
+  const src = isCloseup ? tagPhoto(1) : tagPhoto(16);
 
   return (
     <figure className={`overflow-hidden border border-neutral-300 bg-neutral-100 ${className}`}>

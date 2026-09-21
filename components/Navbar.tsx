@@ -33,7 +33,7 @@ export const Navbar: React.FC = () => {
               id="brand-logo"
             >
               {/* Impact Creative Designs logo mark */}
-              <div className="w-11 h-9 bg-white flex items-center justify-center border border-neutral-900 shadow-[2px_2px_0px_#b91c1c] overflow-hidden transition-transform group-hover:scale-105">
+              <div className="w-11 h-9 bg-white flex items-center justify-center border border-neutral-900 shadow-[2px_2px_0px_#ea580c] overflow-hidden transition-transform group-hover:scale-105">
                 <Image
                   src="/images/impact-designs-logo.png"
                   alt="Impact Creative Designs logo mark"
@@ -64,7 +64,7 @@ export const Navbar: React.FC = () => {
                     href={link.href}
                     className={`px-3 py-2 text-[13px] lg:text-sm font-mono uppercase tracking-wide transition-colors ${
                       isActive
-                        ? 'text-neutral-950 font-bold border-b-2 border-red-600'
+                        ? 'text-neutral-950 font-bold border-b-2 border-orange-500'
                         : 'text-neutral-600 hover:text-neutral-950 font-medium'
                     }`}
                   >
@@ -90,7 +90,7 @@ export const Navbar: React.FC = () => {
               <button
                 type="button"
                 onClick={() => setQuoteModalOpen(true)}
-                className="inline-flex items-center justify-center bg-neutral-900 hover:bg-red-700 text-white font-mono text-sm font-bold uppercase tracking-wide py-3 px-6 border-2 border-neutral-900 transition-all shadow-[2px_2px_0px_#111111]"
+                className="inline-flex items-center justify-center bg-neutral-900 hover:bg-orange-600 text-white font-mono text-sm font-bold uppercase tracking-wide py-3 px-6 border-2 border-neutral-900 transition-all shadow-[2px_2px_0px_#111111]"
               >
                 <span>GET A QUOTE</span>
               </button>

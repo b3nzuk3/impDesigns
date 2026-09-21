@@ -2,6 +2,7 @@
 
 import Image from 'next/image';
 import React from 'react';
+import { tapePhoto } from '@/lib/media';
 
 interface RealTapeShowcaseProps {
   compact?: boolean;
@@ -10,9 +11,8 @@ interface RealTapeShowcaseProps {
 }
 
 /**
- * A static reference gallery using photographs of printed tape instead of
- * simulated/animated CSS tape. The images are deliberately labelled as
- * references so they are not mistaken for Impact Designs client work.
+ * A static reference gallery using photographs of real printed tape produced
+ * by Impact Designs, served from Cloudflare R2 as WebP.
  */
 export const RealTapeShowcase: React.FC<RealTapeShowcaseProps> = ({
   compact = false,
@@ -28,7 +28,7 @@ export const RealTapeShowcase: React.FC<RealTapeShowcaseProps> = ({
     >
       <div className="relative z-10 mb-4 flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
         <div>
-          <p className="font-mono text-xs sm:text-[10px] font-bold uppercase tracking-[0.1em] text-red-300">
+          <p className="font-mono text-xs sm:text-[10px] font-bold uppercase tracking-[0.1em] text-orange-200">
             Physical tape references
           </p>
           <h2
@@ -47,8 +47,8 @@ export const RealTapeShowcase: React.FC<RealTapeShowcaseProps> = ({
         <figure className="group overflow-hidden border border-neutral-700 bg-neutral-900">
           <div className={`relative ${compact ? 'aspect-[1.45]' : 'aspect-[1.2]'}`}>
             <Image
-              src="/images/branded-tape-rolls.jpg"
-              alt="A collection of real printed branded packing tape rolls"
+              src={tapePhoto(16)}
+              alt="A collection of real printed branded packing tape rolls produced by Impact Designs"
               fill
               priority
               sizes="(max-width: 640px) 100vw, 70vw"
@@ -68,8 +68,8 @@ export const RealTapeShowcase: React.FC<RealTapeShowcaseProps> = ({
         <figure className="group overflow-hidden border border-neutral-700 bg-neutral-900">
           <div className={`relative ${compact ? 'aspect-[1.45]' : 'aspect-[1.2]'}`}>
             <Image
-              src="/images/branded-tape-application.jpg"
-              alt="Real branded packing tape shown on rolls and in a handheld dispenser"
+              src={tapePhoto(17)}
+              alt="Real branded packing tape shown on rolls and sealing a client carton"
               fill
               priority
               sizes="(max-width: 640px) 100vw, 40vw"
