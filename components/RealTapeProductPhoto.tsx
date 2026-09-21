@@ -27,7 +27,7 @@ export const RealTapeProductPhoto: React.FC<RealTapeProductPhotoProps> = ({
       <div className={`relative ${aspect}`}>
         <Image
           src={src}
-          alt={alt ?? 'Real branded packaging tape produced by Impact Designs'}
+          alt={alt ?? 'Real branded packaging tape produced by Impact Creative Designs'}
           fill
           loading="lazy"
           sizes="(max-width: 768px) 100vw, 50vw"

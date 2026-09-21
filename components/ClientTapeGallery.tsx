@@ -11,7 +11,7 @@ interface ClientWork {
 }
 
 /**
- * Real client work photographed at the Impact Designs facility.
+ * Real client work photographed at the Impact Creative Designs facility.
  * Key numbering matches the uploaded R2 objects (branded-tapes/tape-XX.webp).
  */
 const CLIENT_WORK: ClientWork[] = [
@@ -79,7 +79,7 @@ export const ClientTapeGallery: React.FC<{ className?: string; id?: string }> = 
           Branded for businesses across Kenya
         </h2>
         <p className="mt-2 text-xs sm:text-sm text-neutral-600 font-sans leading-relaxed">
-          Actual tape printed and delivered by Impact Designs — from pharmacies and logistics
+          Actual tape printed and delivered by Impact Creative Designs — from pharmacies and logistics
           fleets to event organisers. Your logo could be on the next roll.
         </p>
       </div>

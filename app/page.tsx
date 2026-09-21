@@ -32,7 +32,7 @@ export default function HomePage() {
         <div className="absolute top-1/3 -left-10 right-[-10%] z-0 pointer-events-none opacity-25 md:opacity-40 hidden sm:block">
           <TapeStrip
             variant="kraft"
-            text="IMPACT DESIGNS • NAIROBI KENYA • FACTORY DIRECT • CUSTOM BRANDED PACKAGING TAPES • ALUMINIUM TAGS •"
+            text="IMPACT CREATIVE DESIGNS • NAIROBI KENYA • FACTORY DIRECT • CUSTOM BRANDED PACKAGING TAPES • ALUMINIUM TAGS •"
             angle={-3}
             sheen={true}
           />
@@ -76,7 +76,7 @@ export default function HomePage() {
               {/* Instant WhatsApp Quick Link */}
               <div className="pt-2 flex items-center gap-3 text-xs font-mono text-neutral-700">
                 <a
-                  href="https://wa.me/254722404647?text=Hello%20Impact%20Designs%20Kenya!%20I%20want%20to%20quote%20for%20custom%20branded%20tapes%20or%20tags."
+                  href="https://wa.me/254722404647?text=Hello%20Impact%20Creative%20Designs%20Kenya!%20I%20want%20to%20quote%20for%20custom%20branded%20tapes%20or%20tags."
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 text-neutral-900 hover:text-green-700 font-bold border-b border-neutral-400 pb-0.5"
@@ -878,7 +878,7 @@ export default function HomePage() {
             </button>
 
             <a
-              href="https://wa.me/254722404647?text=Hello%20Impact%20Designs%20Kenya,%20I%20would%20like%20to%20quote%20for%20packaging%20tape."
+              href="https://wa.me/254722404647?text=Hello%20Impact%20Creative%20Designs%20Kenya,%20I%20would%20like%20to%20quote%20for%20packaging%20tape."
               target="_blank"
               rel="noopener noreferrer"
               className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#25D366] text-black font-mono font-bold text-xs uppercase py-4 px-8 transition-colors"

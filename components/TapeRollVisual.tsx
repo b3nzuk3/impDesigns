@@ -15,7 +15,7 @@ interface TapeRollVisualProps {
 
 export const TapeRollVisual: React.FC<TapeRollVisualProps> = ({
   color = 'white',
-  brandText = 'IMPACT DESIGNS • NAIROBI • CUSTOM BRANDED TAPE •',
+  brandText = 'IMPACT CREATIVE DESIGNS • NAIROBI • CUSTOM BRANDED TAPE •',
   coreText,
   size = 'md',
   angle = 12,

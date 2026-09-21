@@ -12,7 +12,7 @@ interface RealTapeShowcaseProps {
 
 /**
  * A static reference gallery using photographs of real printed tape produced
- * by Impact Designs, served from Cloudflare R2 as WebP.
+ * by Impact Creative Designs, served from Cloudflare R2 as WebP.
  */
 export const RealTapeShowcase: React.FC<RealTapeShowcaseProps> = ({
   compact = false,
@@ -48,7 +48,7 @@ export const RealTapeShowcase: React.FC<RealTapeShowcaseProps> = ({
           <div className={`relative ${compact ? 'aspect-[1.45]' : 'aspect-[1.2]'}`}>
             <Image
               src={tapePhoto(16)}
-              alt="A collection of real printed branded packing tape rolls produced by Impact Designs"
+              alt="A collection of real printed branded packing tape rolls produced by Impact Creative Designs"
               fill
               priority
               sizes="(max-width: 640px) 100vw, 70vw"

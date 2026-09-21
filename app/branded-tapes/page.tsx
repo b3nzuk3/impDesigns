@@ -11,7 +11,7 @@ import { tapePhoto } from '@/lib/media';
 import { MessageCircle, ChevronDown, ArrowRight, Check, Printer, Package } from 'lucide-react';
 
 const WHATSAPP_URL =
-  'https://wa.me/254722404647?text=Hello%20Impact%20Designs!%20I%20want%20a%20quote%20for%20custom%20branded%20packaging%20tape.';
+  'https://wa.me/254722404647?text=Hello%20Impact%20Creative%20Designs!%20I%20want%20a%20quote%20for%20custom%20branded%20packaging%20tape.';
 
 interface TapeProduct {
   title: string;
@@ -95,7 +95,7 @@ const FAQS = [
     a: 'We print up to 4 Pantone spot colors using high-precision flexographic printing presses in Nairobi. We can also print continuous flood coats (where the tape base is completely colored and your logo is reversed out in white).',
   },
   {
-    q: 'Does Impact Designs deliver outside Nairobi?',
+    q: 'Does Impact Creative Designs deliver outside Nairobi?',
     a: 'Yes, we provide door-to-door courier delivery across all 47 counties in Kenya including Mombasa, Kisumu, Nakuru, Eldoret, Thika, Nanyuki, and Machakos via our logistics partners (Wells Fargo, G4S, Speedaf, and local bus couriers).',
   },
   {
@@ -114,7 +114,7 @@ const ProductCard: React.FC<{ p: TapeProduct; onQuote: () => void }> = ({ p, onQ
       <div className={`relative ${p.aspect} bg-neutral-100 border-b-2 border-neutral-900`}>
         <Image
           src={tapePhoto(p.photo)}
-          alt={`${p.title} — real printed tape produced by Impact Designs Kenya`}
+          alt={`${p.title} — real printed tape produced by Impact Creative Designs Kenya`}
           fill
           loading="lazy"
           sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
@@ -241,7 +241,7 @@ export default function BrandedTapesPage() {
             <figure className="relative aspect-[4/3] border-2 border-neutral-900 shadow-[8px_8px_0px_#111111] overflow-hidden bg-neutral-100">
               <Image
                 src={tapePhoto(16)}
-                alt="Real printed branded packing tape rolls produced for Kenyan companies by Impact Designs"
+                alt="Real printed branded packing tape rolls produced for Kenyan companies by Impact Creative Designs"
                 fill
                 priority
                 sizes="(max-width: 1024px) 100vw, 50vw"
@@ -345,7 +345,7 @@ export default function BrandedTapesPage() {
                 {PRINT_OPTIONS.map((o) => (
                   <figure key={o.title} className="border border-neutral-800 bg-neutral-900 overflow-hidden">
                     <div className="relative aspect-[4/3] border-b border-neutral-800">
-                      <Image src={tapePhoto(o.photo)} alt={`${o.title} example printed by Impact Designs`} fill loading="lazy" sizes="(max-width: 640px) 100vw, 25vw" className="object-cover" />
+                      <Image src={tapePhoto(o.photo)} alt={`${o.title} example printed by Impact Creative Designs`} fill loading="lazy" sizes="(max-width: 640px) 100vw, 25vw" className="object-cover" />
                     </div>
                     <figcaption className="p-3">
                       <div className="font-mono text-xs font-bold uppercase text-white">{o.title}</div>
@@ -367,7 +367,7 @@ export default function BrandedTapesPage() {
         </h2>
         <div className="space-y-3 text-xs sm:text-sm text-neutral-600 leading-relaxed font-sans">
           <p>
-            Impact Designs is a Kenyan manufacturer of custom printed packaging tape — also known
+            Impact Creative Designs is a Kenyan manufacturer of custom printed packaging tape — also known
             as logo tape, sellotape printing, or branded packing tape. We print your company name,
             logo, phone number or tamper-evident message onto premium White or Transparent BOPP
             film, for courier fleets, retail brands, and e-commerce companies in Nairobi and

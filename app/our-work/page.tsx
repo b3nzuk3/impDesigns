@@ -203,7 +203,7 @@ export default function OurWorkPage() {
                       <AluminiumTagVisual
                         companyName={item.tagTitle}
                         subtitle={item.tagSub}
-                        propertyOfText="IMPACT DESIGNS PRODUCT ID"
+                        propertyOfText="IMPACT CREATIVE DESIGNS PRODUCT ID"
                         serialNumber={`ID-${idx + 1}TAG`}
                         barcodeType="code128"
                         logoType={item.category === 'tags' ? 'crest' : 'cargo'}

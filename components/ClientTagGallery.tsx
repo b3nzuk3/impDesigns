@@ -11,7 +11,7 @@ interface ClientTag {
 }
 
 /**
- * Real anodized aluminium asset tags photographed at the Impact Designs
+ * Real anodized aluminium asset tags photographed at the Impact Creative Designs
  * facility. Key numbering matches the uploaded R2 objects (aluminium-tags/tag-XX.webp).
  */
 const CLIENT_TAGS: ClientTag[] = [
@@ -85,7 +85,7 @@ export const ClientTagGallery: React.FC<{ className?: string; id?: string }> = (
           Asset tags trusted by institutions
         </h2>
         <p className="mt-2 text-xs sm:text-sm text-neutral-600 font-sans leading-relaxed">
-          Actual anodized aluminium tags produced by Impact Designs — from banks and hospitals
+          Actual anodized aluminium tags produced by Impact Creative Designs — from banks and hospitals
           to government departments. Built to outlast the assets they mark.
         </p>
       </div>

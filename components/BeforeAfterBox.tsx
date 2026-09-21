@@ -124,7 +124,7 @@ export const BeforeAfterBox: React.FC = () => {
                 {/* Bottom branding stamp on box */}
                 <div className="relative z-10 text-center font-mono text-xs text-[#3b2713] mt-24">
                   <div className="font-bold tracking-wider uppercase text-black/80">
-                    IMPACT DESIGNS SPECIFICATION
+                    IMPACT CREATIVE DESIGNS SPECIFICATION
                   </div>
                   <div className="text-[11px] opacity-80 mt-0.5">
                     48mm Heavy-Tack BOPP Tape + Custom Aluminium Product Tag

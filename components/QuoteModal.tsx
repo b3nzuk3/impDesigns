@@ -71,7 +71,7 @@ export const QuoteModal: React.FC<QuoteModalProps> = ({
   const tapeBaseLabel = tapeBase === 'white' ? 'White BOPP' : 'Transparent BOPP';
 
   const generateWhatsAppMessage = () => {
-    let text = `Hello Impact Designs Kenya! I would like to request a quote:%0A%0A`;
+    let text = `Hello Impact Creative Designs Kenya! I would like to request a quote:%0A%0A`;
     text += `*Business:* ${businessName || 'Interested Business'}%0A`;
     text += `*Contact:* ${contactName || 'Client'} (${phone || 'Via WhatsApp'})%0A`;
     text += `*Location:* ${location}%0A%0A`;

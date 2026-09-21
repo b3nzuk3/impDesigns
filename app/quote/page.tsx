@@ -55,7 +55,7 @@ export default function QuotePage() {
   const tapeBaseLabel = tapeBase === 'white' ? 'White BOPP' : 'Transparent BOPP';
 
   const getWhatsAppUrl = () => {
-    let msg = `Hello Impact Designs Kenya! I would like to place an order inquiry:%0A%0A`;
+    let msg = `Hello Impact Creative Designs Kenya! I would like to place an order inquiry:%0A%0A`;
     msg += `*Business:* ${businessName || 'My Business'}%0A`;
     msg += `*Contact:* ${contactName || 'Client'} (${phone || 'Via WhatsApp'})%0A`;
     msg += `*Delivery County:* ${county}%0A%0A`;

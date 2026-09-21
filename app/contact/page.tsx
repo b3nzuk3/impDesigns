@@ -20,7 +20,7 @@ export default function ContactPage() {
     <div className="bg-[#fbfaf7] text-neutral-900">
       <TapeStrip
         variant="black"
-        text="IMPACT DESIGNS • NAIROBI KENYA • ENTERPRISE ROAD INDUSTRIAL AREA • DIRECT FACTORY CONTACT •"
+        text="IMPACT CREATIVE DESIGNS • NAIROBI KENYA • ENTERPRISE ROAD INDUSTRIAL AREA • DIRECT FACTORY CONTACT •"
         sheen={true}
         compact={true}
       />
@@ -47,7 +47,7 @@ export default function ContactPage() {
                 MANUFACTURING FACILITY
               </div>
               <h2 className="text-2xl font-black font-mono uppercase text-neutral-950">
-                Impact Designs Kenya Ltd.
+                Impact Creative Designs Kenya Ltd.
               </h2>
             </div>
 
@@ -106,7 +106,7 @@ export default function ContactPage() {
                 Our prepress team can immediately check your vector logo resolution and send back visual previews on WhatsApp.
               </p>
               <a
-                href="https://wa.me/254722404647?text=Hello%20Impact%20Designs%20Kenya,%20I%20would%20like%20to%20visit%20your%20Nairobi%20factory%20or%20request%20samples."
+                href="https://wa.me/254722404647?text=Hello%20Impact%20Creative%20Designs%20Kenya,%20I%20would%20like%20to%20visit%20your%20Nairobi%20factory%20or%20request%20samples."
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-block bg-[#25D366] text-black font-mono font-bold text-xs uppercase py-2.5 px-5 mt-2"

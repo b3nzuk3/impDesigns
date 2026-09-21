@@ -15,7 +15,7 @@ interface TapeStripProps {
 }
 
 export const TapeStrip: React.FC<TapeStripProps> = ({
-  text = 'IMPACT DESIGNS • CUSTOM BRANDED TAPES • NAIROBI, KENYA • SEAL EVERY PACKAGE •',
+  text = 'IMPACT CREATIVE DESIGNS • CUSTOM BRANDED TAPES • NAIROBI, KENYA • SEAL EVERY PACKAGE •',
   variant = 'black',
   className = '',
   angle = 0,

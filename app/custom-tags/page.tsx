@@ -11,7 +11,7 @@ import { tagPhoto } from '@/lib/media';
 import { MessageCircle, ChevronDown, Check, PenLine, DraftingCompass, BadgeCheck, Package } from 'lucide-react';
 
 const WHATSAPP_URL =
-  'https://wa.me/254722404647?text=Hello%20Impact%20Designs!%20I%20want%20a%20quote%20for%20custom%20aluminium%20tags.';
+  'https://wa.me/254722404647?text=Hello%20Impact%20Creative%20Designs!%20I%20want%20a%20quote%20for%20custom%20aluminium%20tags.';
 
 interface TagCategory {
   title: string;
@@ -145,7 +145,7 @@ const TagCard: React.FC<{ c: TagCategory; onQuote: () => void }> = ({ c, onQuote
       <div className="relative aspect-[4/3] bg-neutral-100 border-b-2 border-neutral-900">
         <Image
           src={tagPhoto(c.photo)}
-          alt={`${c.title} — real anodized aluminium tags produced by Impact Designs Kenya`}
+          alt={`${c.title} — real anodized aluminium tags produced by Impact Creative Designs Kenya`}
           fill
           loading="lazy"
           sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
@@ -272,7 +272,7 @@ export default function CustomTagsPage() {
             <figure className="relative aspect-[4/3] border-2 border-neutral-900 shadow-[8px_8px_0px_#111111] overflow-hidden bg-neutral-100">
               <Image
                 src={tagPhoto(16)}
-                alt="Real anodized aluminium barcode asset tags produced for Kenyan organisations by Impact Designs"
+                alt="Real anodized aluminium barcode asset tags produced for Kenyan organisations by Impact Creative Designs"
                 fill
                 priority
                 sizes="(max-width: 1024px) 100vw, 50vw"
@@ -534,7 +534,7 @@ export default function CustomTagsPage() {
             {FINISHES.map((f) => (
               <figure key={f.title} className="border border-neutral-800 bg-neutral-900 overflow-hidden">
                 <div className="relative aspect-[4/3] border-b border-neutral-800">
-                  <Image src={tagPhoto(f.photo)} alt={`${f.title} example produced by Impact Designs`} fill loading="lazy" sizes="(max-width: 640px) 50vw, 25vw" className="object-cover" />
+                  <Image src={tagPhoto(f.photo)} alt={`${f.title} example produced by Impact Creative Designs`} fill loading="lazy" sizes="(max-width: 640px) 50vw, 25vw" className="object-cover" />
                 </div>
                 <figcaption className="p-3">
                   <div className="font-mono text-xs font-bold uppercase text-white">{f.title}</div>
@@ -563,7 +563,7 @@ export default function CustomTagsPage() {
         {/* SEO paragraph with keywords + internal link */}
         <div className="mt-10 space-y-3 text-xs sm:text-sm text-neutral-600 leading-relaxed font-sans">
           <p>
-            Impact Designs manufactures anodized aluminium tags, barcode asset tags, and metal
+            Impact Creative Designs manufactures anodized aluminium tags, barcode asset tags, and metal
             nameplates in Nairobi for Kenyan enterprises, hospitals, schools, SACCOs, insurers and
             government departments. Tags are photo-anodized so logos, serial numbers and barcodes
             are sealed beneath the anodic layer — impervious to acetone, paint solvents, abrasion
