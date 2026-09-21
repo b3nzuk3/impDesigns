@@ -26,14 +26,14 @@ export const Navbar: React.FC = () => {
       <header className="sticky top-0 z-40 bg-[#fbfaf7]/95 backdrop-blur-md border-b-2 border-neutral-900 transition-colors">
         <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-12">
           <div className="flex items-center justify-between h-20">
-            {/* Brand Title / Wordmark */}
+            {/* Brand Title / Wordmark — unified enclosed logo lockup */}
             <Link
               href="/"
-              className="flex items-center gap-3 group select-none"
+              className="flex items-center gap-2 sm:gap-3 group select-none bg-white border border-neutral-900 pl-2 pr-3 py-2 sm:pl-2.5 sm:pr-4 shadow-[2px_2px_0px_#ea580c]"
               id="brand-logo"
             >
               {/* Impact Creative Designs logo mark */}
-              <div className="w-11 h-9 bg-white flex items-center justify-center border border-neutral-900 shadow-[2px_2px_0px_#ea580c] overflow-hidden transition-transform group-hover:scale-105">
+              <div className="w-11 h-9 shrink-0 flex items-center justify-center overflow-hidden">
                 <Image
                   src="/images/impact-designs-logo.png"
                   alt="Impact Creative Designs logo mark"
@@ -41,11 +41,11 @@ export const Navbar: React.FC = () => {
                   height={1084}
                   priority
                   sizes="44px"
-                  className="h-full w-full object-contain p-1"
+                  className="h-full w-full object-contain"
                 />
               </div>
               <div className="flex flex-col">
-                <span className="font-mono text-xl font-black tracking-tighter text-neutral-900 leading-none">
+                <span className="font-mono text-lg sm:text-xl font-black tracking-tighter text-neutral-900 leading-none whitespace-nowrap">
                   IMPACT CREATIVE DESIGNS
                 </span>
                 <span className="font-mono text-xs sm:text-[10px] tracking-[0.1em] text-neutral-700 uppercase leading-tight mt-0.5">
