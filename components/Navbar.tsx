@@ -46,7 +46,7 @@ export const Navbar: React.FC = () => {
               </div>
               <div className="flex flex-col">
                 <span className="font-mono text-lg sm:text-xl font-black tracking-tighter text-neutral-900 leading-none whitespace-nowrap">
-                  IMPACT CREATIVE DESIGNS
+                  IMPACT CREATIVE <span className="text-green-700">DESIGNS</span>
                 </span>
                 <span className="font-mono text-xs sm:text-[10px] tracking-[0.1em] text-neutral-700 uppercase leading-tight mt-0.5">
                   BRANDED TAPES & TAGS • KENYA
