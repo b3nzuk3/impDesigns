@@ -31,7 +31,7 @@ const PRODUCTS: TapeProduct[] = [
     badge: 'MOST POPULAR',
     oneLiner: 'The everyday workhorse for carton sealing and parcel dispatch.',
     size: '48mm × 50m / 100m',
-    moq: '36 rolls',
+    moq: '360 rolls',
     photo: 2,
     aspect: 'aspect-[4/3]',
     specs: [
@@ -45,7 +45,7 @@ const PRODUCTS: TapeProduct[] = [
     badge: 'SECURITY & EXPORT',
     oneLiner: 'Wide, high-tack tape for heavy cargo and export freight.',
     size: '72mm × 100m / 150m',
-    moq: '24 rolls',
+    moq: '360 rolls',
     photo: 20,
     aspect: 'aspect-[4/3]',
     specs: [
@@ -55,29 +55,15 @@ const PRODUCTS: TapeProduct[] = [
     ],
   },
   {
-    title: 'Eco Kraft Water-Activated Tape',
-    badge: '100% RECYCLABLE',
-    oneLiner: 'Tamper-evident kraft paper tape — bonds into the carton itself.',
-    size: '48mm & 70mm × 50m / 100m',
-    moq: '36 rolls',
-    photo: 1,
-    aspect: 'aspect-[4/3]',
-    specs: [
-      { label: 'Material', value: 'Natural kraft paper, optional fiberglass reinforcement' },
-      { label: 'Adhesive', value: 'Water-activated starch' },
-      { label: 'Best for', value: 'Eco brands, coffee roasters, cosmetics' },
-    ],
-  },
-  {
     title: '24mm Slim Boutique Tape',
     badge: 'SPECIALTY & RETAIL',
     oneLiner: 'Narrow tape for poly mailers, gift boxes and retail packaging.',
     size: '24mm × 50m / 66m',
-    moq: '72 rolls',
+    moq: '360 rolls',
     photo: 13,
     aspect: 'aspect-[4/3]',
     specs: [
-      { label: 'Film', value: 'Ultra-clear or pure white BOPP 28µm' },
+      { label: 'Film', value: 'White or transparent BOPP 28µm' },
       { label: 'Adhesive', value: 'Clear non-yellowing acrylic' },
       { label: 'Best for', value: 'Garment bags, gift boxes, jewelry, jar seals' },
     ],
@@ -85,12 +71,8 @@ const PRODUCTS: TapeProduct[] = [
 ];
 
 const FILM_COLORS = [
-  { name: 'Pure White', desc: 'Best contrast for colour logos', swatch: 'bg-white text-black' },
-  { name: 'Crystal Clear', desc: 'Box shows through', swatch: 'bg-neutral-200 text-black' },
-  { name: 'Tan Kraft', desc: 'Blends with kraft cartons', swatch: 'bg-[#c49f6d] text-[#2c1a0a]' },
-  { name: 'Signal Red', desc: 'High visibility', swatch: 'bg-red-700 text-white' },
-  { name: 'Forest Green', desc: 'Eco & organic brands', swatch: 'bg-green-800 text-white' },
-  { name: 'Midnight Black', desc: 'Premium unboxing', swatch: 'bg-black text-white border border-neutral-700' },
+  { name: 'White BOPP', desc: 'Best contrast for colour logos', swatch: 'bg-white text-black' },
+  { name: 'Transparent BOPP', desc: 'Box shows through', swatch: 'bg-neutral-200 text-black' },
 ];
 
 const PRINT_OPTIONS = [
@@ -102,11 +84,11 @@ const PRINT_OPTIONS = [
 const FAQS = [
   {
     q: 'What is the minimum order quantity for custom printed tape in Kenya?',
-    a: 'Our factory-direct minimum order starts from just 36 rolls (1 standard carton) for 48mm tape. This makes professional branded packaging accessible for emerging Kenyan e-commerce businesses and boutiques, not just giant corporations.',
+    a: 'Our factory-direct minimum order is 360 rolls per design. This keeps factory pricing sharp while making professionally printed branded packaging tape accessible for growing Kenyan e-commerce businesses and retailers, not just giant corporations.',
   },
   {
-    q: 'What tape film colors can I choose as the base?',
-    a: 'We offer six primary base film options: Pure White BOPP (most popular for vibrant multi-color printing), Crystal Transparent/Clear (allows the box beneath to show through), Natural Kraft Brown, Signal Red, Forest Green, and Midnight Black.',
+    q: 'What base tape materials can I choose from?',
+    a: 'We offer two premium base tape options: White BOPP (most popular for vibrant multi-color printing with maximum logo contrast) and Transparent BOPP (allows the box beneath to show through for a subtle, clean look).',
   },
   {
     q: 'How many colors can be printed on custom tape?',
@@ -213,7 +195,7 @@ export default function BrandedTapesPage() {
     <div className="bg-[#fbfaf7] text-neutral-900">
       <TapeStrip
         variant="black"
-        text="CUSTOM BRANDED TAPES KENYA • FACTORY DIRECT NAIROBI • LOW 36 ROLL MINIMUMS • 48MM & 72MM SPECIALISTS •"
+        text="CUSTOM BRANDED TAPES KENYA • FACTORY DIRECT NAIROBI • 360 ROLL MINIMUM • 48MM & 72MM SPECIALISTS •"
         sheen={true}
         compact={true}
       />
@@ -228,7 +210,7 @@ export default function BrandedTapesPage() {
               </h1>
               <p className="text-base sm:text-lg text-neutral-700 font-sans leading-relaxed">
                 Your logo, printed on every parcel you ship. Factory-direct from our Nairobi
-                facility — from just 36 rolls.
+                facility — 360 roll minimum per design.
               </p>
               <div className="flex flex-wrap gap-4 pt-2">
                 <button
@@ -313,7 +295,7 @@ export default function BrandedTapesPage() {
             Choose your tape
           </h2>
           <p className="mt-2 text-sm text-neutral-600 font-sans">
-            Four formats, one factory price list. Details on request.
+            Three formats, one factory price list. Details on request.
           </p>
         </div>
 
@@ -339,7 +321,7 @@ export default function BrandedTapesPage() {
                 Base film colours
               </h2>
               <p className="mt-2 text-xs sm:text-sm text-neutral-400 font-sans">
-                Pick your carrier film, print in up to 4 Pantone spot colours.
+                Pick White or Transparent BOPP, print in up to 4 Pantone spot colours.
               </p>
               <div className="mt-6 grid grid-cols-2 gap-3">
                 {FILM_COLORS.map((c) => (
@@ -387,8 +369,9 @@ export default function BrandedTapesPage() {
           <p>
             Impact Designs is a Kenyan manufacturer of custom printed packaging tape — also known
             as logo tape, sellotape printing, or branded packing tape. We print your company name,
-            logo, phone number or tamper-evident message onto BOPP film and kraft paper tape, for
-            courier fleets, retail brands, and e-commerce companies in Nairobi and nationwide.
+            logo, phone number or tamper-evident message onto premium White or Transparent BOPP
+            film, for courier fleets, retail brands, and e-commerce companies in Nairobi and
+            nationwide.
           </p>
           <p>
             Every roll is produced on premium cast BOPP film, corona-treated for maximum ink
@@ -425,7 +408,7 @@ export default function BrandedTapesPage() {
             HAVE A CUSTOM PACKAGING TAPE INQUIRY?
           </h3>
           <p className="text-xs sm:text-sm text-neutral-600 max-w-lg mx-auto font-sans">
-            Whether you need 36 rolls for a trial run or 1,000 rolls for an automated fulfillment center, we provide competitive factory pricing in Nairobi.
+            Whether you need 360 rolls for your first branded run or 1,000+ rolls for an automated fulfillment center, we provide competitive factory pricing in Nairobi.
           </p>
           <div className="pt-2 flex justify-center gap-4">
             <button

@@ -18,9 +18,9 @@ export const QuoteModal: React.FC<QuoteModalProps> = ({
 
   // Tape options
   const [tapeWidth, setTapeWidth] = useState<'48mm' | '72mm' | '24mm'>('48mm');
-  const [tapeBase, setTapeBase] = useState<'white' | 'clear' | 'kraft' | 'red' | 'green' | 'black'>('white');
+  const [tapeBase, setTapeBase] = useState<'white' | 'clear'>('white');
   const [tapeColors, setTapeColors] = useState<number>(1);
-  const [tapeRolls, setTapeRolls] = useState<number>(72);
+  const [tapeRolls, setTapeRolls] = useState<number>(360);
 
   // Aluminium tag options
   const [metalThickness, setMetalThickness] = useState<'0.5mm' | '0.8mm'>('0.5mm');
@@ -38,11 +38,11 @@ export const QuoteModal: React.FC<QuoteModalProps> = ({
 
   // Estimated pricing calculation for Kenyan market (KES)
   const calculateTapeEstimate = () => {
+    const rolls = Math.max(360, tapeRolls); // MOQ guard: estimates never price below 360
     const baseRollCost = tapeWidth === '72mm' ? 480 : tapeWidth === '24mm' ? 220 : 340;
     const colorAddon = (tapeColors - 1) * 35;
-    const materialAddon = tapeBase === 'kraft' ? 60 : tapeBase === 'red' || tapeBase === 'green' || tapeBase === 'black' ? 40 : 0;
-    const unitPrice = baseRollCost + colorAddon + materialAddon;
-    const total = unitPrice * tapeRolls;
+    const unitPrice = baseRollCost + colorAddon;
+    const total = unitPrice * rolls;
     return { unitPrice, total };
   };
 
@@ -68,6 +68,8 @@ export const QuoteModal: React.FC<QuoteModalProps> = ({
     return metalEst.unitPrice;
   };
 
+  const tapeBaseLabel = tapeBase === 'white' ? 'White BOPP' : 'Transparent BOPP';
+
   const generateWhatsAppMessage = () => {
     let text = `Hello Impact Designs Kenya! I would like to request a quote:%0A%0A`;
     text += `*Business:* ${businessName || 'Interested Business'}%0A`;
@@ -77,9 +79,9 @@ export const QuoteModal: React.FC<QuoteModalProps> = ({
     if (productType === 'tape') {
       text += `*PRODUCT: CUSTOM BRANDED TAPE*%0A`;
       text += `- Roll Width: ${tapeWidth}%0A`;
-      text += `- Base Material: ${tapeBase.toUpperCase()}%0A`;
+      text += `- Base Tape: ${tapeBaseLabel}%0A`;
       text += `- Print Colors: ${tapeColors} Color(s)%0A`;
-      text += `- Quantity: ${tapeRolls} Rolls%0A`;
+      text += `- Quantity: ${Math.max(360, tapeRolls)} Rolls%0A`;
       text += `- Estimated Total: KES ${tapeEst.total.toLocaleString()}%0A`;
     } else {
       text += `*PRODUCT: ANODIZED ALUMINIUM BARCODE ASSET TAGS*%0A`;
@@ -179,19 +181,15 @@ export const QuoteModal: React.FC<QuoteModalProps> = ({
               </div>
             </div>
 
-            {/* Base Film Color */}
+            {/* Base Tape Material */}
             <div>
               <label className="block text-xs font-mono font-bold uppercase mb-2">
-                Base Tape Material & Color
+                Base Tape Material
               </label>
-              <div className="grid grid-cols-3 sm:grid-cols-6 gap-2">
+              <div className="grid grid-cols-2 gap-2">
                 {[
                   { id: 'white', label: 'White BOPP' },
-                  { id: 'clear', label: 'Transparent' },
-                  { id: 'kraft', label: 'Eco Kraft' },
-                  { id: 'red', label: 'Vibrant Red' },
-                  { id: 'green', label: 'Forest Green' },
-                  { id: 'black', label: 'Matte Black' },
+                  { id: 'clear', label: 'Transparent BOPP' },
                 ].map((b) => (
                   <button
                     key={b.id}
@@ -238,7 +236,7 @@ export const QuoteModal: React.FC<QuoteModalProps> = ({
                   Order Quantity (Rolls)
                 </label>
                 <div className="grid grid-cols-4 gap-2">
-                  {[36, 72, 144, 360].map((q) => (
+                  {[360, 720, 1440, 3600].map((q) => (
                     <button
                       key={q}
                       type="button"
@@ -253,6 +251,25 @@ export const QuoteModal: React.FC<QuoteModalProps> = ({
                     </button>
                   ))}
                 </div>
+                <input
+                  type="number"
+                  min={360}
+                  step={1}
+                  value={tapeRolls}
+                  onChange={(e) => {
+                    const v = parseInt(e.target.value, 10);
+                    if (!isNaN(v)) setTapeRolls(v);
+                  }}
+                  onBlur={(e) => {
+                    const v = parseInt(e.target.value, 10);
+                    if (isNaN(v) || v < 360) setTapeRolls(360);
+                  }}
+                  aria-label="Order quantity in rolls (minimum 360)"
+                  className="mt-2 w-full px-3 py-2 border border-neutral-300 text-xs font-mono focus:border-neutral-900 focus:outline-none"
+                />
+                <p className="mt-1.5 text-[11px] font-mono text-neutral-500">
+                  Minimum order: 360 rolls per design. Enter any quantity of 360 or more.
+                </p>
               </div>
             </div>
           </div>

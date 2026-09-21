@@ -9,9 +9,9 @@ export default function QuotePage() {
 
   // Tape parameters
   const [tapeWidth, setTapeWidth] = useState<'48mm' | '72mm' | '24mm'>('48mm');
-  const [tapeBase, setTapeBase] = useState<'white' | 'clear' | 'kraft' | 'red' | 'green' | 'black'>('white');
+  const [tapeBase, setTapeBase] = useState<'white' | 'clear'>('white');
   const [tapeColors, setTapeColors] = useState<number>(1);
-  const [tapeRolls, setTapeRolls] = useState<number>(72);
+  const [tapeRolls, setTapeRolls] = useState<number>(360);
 
   // Aluminium tag parameters
   const [metalThickness, setMetalThickness] = useState<'0.5mm' | '0.8mm'>('0.5mm');
@@ -29,13 +29,14 @@ export default function QuotePage() {
 
   // Pricing calculations
   const calculateTape = () => {
+    const rolls = Math.max(360, tapeRolls); // MOQ guard: estimates never price below 360
     const baseUnitPrice = tapeWidth === '72mm' ? 480 : tapeWidth === '24mm' ? 220 : 340;
     const colorAddon = (tapeColors - 1) * 35;
-    const materialAddon = tapeBase === 'kraft' ? 60 : tapeBase === 'red' || tapeBase === 'green' || tapeBase === 'black' ? 40 : 0;
-    // Volume discounts
-    const volumeMultiplier = tapeRolls >= 360 ? 0.85 : tapeRolls >= 144 ? 0.92 : tapeRolls >= 72 ? 0.96 : 1.0;
-    const unitPrice = Math.round((baseUnitPrice + colorAddon + materialAddon) * volumeMultiplier);
-    const total = unitPrice * tapeRolls;
+    // Volume discounts (per 360-roll tiers)
+    const volumeMultiplier =
+      rolls >= 1440 ? 0.82 : rolls >= 1080 ? 0.86 : rolls >= 720 ? 0.9 : rolls >= 360 ? 0.95 : 1.0;
+    const unitPrice = Math.round((baseUnitPrice + colorAddon) * volumeMultiplier);
+    const total = unitPrice * rolls;
     return { unitPrice, total };
   };
 
@@ -51,6 +52,8 @@ export default function QuotePage() {
   const tapeEst = calculateTape();
   const aluminiumEst = calculateAluminium();
 
+  const tapeBaseLabel = tapeBase === 'white' ? 'White BOPP' : 'Transparent BOPP';
+
   const getWhatsAppUrl = () => {
     let msg = `Hello Impact Designs Kenya! I would like to place an order inquiry:%0A%0A`;
     msg += `*Business:* ${businessName || 'My Business'}%0A`;
@@ -60,9 +63,9 @@ export default function QuotePage() {
     if (productType === 'tape') {
       msg += `*ORDER: CUSTOM BRANDED TAPE*%0A`;
       msg += `- Width: ${tapeWidth}%0A`;
-      msg += `- Carrier Film: ${tapeBase.toUpperCase()}%0A`;
+      msg += `- Base Tape: ${tapeBaseLabel}%0A`;
       msg += `- Colors: ${tapeColors} Pantone Spot Color(s)%0A`;
-      msg += `- Volume: ${tapeRolls} Rolls%0A`;
+      msg += `- Volume: ${Math.max(360, tapeRolls)} Rolls%0A`;
       msg += `- Est. Rate: KES ${tapeEst.unitPrice}/roll (Total: KES ${tapeEst.total.toLocaleString()})%0A`;
     } else {
       msg += `*ORDER: ANODIZED ALUMINIUM TAGS*%0A`;
@@ -120,7 +123,7 @@ export default function QuotePage() {
                 >
                   <Box className="w-5 h-5 mb-2" />
                   <div className="font-mono text-sm font-bold uppercase">1. Custom Branded Tape</div>
-                  <div className="text-xs opacity-75 mt-0.5 font-sans">BOPP & Kraft printed sealing tape</div>
+                  <div className="text-xs opacity-75 mt-0.5 font-sans">White &amp; Transparent BOPP printed sealing tape</div>
                 </button>
 
                 <button
@@ -171,16 +174,12 @@ export default function QuotePage() {
 
                 <div>
                   <label className="block font-mono text-xs font-bold uppercase tracking-wider text-neutral-700 mb-2">
-                    BASE CARRIER FILM
+                    BASE TAPE MATERIAL
                   </label>
-                  <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 font-mono text-xs">
+                  <div className="grid grid-cols-2 gap-2 font-mono text-xs">
                     {[
                       { id: 'white', label: 'White BOPP' },
-                      { id: 'clear', label: 'Transparent' },
-                      { id: 'kraft', label: 'Eco Kraft' },
-                      { id: 'red', label: 'Signal Red' },
-                      { id: 'green', label: 'Forest Green' },
-                      { id: 'black', label: 'Midnight Black' },
+                      { id: 'clear', label: 'Transparent BOPP' },
                     ].map((b) => (
                       <button
                         key={b.id}
@@ -223,10 +222,10 @@ export default function QuotePage() {
 
                   <div>
                     <label className="block font-mono text-xs font-bold uppercase tracking-wider text-neutral-700 mb-2">
-                      QUANTITY (ROLLS)
+                      QUANTITY (ROLLS) — MINIMUM 360
                     </label>
                     <div className="grid grid-cols-4 gap-2">
-                      {[36, 72, 144, 360].map((q) => (
+                      {[360, 720, 1080, 1440].map((q) => (
                         <button
                           key={q}
                           type="button"
@@ -241,6 +240,25 @@ export default function QuotePage() {
                         </button>
                       ))}
                     </div>
+                    <input
+                      type="number"
+                      min={360}
+                      step={1}
+                      value={tapeRolls}
+                      onChange={(e) => {
+                        const v = parseInt(e.target.value, 10);
+                        if (!isNaN(v)) setTapeRolls(v);
+                      }}
+                      onBlur={(e) => {
+                        const v = parseInt(e.target.value, 10);
+                        if (isNaN(v) || v < 360) setTapeRolls(360);
+                      }}
+                      aria-label="Order quantity in rolls (minimum 360)"
+                      className="mt-2 w-full px-3 py-2.5 border border-neutral-300 font-mono text-xs focus:border-neutral-950 focus:outline-none"
+                    />
+                    <p className="mt-1.5 text-[11px] font-mono text-neutral-500">
+                      Minimum order: 360 rolls per design. Enter any quantity of 360 or more.
+                    </p>
                   </div>
                 </div>
               </div>
@@ -429,14 +447,14 @@ export default function QuotePage() {
                 <span className="text-neutral-400">SPECIFICATION:</span>
                 <span className="font-bold uppercase text-white">
                   {productType === 'tape'
-                    ? `${tapeWidth} • ${tapeBase} • ${tapeColors} Col`
+                    ? `${tapeWidth} • ${tapeBaseLabel} • ${tapeColors} Col`
                     : `${metalThickness} • ${metalMounting === '3m-adhesive' ? '3M Adhesive' : 'Rivet Holes'} • ${barcodeType}`}
                 </span>
               </div>
               <div className="flex justify-between border-b border-neutral-800 pb-2">
                 <span className="text-neutral-400">QUANTITY:</span>
                 <span className="font-bold uppercase text-white">
-                  {productType === 'tape' ? `${tapeRolls} Rolls` : `${metalQuantity} Plates`}
+                  {productType === 'tape' ? `${Math.max(360, tapeRolls)} Rolls` : `${metalQuantity} Plates`}
                 </span>
               </div>
               <div className="flex justify-between border-b border-neutral-800 pb-2">
