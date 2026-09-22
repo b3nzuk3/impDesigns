@@ -32,24 +32,33 @@ export const Navbar: React.FC = () => {
               className="flex items-center gap-1.5 sm:gap-3 group select-none bg-white border border-neutral-900 pl-1.5 pr-2 py-1.5 sm:pl-2.5 sm:pr-4 sm:py-2 shadow-[2px_2px_0px_#ea580c] min-w-0 max-w-full"
               id="brand-logo"
             >
-              {/* Impact Creative Designs logo mark */}
-              <div className="w-8 h-7 sm:w-11 sm:h-9 shrink-0 flex items-center justify-center overflow-hidden">
+              {/* Brand logo: mobile shows the drops mark + text spans; sm+ shows the
+                  full lockup (drops + wordmark) on its own. */}
+              <div className="w-9 h-7 sm:hidden shrink-0 flex items-center justify-center overflow-hidden">
                 <Image
-                  src="/images/impact-designs-logo.png"
-                  alt="Impact Creative Designs logo mark"
-                  width={1451}
-                  height={1084}
+                  src="/images/impact-drops.svg"
+                  alt="Impact Creative Designs paint drops mark"
+                  width={120}
+                  height={62}
                   priority
-                  sizes="44px"
+                  sizes="36px"
                   className="h-full w-full object-contain"
                 />
               </div>
-              <div className="flex flex-col min-w-0">
-                <span className="font-mono text-xs sm:text-xl font-black tracking-tighter text-neutral-900 leading-none whitespace-nowrap truncate">
+              <div className="hidden sm:flex w-44 lg:w-52 shrink-0 items-center justify-center overflow-hidden">
+                <Image
+                  src="/images/impact-designs-logo.svg"
+                  alt="Impact Creative Designs — Branded Tapes • Asset Tags"
+                  width={480}
+                  height={62}
+                  priority
+                  sizes="208px"
+                  className="h-full w-full object-contain"
+                />
+              </div>
+              <div className="flex flex-col min-w-0 sm:hidden">
+                <span className="font-mono text-xs font-black tracking-tighter text-neutral-900 leading-none whitespace-nowrap truncate">
                   IMPACT CREATIVE <span className="text-green-700">DESIGNS</span>
-                </span>
-                <span className="hidden sm:block font-mono text-[10px] tracking-[0.1em] text-neutral-700 uppercase leading-tight mt-0.5 whitespace-nowrap truncate">
-                  BRANDED TAPES &amp; TAGS • KENYA
                 </span>
               </div>
             </Link>

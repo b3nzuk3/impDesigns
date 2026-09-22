@@ -22,14 +22,15 @@ export const Footer: React.FC = () => {
           {/* Brand & Factory Summary */}
           <div>
             <div className="flex items-center gap-3 mb-4">
-              <div className="w-11 h-9 bg-white border border-neutral-300 flex items-center justify-center overflow-hidden">
+              {/* Impact Creative Designs full logo lockup */}
+              <div className="w-40 shrink-0 flex items-center justify-center overflow-hidden">
                 <Image
-                  src="/images/impact-designs-logo.png"
-                  alt="Impact Creative Designs logo mark"
-                  width={1451}
-                  height={1084}
-                  sizes="44px"
-                  className="h-full w-full object-contain p-1"
+                  src="/images/impact-designs-logo.svg"
+                  alt="Impact Creative Designs — Branded Tapes • Asset Tags"
+                  width={480}
+                  height={62}
+                  sizes="160px"
+                  className="h-full w-full object-contain"
                 />
               </div>
               <span className="font-mono text-xl font-black uppercase tracking-tight text-white">
