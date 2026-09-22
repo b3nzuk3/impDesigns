@@ -16,6 +16,7 @@ export const BrandLogo: React.FC<{ className?: string; priority?: boolean }> = (
     width={360}
     height={100}
     priority={priority}
+    unoptimized
     sizes="220px"
     className={`h-full w-full object-contain ${className}`}
   />
