@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import { TapeStrip } from '@/components/TapeStrip';
 import { HeroCarousel } from '@/components/HeroCarousel';
+import { ManufacturingVideoSection } from '@/components/ManufacturingVideoSection';
 import { RealTapeShowcase } from '@/components/RealTapeShowcase';
 import { RealTapeProductPhoto } from '@/components/RealTapeProductPhoto';
 import { AluminiumTagVisual } from '@/components/AluminiumTagVisual';
@@ -105,6 +106,13 @@ export default function HomePage() {
           <RealTapeShowcase id="reference-real-tape-showcase" compact />
         </div>
       </div>
+
+      {/* ------------------------------------------------------------- */}
+      {/* REAL MANUFACTURING FOOTAGE                                     */}
+      {/* Behind-the-scenes proof: tape printing line in Nairobi.        */}
+      {/* Video source loads lazily via IntersectionObserver.            */}
+      {/* ------------------------------------------------------------- */}
+      <ManufacturingVideoSection />
 
       {/* ------------------------------------------------------------- */}
       {/* IMMEDIATE PRODUCT INTRODUCTION                                */}
