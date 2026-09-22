@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 88" role="img" aria-label="Impact Creative Designs — Branded Tapes • Asset Tags">
+  <g fill="#0ab6f5">
+    <circle cx="17" cy="11" r="11"/>
+    <path d="M13 20 C 15 30, 16.4 35, 16.4 41 a0.9 0.9 0 0 0 1.2 0 C 17.6 35, 19 30, 21 20 Q 17 23 13 20 Z"/>
+  </g>
+  <g fill="#ed0f83">
+    <circle cx="47" cy="11" r="11"/>
+    <path d="M43 20 C 45 30, 46.4 35, 46.4 41 a0.7 0.7 0 0 0 1.2 0 C 47.6 35, 49 30, 51 20 Q 47 23 43 20 Z"/>
+  </g>
+  <g fill="#fff212">
+    <circle cx="77" cy="11" r="11"/>
+    <path d="M73 20 C 75 30, 76.4 35, 76.4 41 a0.7 0.7 0 0 0 1.2 0 C 77.6 35, 79 30, 81 20 Q 77 23 73 20 Z"/>
+  </g>
+  <g fill="#3b3b3b">
+    <circle cx="107" cy="11" r="11"/>
+    <path d="M103 20 C 105 30, 106.4 35, 106.4 41 a0.7 0.7 0 0 0 1.2 0 C 107.6 35, 109 30, 111 20 Q 107 23 103 20 Z"/>
+  </g>
+  <text x="4" y="64" font-family="Arial, Helvetica, sans-serif" font-weight="800" font-size="38" letter-spacing="-0.8" textLength="352" lengthAdjust="spacingAndGlyphs"><tspan fill="#ed0f83">Impact</tspan><tspan fill="#17a3e8"> Creative</tspan><tspan fill="#0c0c0c"> Designs</tspan></text>
+  <text x="5" y="84" font-family="Arial, Helvetica, sans-serif" font-weight="700" font-size="14" letter-spacing="2.2" fill="#243a8c" textLength="350" lengthAdjust="spacing">BRANDED TAPES • ASSET TAGS</text>
+</svg>

@@ -11,7 +11,7 @@ import React from 'react';
  */
 export const BrandLogo: React.FC<{ className?: string; priority?: boolean }> = ({ className = '', priority = false }) => (
   <Image
-    src="/images/impact-designs-logo.svg"
+    src="/images/impact-designs-logo-v2.svg"
     alt="Impact Creative Designs — Branded Tapes • Asset Tags"
     width={360}
     height={100}
