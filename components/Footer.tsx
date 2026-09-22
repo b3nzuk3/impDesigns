@@ -4,6 +4,7 @@ import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { TapeStrip } from './TapeStrip';
+import { BrandLogo } from './BrandLogo';
 import { MessageCircle, MapPin, Phone, Mail, Clock, ArrowUpRight } from 'lucide-react';
 
 export const Footer: React.FC = () => {
@@ -22,16 +23,9 @@ export const Footer: React.FC = () => {
           {/* Brand & Factory Summary */}
           <div>
             <div className="flex items-center gap-3 mb-4">
-              {/* Impact Creative Designs full logo lockup */}
-              <div className="w-40 shrink-0 flex items-center justify-center overflow-hidden">
-                <Image
-                  src="/images/impact-designs-logo.svg"
-                  alt="Impact Creative Designs — Branded Tapes • Asset Tags"
-                  width={480}
-                  height={62}
-                  sizes="160px"
-                  className="h-full w-full object-contain"
-                />
+              {/* Shared BrandLogo lockup — identical design on mobile and PC */}
+              <div className="h-12 w-[144px] shrink-0 flex items-center justify-center overflow-hidden">
+                <BrandLogo />
               </div>
               <span className="font-mono text-xl font-black uppercase tracking-tight text-white">
                 IMPACT CREATIVE DESIGNS
