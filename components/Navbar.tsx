@@ -30,11 +30,12 @@ export const Navbar: React.FC = () => {
             {/* Brand Title / Wordmark — unified enclosed logo lockup */}
             <Link
               href="/"
-              className="flex items-center gap-1.5 sm:gap-3 group select-none bg-white border border-neutral-900 pl-1.5 pr-2 py-1.5 sm:pl-2.5 sm:pr-4 sm:py-2 shadow-[2px_2px_0px_#ea580c] min-w-0 max-w-full"
+              className="flex h-[60px] w-[232px] items-center group select-none bg-white border border-neutral-900 pl-1.5 pr-2 py-1.5 sm:pl-2.5 sm:pr-4 sm:py-2 shadow-[2px_2px_0px_#ea580c] min-w-0 max-w-full lg:w-[300px] xl:w-[320px]"
               id="brand-logo"
             >
-              {/* Shared BrandLogo lockup — identical design on mobile and PC */}
-              <div className="h-11 w-[132px] sm:h-12 sm:w-[144px] lg:h-14 lg:w-[168px] shrink-0 flex items-center justify-center overflow-hidden">
+              {/* Client logo lockup — horizontal layout per client mockup */}
+              {/* Fluid width: mockup-proportioned max, shrinks gracefully on md screens where the nav needs the room */}
+              <div className="h-full w-full flex items-center justify-center overflow-hidden">
                 <BrandLogo priority />
               </div>
             </Link>
@@ -47,7 +48,7 @@ export const Navbar: React.FC = () => {
                   <Link
                     key={link.name}
                     href={link.href}
-                    className={`px-3 py-2 text-[13px] lg:text-sm font-mono uppercase tracking-wide transition-colors ${
+                    className={`px-2 py-2 text-[13px] lg:px-3 lg:text-sm font-mono uppercase tracking-wide transition-colors ${
                       isActive
                         ? 'text-neutral-950 font-bold border-b-2 border-orange-500'
                         : 'text-neutral-600 hover:text-neutral-950 font-medium'
@@ -69,13 +70,13 @@ export const Navbar: React.FC = () => {
                 title="Direct WhatsApp Chat"
               >
                 <MessageCircle className="w-4 h-4 text-green-600 fill-green-600" />
-                <span className="hidden lg:inline">0722404647</span>
+                <span className="hidden xl:inline">0722404647</span>
               </a>
 
               <button
                 type="button"
                 onClick={() => setQuoteModalOpen(true)}
-                className="inline-flex items-center justify-center bg-neutral-900 hover:bg-orange-600 text-white font-mono text-sm font-bold uppercase tracking-wide py-3 px-6 border-2 border-neutral-900 transition-all shadow-[2px_2px_0px_#111111]"
+                className="inline-flex items-center justify-center bg-neutral-900 hover:bg-orange-600 text-white font-mono text-sm font-bold uppercase tracking-wide py-3 px-4 lg:px-6 border-2 border-neutral-900 transition-all shadow-[2px_2px_0px_#111111]"
               >
                 <span>GET A QUOTE</span>
               </button>

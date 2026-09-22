@@ -4,7 +4,7 @@ import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { TapeStrip } from './TapeStrip';
-import { BrandLogo } from './BrandLogo';
+import { LegacyBrandLogo } from './BrandLogo';
 import { MessageCircle, MapPin, Phone, Mail, Clock, ArrowUpRight } from 'lucide-react';
 
 export const Footer: React.FC = () => {
@@ -23,9 +23,9 @@ export const Footer: React.FC = () => {
           {/* Brand & Factory Summary */}
           <div>
             <div className="flex items-center gap-3 mb-4">
-              {/* Shared BrandLogo lockup — identical design on mobile and PC */}
+              {/* Legacy SVG lockup — kept for the dark footer */}
               <div className="h-12 w-[144px] shrink-0 flex items-center justify-center overflow-hidden">
-                <BrandLogo />
+                <LegacyBrandLogo />
               </div>
               <span className="font-mono text-xl font-black uppercase tracking-tight text-white">
                 IMPACT CREATIVE DESIGNS

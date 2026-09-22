@@ -1,4 +1,4 @@
-import { Inter } from 'next/font/google';
+import { Inter, Barlow_Condensed } from 'next/font/google';
 import type { Metadata } from 'next';
 import './globals.css';
 import { Navbar } from '@/components/Navbar';
@@ -9,6 +9,18 @@ import { MobileStickyBar } from '@/components/MobileStickyBar';
 const inter = Inter({
   subsets: ['latin'],
   variable: '--font-inter',
+  display: 'swap',
+});
+
+/**
+ * Brand wordmark face for the logo lockup (see components/BrandLogo.tsx).
+ * Barlow Condensed ExtraBold matches the client artwork's condensed heavy
+ * letterforms; loading it as a real webfont keeps the lockup crisp at any size.
+ */
+const barlowCondensed = Barlow_Condensed({
+  subsets: ['latin'],
+  weight: ['700', '800'],
+  variable: '--font-logo',
   display: 'swap',
 });
 
@@ -93,7 +105,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body suppressHydrationWarning className={`${inter.variable} font-sans min-h-screen flex flex-col selection:bg-orange-600 selection:text-white pb-20 md:pb-0`}>
+      <body suppressHydrationWarning className={`${inter.variable} ${barlowCondensed.variable} font-sans min-h-screen flex flex-col selection:bg-orange-600 selection:text-white pb-20 md:pb-0`}>
         <NavScrollWrapper>
           <Navbar />
         </NavScrollWrapper>
