@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import { TapeStrip } from '@/components/TapeStrip';
+import { HeroCarousel } from '@/components/HeroCarousel';
 import { RealTapeShowcase } from '@/components/RealTapeShowcase';
 import { RealTapeProductPhoto } from '@/components/RealTapeProductPhoto';
 import { AluminiumTagVisual } from '@/components/AluminiumTagVisual';
@@ -23,89 +24,74 @@ export default function HomePage() {
   return (
     <div className="relative overflow-hidden bg-[#fbfaf7] text-neutral-900">
       {/* ------------------------------------------------------------- */}
-      {/* HERO SECTION                                                 */}
-      {/* Editorial product-photography composition dominated by:       */}
-      {/* LARGE BRANDED TAPE ROLLS + ALUMINIUM TAGS + PACKAGING         */}
+      {/* HERO SECTION                                                   */}
+      {/* Full-bleed background image carousel of real branded tape      */}
+      {/* photography; copy anchored left, product composed right.       */}
       {/* ------------------------------------------------------------- */}
-      <section className="relative pt-8 pb-16 md:pt-14 md:pb-24 border-b-2 border-neutral-900 overflow-hidden">
-        {/* Background Architectural Tape Running Behind the Hero */}
-        <div className="absolute top-1/3 -left-10 right-[-10%] z-0 pointer-events-none opacity-25 md:opacity-40 hidden sm:block">
-          <TapeStrip
-            variant="kraft"
-            text="IMPACT CREATIVE DESIGNS • NAIROBI KENYA • FACTORY DIRECT • CUSTOM BRANDED PACKAGING TAPES • ALUMINIUM TAGS •"
-            angle={-3}
-            sheen={true}
-          />
-        </div>
+      <section className="relative flex items-center min-h-[620px] sm:min-h-[680px] lg:min-h-[760px] border-b-2 border-neutral-900 overflow-hidden">
+        <HeroCarousel />
 
-        <div className="max-w-[88rem] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-center">
-            {/* Left Column: Bold Editorial Headline & Conversion */}
-            <div className="lg:col-span-6 space-y-6">
-              <h1 className="text-4xl sm:text-6xl lg:text-7xl font-black font-mono tracking-tight text-neutral-950 uppercase leading-[0.95]">
-                YOUR BRAND.
-                <br />
-                <span className="text-orange-600">ON EVERY</span>
-                <br />
-                PACKAGE.
-              </h1>
+        <div className="relative z-10 max-w-[88rem] mx-auto px-4 sm:px-6 lg:px-8 w-full py-16 sm:py-20 lg:py-24 pointer-events-none">
+          {/* Left Column: Bold Editorial Headline & Conversion (over the darker gradient side) */}
+          <div className="max-w-2xl space-y-6 pointer-events-auto">
+            <h1 className="text-4xl sm:text-6xl lg:text-7xl font-black font-mono tracking-tight text-white uppercase leading-[0.95] drop-shadow-[0_2px_12px_rgba(0,0,0,0.55)]">
+              YOUR BRAND.
+              <br />
+              <span className="text-orange-500">ON EVERY</span>
+              <br />
+              PACKAGE.
+            </h1>
 
-              <p className="text-base sm:text-lg text-neutral-700 font-sans max-w-xl leading-relaxed">
-                Custom branded packaging tapes and durable aluminium tags made for Kenyan businesses. Elevate your unboxing, prevent carton tampering, and give every product a permanent branded identifier.
-              </p>
+            <p className="text-base sm:text-lg text-neutral-100 font-sans max-w-xl leading-relaxed drop-shadow-[0_1px_8px_rgba(0,0,0,0.65)]">
+              Custom branded packaging tapes and durable aluminium tags made for Kenyan businesses. Elevate your unboxing, prevent carton tampering, and give every product a permanent branded identifier.
+            </p>
 
-              {/* Conversion Buttons (No pill capsules; architectural 2x padding) */}
-              <div className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
-                <button
-                  type="button"
-                  onClick={() => openQuoteFor('tape')}
-                  className="inline-flex items-center justify-center bg-neutral-950 hover:bg-neutral-800 text-white font-mono text-sm font-bold uppercase tracking-wider py-4 px-8 border-2 border-neutral-950 shadow-[4px_4px_0px_#ea580c] transition-all"
-                >
-                  <span>GET A QUOTE</span>
-                  <ArrowRight className="w-4 h-4 ml-2" />
-                </button>
+            {/* Conversion Buttons (No pill capsules; architectural 2x padding) */}
+            <div className="pt-2 flex flex-col items-start sm:flex-row sm:items-center gap-3 sm:gap-4">
+              <button
+                type="button"
+                onClick={() => openQuoteFor('tape')}
+                className="inline-flex sm:w-auto items-center justify-center whitespace-nowrap bg-orange-600 hover:bg-orange-500 text-white font-mono text-sm font-bold uppercase tracking-wider py-3 px-6 sm:py-4 sm:px-8 border-2 border-orange-600 shadow-[4px_4px_0px_#111111] transition-all"
+              >
+                <span>GET A QUOTE</span>
+                <ArrowRight className="w-4 h-4 ml-2" />
+              </button>
 
-                <Link
-                  href="/our-work"
-                  className="inline-flex items-center justify-center bg-transparent hover:bg-neutral-200 text-neutral-950 font-mono text-sm font-bold uppercase tracking-wider py-4 px-8 border-2 border-neutral-950 transition-colors text-center"
-                >
-                  EXPLORE OUR WORK
-                </Link>
-              </div>
-
-              {/* Instant WhatsApp Quick Link */}
-              <div className="pt-2 flex items-center gap-3 text-xs font-mono text-neutral-700">
-                <a
-                  href="https://wa.me/254722404647?text=Hello%20Impact%20Creative%20Designs%20Kenya!%20I%20want%20to%20quote%20for%20custom%20branded%20tapes%20or%20tags."
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 text-neutral-900 hover:text-green-700 font-bold border-b border-neutral-400 pb-0.5"
-                >
-                  <MessageCircle className="w-4 h-4 text-green-600 fill-green-600" />
-                  <span>Chat with Nairobi factory desk on WhatsApp (0722404647)</span>
-                </a>
-              </div>
-
-              {/* Key Industrial Specs (Pure facts, no badges) */}
-              <div className="pt-4 grid grid-cols-3 gap-4 border-t border-neutral-300 text-neutral-800 font-mono text-xs">
-                <div>
-                  <div className="font-black text-neutral-950 text-base">360 ROLLS</div>
-                  <div className="text-neutral-500 text-[11px]">Factory MOQ</div>
-                </div>
-                <div>
-                  <div className="font-black text-neutral-950 text-base">3-5 DAYS</div>
-                  <div className="text-neutral-500 text-[11px]">Nairobi Turnaround</div>
-                </div>
-                <div>
-                  <div className="font-black text-neutral-950 text-base">47 COUNTIES</div>
-                  <div className="text-neutral-500 text-[11px]">Door Dispatch</div>
-                </div>
-              </div>
+              <Link
+                href="/our-work"
+                className="inline-flex sm:w-auto items-center justify-center whitespace-nowrap bg-transparent hover:bg-white/15 text-white font-mono text-sm font-bold uppercase tracking-wider py-3 px-6 sm:py-4 sm:px-8 border-2 border-white transition-colors text-center backdrop-blur-[2px]"
+              >
+                EXPLORE OUR WORK
+              </Link>
             </div>
 
-            {/* Right Column: Real branded tape reference photography */}
-            <div className="lg:col-span-6 relative flex items-center justify-center">
-              <RealTapeShowcase id="hero-real-tape-showcase" className="w-full max-w-lg" />
+            {/* Instant WhatsApp Quick Link */}
+            <div className="pt-2 flex items-center gap-3 text-xs font-mono text-neutral-200">
+              <a
+                href="https://wa.me/254722404647?text=Hello%20Impact%20Creative%20Designs%20Kenya!%20I%20want%20to%20quote%20for%20custom%20branded%20tapes%20or%20tags."
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 text-white hover:text-green-300 font-bold border-b border-white/50 pb-0.5"
+              >
+                <MessageCircle className="w-4 h-4 text-green-400 fill-green-400" />
+                <span>Chat with Nairobi factory desk on WhatsApp (0722404647)</span>
+              </a>
+            </div>
+
+            {/* Key Industrial Specs (Pure facts, no badges) */}
+            <div className="pt-4 grid grid-cols-3 gap-4 border-t border-white/30 text-neutral-100 font-mono text-xs">
+              <div>
+                <div className="font-black text-white text-base">360 ROLLS</div>
+                <div className="text-neutral-300 text-[11px]">Factory MOQ</div>
+              </div>
+              <div>
+                <div className="font-black text-white text-base">3-5 DAYS</div>
+                <div className="text-neutral-300 text-[11px]">Nairobi Turnaround</div>
+              </div>
+              <div>
+                <div className="font-black text-white text-base">47 COUNTIES</div>
+                <div className="text-neutral-300 text-[11px]">Door Dispatch</div>
+              </div>
             </div>
           </div>
         </div>

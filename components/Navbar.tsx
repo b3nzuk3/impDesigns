@@ -29,11 +29,11 @@ export const Navbar: React.FC = () => {
             {/* Brand Title / Wordmark — unified enclosed logo lockup */}
             <Link
               href="/"
-              className="flex items-center gap-2 sm:gap-3 group select-none bg-white border border-neutral-900 pl-2 pr-3 py-2 sm:pl-2.5 sm:pr-4 shadow-[2px_2px_0px_#ea580c]"
+              className="flex items-center gap-1.5 sm:gap-3 group select-none bg-white border border-neutral-900 pl-1.5 pr-2 py-1.5 sm:pl-2.5 sm:pr-4 sm:py-2 shadow-[2px_2px_0px_#ea580c] min-w-0 max-w-full"
               id="brand-logo"
             >
               {/* Impact Creative Designs logo mark */}
-              <div className="w-11 h-9 shrink-0 flex items-center justify-center overflow-hidden">
+              <div className="w-8 h-7 sm:w-11 sm:h-9 shrink-0 flex items-center justify-center overflow-hidden">
                 <Image
                   src="/images/impact-designs-logo.png"
                   alt="Impact Creative Designs logo mark"
@@ -44,12 +44,12 @@ export const Navbar: React.FC = () => {
                   className="h-full w-full object-contain"
                 />
               </div>
-              <div className="flex flex-col">
-                <span className="font-mono text-lg sm:text-xl font-black tracking-tighter text-neutral-900 leading-none whitespace-nowrap">
+              <div className="flex flex-col min-w-0">
+                <span className="font-mono text-xs sm:text-xl font-black tracking-tighter text-neutral-900 leading-none whitespace-nowrap truncate">
                   IMPACT CREATIVE <span className="text-green-700">DESIGNS</span>
                 </span>
-                <span className="font-mono text-xs sm:text-[10px] tracking-[0.1em] text-neutral-700 uppercase leading-tight mt-0.5">
-                  BRANDED TAPES & TAGS • KENYA
+                <span className="hidden sm:block font-mono text-[10px] tracking-[0.1em] text-neutral-700 uppercase leading-tight mt-0.5 whitespace-nowrap truncate">
+                  BRANDED TAPES &amp; TAGS • KENYA
                 </span>
               </div>
             </Link>
@@ -97,7 +97,7 @@ export const Navbar: React.FC = () => {
             </div>
 
             {/* Mobile Menu Trigger */}
-            <div className="flex md:hidden items-center gap-2">
+            <div className="flex md:hidden items-center gap-2 shrink-0">
               <button
                 type="button"
                 onClick={() => setQuoteModalOpen(true)}

@@ -50,7 +50,6 @@ export const RealTapeShowcase: React.FC<RealTapeShowcaseProps> = ({
               src={tapePhoto(16)}
               alt="A collection of real printed branded packing tape rolls produced by Impact Creative Designs"
               fill
-              priority
               sizes="(max-width: 640px) 100vw, 70vw"
               className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
             />
@@ -71,7 +70,6 @@ export const RealTapeShowcase: React.FC<RealTapeShowcaseProps> = ({
               src={tapePhoto(17)}
               alt="Real branded packing tape shown on rolls and sealing a client carton"
               fill
-              priority
               sizes="(max-width: 640px) 100vw, 40vw"
               className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
             />

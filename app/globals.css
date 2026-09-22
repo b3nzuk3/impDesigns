@@ -129,3 +129,19 @@ select {
   background-image: radial-gradient(rgba(104, 76, 44, 0.08) 1px, transparent 0);
   background-size: 8px 8px;
 }
+
+/* Hero carousel: slow, subtle Ken Burns drift on the active slide.
+   Disabled automatically under prefers-reduced-motion (component gates the class). */
+@media (prefers-reduced-motion: no-preference) {
+  .hero-slow-zoom {
+    animation: hero-slow-zoom 9s ease-out forwards;
+  }
+  @keyframes hero-slow-zoom {
+    from {
+      transform: scale(1.04);
+    }
+    to {
+      transform: scale(1.12);
+    }
+  }
+}
