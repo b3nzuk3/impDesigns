@@ -47,8 +47,8 @@ export const RealTapeShowcase: React.FC<RealTapeShowcaseProps> = ({
         <figure className="group overflow-hidden border border-neutral-700 bg-neutral-900">
           <div className={`relative ${compact ? 'aspect-[1.45]' : 'aspect-[1.2]'}`}>
             <Image
-              src={tapePhoto(16)}
-              alt="A collection of real printed branded packing tape rolls produced by Impact Creative Designs"
+              src={tapePhoto(8)}
+              alt="A collection of real branded packing tape rolls photographed as product references"
               fill
               sizes="(max-width: 640px) 100vw, 70vw"
               className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
@@ -67,8 +67,8 @@ export const RealTapeShowcase: React.FC<RealTapeShowcaseProps> = ({
         <figure className="group overflow-hidden border border-neutral-700 bg-neutral-900">
           <div className={`relative ${compact ? 'aspect-[1.45]' : 'aspect-[1.2]'}`}>
             <Image
-              src={tapePhoto(17)}
-              alt="Real branded packing tape shown on rolls and sealing a client carton"
+              src={tapePhoto(21)}
+              alt="Real branded packing tape rolls shown beside a shipping carton"
               fill
               sizes="(max-width: 640px) 100vw, 40vw"
               className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"

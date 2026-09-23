@@ -160,15 +160,15 @@ export default function HomePage() {
                 </div>
                 <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
                   <RealTapeProductPhoto
-                    image="rolls"
-                    alt="Real printed branded tape rolls shown together as product samples"
+                    image={1}
+                    alt="Real branded tape products photographed together as sample references"
                     label="ROLL SAMPLE"
                     caption="Printed roll finishes"
                     aspect="aspect-[4/3]"
                   />
                   <RealTapeProductPhoto
-                    image="application"
-                    alt="Real branded packing tape shown in a handheld dispenser"
+                    image={3}
+                    alt="Branded packing tape on a shipping carton with a tape roll nearby"
                     label="IN USE"
                     caption="Applied carton seal"
                     aspect="aspect-[4/3]"
@@ -351,10 +351,10 @@ export default function HomePage() {
               {/* Real product reference photo */}
               <div className="my-6">
                 <RealTapeProductPhoto
-                  image="application"
-                  alt="Real printed branded tape being dispensed onto a shipping carton"
-                  label="48MM APPLICATION"
-                  caption="Reference photo · branded tape in use"
+                  image={4}
+                  alt="A branded tape roll photographed as a real product reference"
+                  label="TAPE SAMPLE"
+                  caption="Reference photo · branded tape sample"
                   aspect="aspect-[2.4/1]"
                 />
               </div>
@@ -474,10 +474,10 @@ export default function HomePage() {
                 Fuses permanently with the corrugated fibers of brown shipping boxes. Tamper-evident bond cannot be peeled off without tearing the carton surface.
               </p>
               <RealTapeProductPhoto
-                image="rolls"
-                alt="Real printed packing tape rolls with varied brand patterns"
-                label="KRAFT REFERENCE"
-                caption="Reference photo · printed roll finishes"
+                image={5}
+                alt="A real branded tape product photographed as a sample reference"
+                label="TAPE REFERENCE"
+                caption="Reference photo · branded tape sample"
                 aspect="aspect-[2.2/1]"
               />
             </div>
@@ -508,10 +508,10 @@ export default function HomePage() {
                 Allows your underlying box color, white mailer, or pattern to show through clearly while highlighting bold printed brand typography.
               </p>
               <RealTapeProductPhoto
-                image="application"
-                alt="Real clear branded packing tape shown on a dispenser and carton"
-                label="CLEAR TAPE REFERENCE"
-                caption="Reference photo · transparent branded tape"
+                image={6}
+                alt="A real branded tape product photographed as a sample reference"
+                label="TAPE REFERENCE"
+                caption="Reference photo · branded tape sample"
                 aspect="aspect-[2.2/1]"
               />
             </div>
@@ -631,13 +631,13 @@ export default function HomePage() {
                   <span>ROLL: SAVANNAH 48MM</span>
                 </div>
 
-                {/* Real applied branded tape reference */}
+                {/* Real branded tape product reference */}
                 <div className="relative z-10 my-1 shadow-sm">
                   <RealTapeProductPhoto
-                    image="application"
-                    alt="Real branded tape applied to a shipping carton"
+                    image={2}
+                    alt="A real branded tape product photographed as a packaging reference"
                     label="REAL TAPE"
-                    caption="Applied seal reference"
+                    caption="Branded tape photo reference"
                     aspect="aspect-[2.5/1]"
                   />
                 </div>
@@ -647,9 +647,9 @@ export default function HomePage() {
                   <div className="flex flex-col items-center">
                     <div className="w-24 drop-shadow-md">
                       <RealTapeProductPhoto
-                        image="rolls"
-                        alt="Real printed branded tape rolls"
-                        label="ROLL"
+                        image={7}
+                        alt="A group of real branded tape samples photographed together"
+                        label="TAPE SAMPLE"
                         aspect="aspect-square"
                       />
                     </div>
@@ -706,13 +706,13 @@ export default function HomePage() {
                   <span>ROLL: KILIMA 48MM</span>
                 </div>
 
-                {/* Real applied branded tape reference */}
+                {/* Real branded tape product reference */}
                 <div className="relative z-10 my-1 shadow-sm">
                   <RealTapeProductPhoto
-                    image="application"
-                    alt="Real branded tape applied to a shipping carton"
+                    image={12}
+                    alt="A group of real branded tape products photographed as a reference"
                     label="REAL TAPE"
-                    caption="Applied seal reference"
+                    caption="Branded tape photo reference"
                     aspect="aspect-[2.5/1]"
                   />
                 </div>
@@ -722,9 +722,9 @@ export default function HomePage() {
                   <div className="flex flex-col items-center">
                     <div className="w-24 drop-shadow-md">
                       <RealTapeProductPhoto
-                        image="rolls"
-                        alt="Real printed branded tape rolls"
-                        label="ROLL"
+                        image={9}
+                        alt="A real branded tape product displayed upright"
+                        label="TAPE SAMPLE"
                         aspect="aspect-square"
                       />
                     </div>
@@ -781,13 +781,13 @@ export default function HomePage() {
                   <span>ROLL: 72MM HEAVY</span>
                 </div>
 
-                {/* Real applied branded tape reference */}
+                {/* Real branded tape product reference */}
                 <div className="relative z-10 my-1 shadow-sm">
                   <RealTapeProductPhoto
-                    image="application"
-                    alt="Real branded tape shown on a carton sealing dispenser"
+                    image={14}
+                    alt="A group of real branded tape products photographed as a reference"
                     label="REAL TAPE"
-                    caption="Security seal reference"
+                    caption="Branded tape photo reference"
                     aspect="aspect-[2.5/1]"
                   />
                 </div>
@@ -797,9 +797,9 @@ export default function HomePage() {
                   <div className="flex flex-col items-center">
                     <div className="w-24 drop-shadow-md">
                       <RealTapeProductPhoto
-                        image="rolls"
-                        alt="Real printed tape rolls used for packaging"
-                        label="ROLL"
+                        image={10}
+                        alt="A real branded tape product displayed upright"
+                        label="TAPE SAMPLE"
                         aspect="aspect-square"
                       />
                     </div>

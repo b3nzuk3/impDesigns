@@ -3,7 +3,8 @@ import React from 'react';
 import { tapePhoto } from '@/lib/media';
 
 interface RealTapeProductPhotoProps {
-  image?: 'rolls' | 'application';
+  /** R2 branded-tape photo number (tape-01.webp through tape-26.webp). */
+  image?: number;
   alt?: string;
   label: string;
   caption?: string;
@@ -13,14 +14,14 @@ interface RealTapeProductPhotoProps {
 
 /** A compact, static product-photo tile for product and portfolio cards. */
 export const RealTapeProductPhoto: React.FC<RealTapeProductPhotoProps> = ({
-  image = 'rolls',
+  image = 1,
   alt,
   label,
   caption,
   className = '',
   aspect = 'aspect-[16/9]',
 }) => {
-  const src = image === 'application' ? tapePhoto(17) : tapePhoto(1);
+  const src = tapePhoto(image ?? 1);
 
   return (
     <figure className={`overflow-hidden border border-neutral-300 bg-neutral-100 ${className}`}>
