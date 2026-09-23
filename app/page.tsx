@@ -7,7 +7,7 @@ import { HeroCarousel } from '@/components/HeroCarousel';
 import { ManufacturingVideoSection } from '@/components/ManufacturingVideoSection';
 import { RealTapeShowcase } from '@/components/RealTapeShowcase';
 import { RealTapeProductPhoto } from '@/components/RealTapeProductPhoto';
-import { AluminiumTagVisual } from '@/components/AluminiumTagVisual';
+import { RealAluminiumTagPhoto } from '@/components/RealAluminiumTagPhoto';
 import { BeforeAfterBox } from '@/components/BeforeAfterBox';
 import { ProcessTapeFlow } from '@/components/ProcessTapeFlow';
 import { QuoteModal } from '@/components/QuoteModal';
@@ -233,33 +233,21 @@ export default function HomePage() {
                 Durable branded tags and barcode asset plates made from 0.5mm to 0.8mm anodized aluminium. Finished with high-contrast markings, serialized codes, and reliable adhesive or rivet mounting for retail, logistics, and industrial use.
               </p>
 
-              {/* Physical Aluminium Tag Presentation */}
-              <div className="bg-[#e9e3d8] border border-neutral-300 p-5 mb-6 relative overflow-hidden flex flex-wrap items-center justify-center gap-4 min-h-[200px]">
-                <AluminiumTagVisual
-                  companyName="KILIMA APPAREL"
-                  subtitle="100% KENYAN COTTON"
-                  propertyOfText="RETAIL SERIES • KES 2,400"
-                  serialNumber="KLM-2400"
-                  barcodeType="code128"
-                  logoType="tech"
-                  logoColor="#1d4ed8"
-                  logoAccent="#eab308"
-                  thickness="0.5mm"
-                  mountingHoles={true}
-                  size="sm"
+              {/* Real aluminium tag references from the R2 production gallery */}
+              <div className="grid grid-cols-2 items-stretch gap-3 border border-neutral-300 bg-[#e9e3d8] p-4 mb-6 min-h-[200px]">
+                <RealAluminiumTagPhoto
+                  image={1}
+                  alt="Brushed aluminium property tag with barcode produced for MUA"
+                  label="R2 TAG SAMPLE"
+                  aspect="aspect-[2/1]"
+                  className="w-full"
                 />
-                <AluminiumTagVisual
-                  companyName="SAVANNAH TEA"
-                  subtitle="SINGLE ORIGIN KERICHO"
-                  propertyOfText="ORGANIC CERT • PRODUCT TAG"
-                  serialNumber="SAV-ORG"
-                  barcodeType="code128"
-                  logoType="crest"
-                  logoColor="#15803d"
-                  logoAccent="#d4af37"
-                  thickness="0.8mm"
-                  mountingHoles={false}
-                  size="sm"
+                <RealAluminiumTagPhoto
+                  image={6}
+                  alt="Metal asset tag with barcode produced for Equity Bank"
+                  label="R2 TAG SAMPLE"
+                  aspect="aspect-[2/1]"
+                  className="w-full"
                 />
               </div>
 
@@ -556,18 +544,12 @@ export default function HomePage() {
             </div>
 
             <div className="flex flex-col items-center gap-4">
-              <AluminiumTagVisual
-                companyName="SAVANNAH FREIGHT"
-                subtitle="EXPRESS LOGISTICS NAIROBI"
-                propertyOfText="PROPERTY OF SAVANNAH POSTAL"
-                serialNumber="PST-1823-NB"
-                barcodeType="code128"
-                logoType="shield"
-                logoColor="#ea580c"
-                logoAccent="#1e3a8a"
-                thickness="0.8mm"
-                mountingHoles={false}
-                size="md"
+              <RealAluminiumTagPhoto
+                image={30}
+                alt="Brushed metal asset tag with barcode produced for KCB Foundation"
+                label="R2 TAG SAMPLE"
+                aspect="aspect-[2/1]"
+                className="w-full max-w-[360px]"
               />
               <div className="flex items-center gap-3 w-full justify-center">
                 <Link
@@ -659,21 +641,15 @@ export default function HomePage() {
                   </div>
 
                   <div className="flex flex-col items-end">
-                    <AluminiumTagVisual
-                      companyName="KERICHIA AA"
-                      subtitle="ROAST #12"
-                      propertyOfText="SAVANNAH ROASTERS"
-                      serialNumber="KER-012"
-                      barcodeType="code128"
-                      logoType="crest"
-                      logoColor="#ea580c"
-                      logoAccent="#1e3a8a"
-                      thickness="0.5mm"
-                      mountingHoles={false}
-                      size="sm"
+                    <RealAluminiumTagPhoto
+                      image={26}
+                      alt="R2 aluminium tag design sample shown as a general product reference"
+                      label="R2 TAG SAMPLE"
+                      aspect="aspect-[2/1]"
+                      className="w-24 sm:w-28"
                     />
                     <span className="font-mono text-[8px] font-bold uppercase tracking-wider text-black bg-white/90 px-1.5 py-0.5 border border-neutral-400 mt-1 shadow-xs">
-                      ALUMINIUM PRODUCT TAG
+                      ALUMINIUM TAG REFERENCE
                     </span>
                   </div>
                 </div>
@@ -734,21 +710,15 @@ export default function HomePage() {
                   </div>
 
                   <div className="flex flex-col items-end">
-                    <AluminiumTagVisual
-                      companyName="KILIMA LUXE"
-                      subtitle="GARMENT SEAL"
-                      propertyOfText="KENYAN COTTON"
-                      serialNumber="KLM-SEAL"
-                      barcodeType="code128"
-                      logoType="tech"
-                      logoColor="#1d4ed8"
-                      logoAccent="#eab308"
-                      thickness="0.8mm"
-                      mountingHoles={true}
-                      size="sm"
+                    <RealAluminiumTagPhoto
+                      image={28}
+                      alt="R2 aluminium tag design sample shown as a general product reference"
+                      label="R2 TAG SAMPLE"
+                      aspect="aspect-[2/1]"
+                      className="w-24 sm:w-28"
                     />
                     <span className="font-mono text-[8px] font-bold uppercase tracking-wider text-white bg-neutral-900 px-1.5 py-0.5 border border-neutral-700 mt-1 shadow-xs">
-                      0.8MM ALUMINIUM TAG
+                      ALUMINIUM TAG REFERENCE
                     </span>
                   </div>
                 </div>
@@ -809,21 +779,15 @@ export default function HomePage() {
                   </div>
 
                   <div className="flex flex-col items-end">
-                    <AluminiumTagVisual
-                      companyName="QUICKDROP"
-                      subtitle="TRANSIT SEAL"
-                      propertyOfText="CARGO INSPECTED"
-                      serialNumber="QDROP-72"
-                      barcodeType="datamatrix"
-                      logoType="cargo"
-                      logoColor="#b45309"
-                      logoAccent="#fbbf24"
-                      thickness="0.8mm"
-                      mountingHoles={true}
-                      size="sm"
+                    <RealAluminiumTagPhoto
+                      image={31}
+                      alt="R2 aluminium tag design sample shown as a general product reference"
+                      label="R2 TAG SAMPLE"
+                      aspect="aspect-[2/1]"
+                      className="w-24 sm:w-28"
                     />
                     <span className="font-mono text-[8px] font-bold uppercase tracking-wider text-black bg-white/90 px-1.5 py-0.5 border border-neutral-400 mt-1 shadow-xs">
-                      ALUMINIUM INSPECTION TAG
+                      ALUMINIUM TAG REFERENCE
                     </span>
                   </div>
                 </div>

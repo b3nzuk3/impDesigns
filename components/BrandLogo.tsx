@@ -5,16 +5,16 @@ import React from 'react';
 
 /**
  * Brand logo lockup — horizontal layout matching the client's mockup:
- * square 2x2 paint-drop icon on the left, stacked text on the right
+ * four paint-drop icons in a horizontal row on the left, stacked text on the right
  * (one-line "Impact Creative Designs" wordmark over the tagline).
  *
  * Assets are cropped from the client artwork (impact/logo.svg) at 2x:
- *   /images/impact-drops-icon.png   504x647  — 4 CMYK drops in a 2x2 grid
+ *   /images/impact-logo-paint-drops-160.png  — blue, magenta, yellow, black drops
  *   /images/impact-wordmark.png    2967x337  — "Impact Creative Designs" line
  *   /images/impact-tagline.png     2805x98   — "BRANDED TAPES • ASSET TAGS"
  *
- * The wordmark is sized to fill the text column's width; the icon height
- * equals wordmark + gap + tagline so the lockup is vertically tight.
+ * The wordmark is sized to fill the text column's width; the icon strip
+ * sits beside the vertically stacked wordmark and tagline.
  * Everything scales together — box grows, font grows with it.
  *
  * The old footer variant (LegacyBrandLogo) is unchanged below.
@@ -29,11 +29,11 @@ export const BrandLogo: React.FC<{
   size?: BrandLogoSize;
 }> = ({ className = '', priority = false }) => {
   return (
-    <div className={`flex h-full w-full items-center gap-[7%] pr-[2%] ${className}`}>
-      {/* Paint-drop icon — square, spans the full text-column height */}
-      <div className="relative h-full shrink-0 aspect-square">
+    <div className={`flex h-full w-full items-center gap-[5%] pr-[2%] ${className}`}>
+      {/* Four paint-drop icons — left-to-right order matches the client reference */}
+      <div className="relative h-full w-[30%] shrink-0">
         <Image
-          src="/images/impact-drops-icon.png"
+          src="/images/impact-logo-paint-drops-160.png"
           alt=""
           aria-hidden="true"
           fill

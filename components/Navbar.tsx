@@ -30,7 +30,7 @@ export const Navbar: React.FC = () => {
             {/* Brand Title / Wordmark — unified enclosed logo lockup */}
             <Link
               href="/"
-              className="flex h-[60px] w-[232px] items-center group select-none bg-white border border-neutral-900 pl-1.5 pr-2 py-1.5 sm:pl-2.5 sm:pr-4 sm:py-2 shadow-[2px_2px_0px_#ea580c] min-w-0 max-w-full lg:w-[300px] xl:w-[320px]"
+              className="flex h-[60px] w-[220px] items-center group select-none bg-white border border-neutral-900 pl-1.5 pr-2 py-1.5 sm:pl-2.5 sm:pr-4 sm:py-2 shadow-[2px_2px_0px_#ea580c] min-w-0 max-w-full lg:w-[300px] xl:w-[320px]"
               id="brand-logo"
             >
               {/* Client logo lockup — horizontal layout per client mockup */}

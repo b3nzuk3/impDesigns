@@ -6,11 +6,12 @@ import { MEDIA_BASE } from '@/lib/media';
 export const tagPhoto = (n: number) => `${MEDIA_BASE}/aluminium-tags/tag-${String(n).padStart(2, '0')}.webp`;
 
 interface RealAluminiumTagPhotoProps {
-  image?: 'range' | 'closeup';
+  image?: number | 'range' | 'closeup';
   alt: string;
   label?: string;
   caption?: string;
   className?: string;
+  aspect?: string;
 }
 
 /** A reusable real-photo tile for aluminium tag product cards. */
@@ -20,13 +21,14 @@ export const RealAluminiumTagPhoto: React.FC<RealAluminiumTagPhotoProps> = ({
   label = 'REFERENCE PHOTO',
   caption,
   className = '',
+  aspect = 'aspect-[4/3]',
 }) => {
   const isCloseup = image === 'closeup';
-  const src = isCloseup ? tagPhoto(1) : tagPhoto(16);
+  const src = typeof image === 'number' ? tagPhoto(image) : tagPhoto(isCloseup ? 1 : 16);
 
   return (
     <figure className={`overflow-hidden border border-neutral-300 bg-neutral-100 ${className}`}>
-      <div className="relative aspect-[4/3]">
+      <div className={`relative ${aspect}`}>
         <Image
           src={src}
           alt={alt}
