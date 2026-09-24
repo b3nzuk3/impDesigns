@@ -1,12 +1,14 @@
 import type { Metadata } from 'next';
 import { OurWorkPortfolio } from './OurWorkPortfolio';
-import { portfolioProjects } from '@/lib/portfolio';
 import { tagPhoto } from '@/lib/media';
+import { StructuredData } from '@/components/StructuredData';
+import { absoluteUrl } from '@/lib/site';
+import { portfolioProjects } from '@/lib/portfolio';
 
 const pageTitle = 'Our Work | Branded Tapes & Aluminium Tags Kenya';
 const pageDescription =
-  'See real branded packaging tape and aluminium asset-tag projects produced in Kenya for organizations including Kenya Pipeline Company, Equity Bank, KCB Foundation and Pumwani Hospital.';
-const canonicalUrl = 'https://impactdesigns.co.ke/our-work';
+  'Explore real production photos of custom branded packaging tape and aluminium asset tags made for businesses and institutions across Kenya.';
+const canonicalUrl = absoluteUrl('/our-work');
 
 export const metadata: Metadata = {
   title: pageTitle,
@@ -16,7 +18,6 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_KE',
-    siteName: 'Impact Creative Designs Kenya',
     title: pageTitle,
     description: pageDescription,
     url: canonicalUrl,
@@ -43,6 +44,7 @@ const structuredData = {
   name: pageTitle,
   description: pageDescription,
   url: canonicalUrl,
+  about: { '@id': absoluteUrl('/#business') },
   mainEntity: {
     '@type': 'ItemList',
     itemListElement: portfolioProjects.map((project, index) => ({
@@ -53,10 +55,7 @@ const structuredData = {
         name: project.title,
         description: project.description,
         image: project.image,
-        creator: {
-          '@type': 'Organization',
-          name: 'Impact Creative Designs Kenya',
-        },
+        creator: { '@id': absoluteUrl('/#business') },
         about: project.organizations.map((name) => ({
           '@type': 'Organization',
           name,
@@ -69,12 +68,7 @@ const structuredData = {
 export default function OurWorkPage() {
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(structuredData).replace(/</g, '\\u003c'),
-        }}
-      />
+      <StructuredData data={structuredData} />
       <OurWorkPortfolio />
     </>
   );

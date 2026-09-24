@@ -6,6 +6,15 @@ import Link from 'next/link';
 import { TapeStrip } from './TapeStrip';
 import { LegacyBrandLogo } from './BrandLogo';
 import { MessageCircle, MapPin, Phone, Mail, Clock, ArrowUpRight } from 'lucide-react';
+import {
+  SITE_ADDRESS_DISPLAY,
+  SITE_EMAIL,
+  SITE_HOURS_DISPLAY,
+  SITE_NAME,
+  SITE_PHONE_DISPLAY,
+  SITE_PHONE_E164,
+  siteWhatsAppLink,
+} from '@/lib/site-contact';
 
 export const Footer: React.FC = () => {
   return (
@@ -37,7 +46,7 @@ export const Footer: React.FC = () => {
 
             <div className="mt-6 flex items-center gap-3">
               <a
-                href="https://wa.me/254722404647"
+                href={siteWhatsAppLink(`Hello ${SITE_NAME}, I would like to discuss custom branded tapes or aluminium tags.`)}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 bg-[#25D366] text-black font-mono font-bold text-xs uppercase py-2.5 px-5"
@@ -122,19 +131,23 @@ export const Footer: React.FC = () => {
             <ul className="space-y-3 font-mono text-xs text-neutral-400">
               <li className="flex items-start gap-2.5">
                 <MapPin className="w-4 h-4 text-orange-400 shrink-0 mt-0.5" />
-                <span>Kai Plaza, 6 Tom Mboya St, Nairobi, Kenya</span>
+                <span>{SITE_ADDRESS_DISPLAY}</span>
               </li>
               <li className="flex items-center gap-2.5">
                 <Phone className="w-4 h-4 text-green-500 shrink-0" />
-                <span>0722404647</span>
+                <a href={`tel:${SITE_PHONE_E164}`} className="hover:text-white underline decoration-neutral-600">
+                  {SITE_PHONE_DISPLAY}
+                </a>
               </li>
               <li className="flex items-center gap-2.5">
                 <Mail className="w-4 h-4 text-neutral-400 shrink-0" />
-                <span>impactcreativedesigns@gmail.com</span>
+                <a className="hover:text-white underline decoration-neutral-600" href={`mailto:${SITE_EMAIL}`}>
+                  {SITE_EMAIL}
+                </a>
               </li>
               <li className="flex items-center gap-2.5">
                 <Clock className="w-4 h-4 text-neutral-400 shrink-0" />
-                <span>Mon – Fri: 8:00 AM – 5:30 PM EAT</span>
+                <span>{SITE_HOURS_DISPLAY}</span>
               </li>
             </ul>
           </div>
@@ -143,7 +156,7 @@ export const Footer: React.FC = () => {
         {/* Bottom Bar with Tape Motif */}
         <div className="mt-12 pt-8 border-t border-neutral-800 flex flex-col md:flex-row items-center justify-between gap-4 font-mono text-xs text-neutral-500">
           <div>
-            © {new Date().getFullYear()} Impact Creative Designs Ltd. All rights reserved. Nairobi, Kenya.
+            © {new Date().getFullYear()} {SITE_NAME}. All rights reserved. Nairobi, Kenya.
           </div>
           <div className="flex items-center gap-6">
             <span>Specialists in Branded Tapes & Tags</span>

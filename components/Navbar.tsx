@@ -8,6 +8,11 @@ import { usePathname } from 'next/navigation';
 import { Menu, X, MessageCircle, ArrowUpRight } from 'lucide-react';
 import { QuoteModal } from './QuoteModal';
 import { BrandLogo } from './BrandLogo';
+import { SITE_NAME, SITE_PHONE_DISPLAY, siteWhatsAppLink } from '@/lib/site-contact';
+
+const NAV_WHATSAPP_URL = siteWhatsAppLink(
+  `Hello ${SITE_NAME}, I would like to inquire about custom branded tapes and tags.`,
+);
 
 export const Navbar: React.FC = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -36,7 +41,7 @@ export const Navbar: React.FC = () => {
               {/* Client logo lockup — horizontal layout per client mockup */}
               {/* Fluid width: mockup-proportioned max, shrinks gracefully on md screens where the nav needs the room */}
               <div className="h-full w-full flex items-center justify-center overflow-hidden">
-                <BrandLogo priority />
+                <BrandLogo />
               </div>
             </Link>
 
@@ -63,14 +68,14 @@ export const Navbar: React.FC = () => {
             {/* Desktop Actions */}
             <div className="hidden md:flex items-center gap-4">
               <a
-                href="https://wa.me/254722404647?text=Hello%20Impact%20Creative%20Designs%20Kenya,%20I%20would%20like%20to%20inquire%20about%20custom%20branded%20tapes%20and%20tags."
+                href={NAV_WHATSAPP_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-1.5 text-sm font-mono font-bold text-neutral-800 hover:text-green-700 transition-colors"
                 title="Direct WhatsApp Chat"
               >
                 <MessageCircle className="w-4 h-4 text-green-600 fill-green-600" />
-                <span className="hidden xl:inline">0722404647</span>
+                <span className="hidden xl:inline">{SITE_PHONE_DISPLAY}</span>
               </a>
 
               <button
@@ -123,13 +128,13 @@ export const Navbar: React.FC = () => {
 
             <div className="pt-4 flex flex-col gap-3">
               <a
-                href="https://wa.me/254722404647?text=Hello%20Impact%20Creative%20Designs%20Kenya,%20I%20would%20like%20to%20inquire%20about%20custom%20branded%20tapes%20and%20tags."
+                href={NAV_WHATSAPP_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center justify-center gap-2 bg-[#25D366] text-black font-mono font-bold text-xs uppercase py-3 px-6 border border-green-700"
               >
                 <MessageCircle className="w-4 h-4 fill-black" />
-                <span>WhatsApp (0722404647)</span>
+                <span>WhatsApp ({SITE_PHONE_DISPLAY})</span>
               </a>
 
               <button

@@ -12,6 +12,7 @@ import { BeforeAfterBox } from '@/components/BeforeAfterBox';
 import { ProcessTapeFlow } from '@/components/ProcessTapeFlow';
 import { QuoteModal } from '@/components/QuoteModal';
 import { MessageCircle, ArrowRight, ShieldCheck, Box, Tag, Truck, Sparkles, CheckCircle2 } from 'lucide-react';
+import { SITE_NAME, SITE_PHONE_DISPLAY, siteWhatsAppLink } from '@/lib/site-contact';
 
 export default function HomePage() {
   const [quoteOpen, setQuoteOpen] = useState(false);
@@ -69,13 +70,13 @@ export default function HomePage() {
             {/* Instant WhatsApp Quick Link */}
             <div className="pt-2 flex items-center gap-3 text-xs font-mono text-neutral-200">
               <a
-                href="https://wa.me/254722404647?text=Hello%20Impact%20Creative%20Designs%20Kenya!%20I%20want%20to%20quote%20for%20custom%20branded%20tapes%20or%20tags."
+                href={siteWhatsAppLink(`Hello ${SITE_NAME}! I would like a quote for custom branded tapes or tags.`)}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 text-white hover:text-green-300 font-bold border-b border-white/50 pb-0.5"
               >
                 <MessageCircle className="w-4 h-4 text-green-400 fill-green-400" />
-                <span>Chat with Nairobi factory desk on WhatsApp (0722404647)</span>
+                <span>Chat with Nairobi factory desk on WhatsApp ({SITE_PHONE_DISPLAY})</span>
               </a>
             </div>
 
@@ -836,7 +837,7 @@ export default function HomePage() {
             </button>
 
             <a
-              href="https://wa.me/254722404647?text=Hello%20Impact%20Creative%20Designs%20Kenya,%20I%20would%20like%20to%20quote%20for%20packaging%20tape."
+              href={siteWhatsAppLink(`Hello ${SITE_NAME}, I would like a quote for packaging tape.`)}
               target="_blank"
               rel="noopener noreferrer"
               className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#25D366] text-black font-mono font-bold text-xs uppercase py-4 px-8 transition-colors"

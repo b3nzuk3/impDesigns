@@ -20,20 +20,13 @@ export interface PortfolioProject {
  */
 export const portfolioProjects: PortfolioProject[] = [
   {
-    slug: 'kenya-revenue-authority-national-biosafety-authority-tape',
+    slug: 'adhi-pharmacy-branded-tape',
     category: 'tapes',
-    title: 'Kenya Revenue Authority & National Biosafety Authority',
-    organizations: [
-      'Kenya Revenue Authority',
-      'National Biosafety Authority',
-      'Innovation for Poverty Action',
-      'Maralal Safaris Investment',
-    ],
-    description:
-      'A real production photo of custom printed packaging tape includes designs for the Kenya Revenue Authority, National Biosafety Authority, Innovation for Poverty Action and Maralal Safaris Investment.',
+    title: 'Adhi Pharmacy',
+    organizations: ['Adhi Pharmacy Limited'],
+    description: 'A carton sealed with custom branded tape printed for Adhi Pharmacy Limited.',
     image: tapePhoto(17),
-    imageAlt:
-      'Printed tape rolls showing designs for Kenya Revenue Authority, National Biosafety Authority, Innovation for Poverty Action and Maralal Safaris Investment.',
+    imageAlt: 'Carton sealed with custom branded tape printed for Adhi Pharmacy Limited.',
     productLabel: 'Branded packaging tape',
   },
   {
@@ -49,15 +42,13 @@ export const portfolioProjects: PortfolioProject[] = [
     productLabel: 'Aluminium barcode asset tags',
   },
   {
-    slug: 'eysupply-sharpprint-safe-fuel-systems-tape',
+    slug: 'cameron-eyesupply-sharp-prints-safe-fuel-systems-tape',
     category: 'tapes',
-    title: 'EYSUPPLY, SharpPrint & Safe Fuel Systems',
-    organizations: ['EYSUPPLY', 'SharpPrint', 'Safe Fuel Systems'],
-    description:
-      'Printed packaging tape samples feature the EYSUPPLY, SharpPrint and Safe Fuel Systems brand marks.',
+    title: 'Cameron, Eyesupply, Sharp Prints & Safe Fuel Systems',
+    organizations: ['Cameron', 'Eyesupply', 'Sharp Prints', 'Safe Fuel Systems'],
+    description: 'Branded tape rolls printed for Cameron, Eyesupply, Sharp Prints, Safe Fuel Systems and other clients.',
     image: tapePhoto(1),
-    imageAlt:
-      'Printed tape rolls featuring EYSUPPLY, SharpPrint and Safe Fuel Systems branding.',
+    imageAlt: 'Branded tape rolls printed for Cameron, Eyesupply, Sharp Prints, Safe Fuel Systems and other clients.',
     productLabel: 'Branded packaging tape',
   },
   {
@@ -73,15 +64,13 @@ export const portfolioProjects: PortfolioProject[] = [
     productLabel: 'Serialised aluminium asset tags',
   },
   {
-    slug: 'action-against-hunger-flash-parcel-tape',
+    slug: 'aberdair-nicco-mtapai-sr-coach-tape',
     category: 'tapes',
-    title: 'Action Against Hunger & Flash Parcel',
-    organizations: ['Action Against Hunger', 'Flash Parcel'],
-    description:
-      'Custom printed tape rolls show Action Against Hunger and Flash Parcel designs among the production samples.',
+    title: 'Aberdair Aviation, NICCO Movers, MTAPAI & S/R Coach Sacco',
+    organizations: ['Aberdair Aviation', 'NICCO Movers', 'MTAPAI', 'S/R Coach Sacco'],
+    description: 'Branded tape rolls for Aberdair Aviation, NICCO Movers, MTAPAI and S/R Coach Sacco.',
     image: tapePhoto(10),
-    imageAlt:
-      'Printed tape rolls with Action Against Hunger and Flash Parcel designs.',
+    imageAlt: 'Branded tape rolls for Aberdair Aviation, NICCO Movers, MTAPAI and S/R Coach Sacco.',
     productLabel: 'Branded packaging tape',
   },
   {
@@ -96,15 +85,13 @@ export const portfolioProjects: PortfolioProject[] = [
     productLabel: 'Aluminium asset tag',
   },
   {
-    slug: 'union-meat-group-aberdair-aviation-tape',
+    slug: 'kitui-green-run-event-tape',
     category: 'tapes',
-    title: 'Union Meat Group & Aberdair Aviation',
-    organizations: ['Union Meat Group', 'Aberdair Aviation'],
-    description:
-      'Printed tape samples include a Union Meat Group design and a partly visible Aberdair Aviation mark.',
+    title: 'Kitui Green Run',
+    organizations: ['Kitui Green Run'],
+    description: 'Event branded tape printed for the Kitui Green Run — Run for Rain campaign.',
     image: tapePhoto(11),
-    imageAlt:
-      'Printed tape rolls showing Union Meat Group branding and partly visible Aberdair Aviation artwork.',
+    imageAlt: 'Event branded tape printed for the Kitui Green Run — Run for Rain campaign.',
     productLabel: 'Branded packaging tape',
   },
   {

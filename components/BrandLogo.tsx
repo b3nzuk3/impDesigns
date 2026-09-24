@@ -10,8 +10,8 @@ import React from 'react';
  *
  * Assets are cropped from the client artwork (impact/logo.svg) at 2x:
  *   /images/impact-logo-paint-drops-160.png  — blue, magenta, yellow, black drops
- *   /images/impact-wordmark.png    2967x337  — "Impact Creative Designs" line
- *   /images/impact-tagline.png     2805x98   — "BRANDED TAPES • ASSET TAGS"
+ *   /images/impact-wordmark.png     380x43   — "Impact Creative Designs" line
+ *   /images/impact-tagline.png      350x12   — "BRANDED TAPES • ASSET TAGS"
  *
  * The wordmark is sized to fill the text column's width; the icon strip
  * sits beside the vertically stacked wordmark and tagline.
@@ -37,8 +37,7 @@ export const BrandLogo: React.FC<{
           alt=""
           aria-hidden="true"
           fill
-          priority={priority}
-          unoptimized
+          sizes="(max-width: 768px) 66px, 96px"
           style={{ objectFit: 'contain' }}
         />
       </div>
@@ -48,19 +47,18 @@ export const BrandLogo: React.FC<{
         <Image
           src="/images/impact-wordmark.png"
           alt="Impact Creative Designs"
-          width={2967}
-          height={337}
+          width={380}
+          height={43}
           priority={priority}
-          unoptimized
+          sizes="(max-width: 640px) 140px, (max-width: 1024px) 170px, 190px"
           className="h-auto w-full"
         />
         <Image
           src="/images/impact-tagline.png"
           alt="Branded Tapes • Asset Tags"
-          width={2805}
-          height={98}
-          priority={priority}
-          unoptimized
+          width={350}
+          height={12}
+          sizes="(max-width: 640px) 130px, (max-width: 1024px) 155px, 175px"
           className="mt-[4%] h-auto w-[92%]"
         />
       </div>

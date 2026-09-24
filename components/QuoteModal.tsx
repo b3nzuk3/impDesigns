@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import { MessageCircle, X, Check, ArrowRight } from 'lucide-react';
+import { SITE_NAME, siteWhatsAppLink } from '@/lib/site-contact';
 
 interface QuoteModalProps {
   isOpen: boolean;
@@ -71,29 +72,29 @@ export const QuoteModal: React.FC<QuoteModalProps> = ({
   const tapeBaseLabel = tapeBase === 'white' ? 'White BOPP' : 'Transparent BOPP';
 
   const generateWhatsAppMessage = () => {
-    let text = `Hello Impact Creative Designs Kenya! I would like to request a quote:%0A%0A`;
-    text += `*Business:* ${businessName || 'Interested Business'}%0A`;
-    text += `*Contact:* ${contactName || 'Client'} (${phone || 'Via WhatsApp'})%0A`;
-    text += `*Location:* ${location}%0A%0A`;
+    let text = `Hello ${SITE_NAME}! I would like to request a quote:\n\n`;
+    text += `*Business:* ${businessName || 'Interested Business'}\n`;
+    text += `*Contact:* ${contactName || 'Client'} (${phone || 'Via WhatsApp'})\n`;
+    text += `*Location:* ${location}\n\n`;
 
     if (productType === 'tape') {
-      text += `*PRODUCT: CUSTOM BRANDED TAPE*%0A`;
-      text += `- Roll Width: ${tapeWidth}%0A`;
-      text += `- Base Tape: ${tapeBaseLabel}%0A`;
-      text += `- Print Colors: ${tapeColors} Color(s)%0A`;
-      text += `- Quantity: ${Math.max(360, tapeRolls)} Rolls%0A`;
-      text += `- Estimated Total: KES ${tapeEst.total.toLocaleString()}%0A`;
+      text += `*PRODUCT: CUSTOM BRANDED TAPE*\n`;
+      text += `- Roll Width: ${tapeWidth}\n`;
+      text += `- Base Tape: ${tapeBaseLabel}\n`;
+      text += `- Print Colors: ${tapeColors} Color(s)\n`;
+      text += `- Quantity: ${Math.max(360, tapeRolls)} Rolls\n`;
+      text += `- Estimated Total: KES ${tapeEst.total.toLocaleString()}\n`;
     } else {
-      text += `*PRODUCT: ANODIZED ALUMINIUM BARCODE ASSET TAGS*%0A`;
-      text += `- Thickness: ${metalThickness} Anodized Aluminium%0A`;
-      text += `- Mounting: ${metalMounting === '3m-adhesive' ? '3M 468MP High-Bond Adhesive' : 'Dual 3.2mm Rivet Mounting Holes'}%0A`;
-      text += `- Barcode: ${barcodeType === 'code128' ? 'Code 128 / Code 39' : '2D DataMatrix / QR'}%0A`;
-      text += `- Quantity: ${metalQuantity} Metal Plates%0A`;
-      text += `- Estimated Total: KES ${metalEst.total.toLocaleString()}%0A`;
+      text += `*PRODUCT: ANODIZED ALUMINIUM BARCODE ASSET TAGS*\n`;
+      text += `- Thickness: ${metalThickness} Anodized Aluminium\n`;
+      text += `- Mounting: ${metalMounting === '3m-adhesive' ? '3M 468MP High-Bond Adhesive' : 'Dual 3.2mm Rivet Mounting Holes'}\n`;
+      text += `- Barcode: ${barcodeType === 'code128' ? 'Code 128 / Code 39' : '2D DataMatrix / QR'}\n`;
+      text += `- Quantity: ${metalQuantity} Metal Plates\n`;
+      text += `- Estimated Total: KES ${metalEst.total.toLocaleString()}\n`;
     }
 
-    text += `%0APlease share official artwork guidelines and turnaround times.`;
-    return `https://wa.me/254722404647?text=${text}`;
+    text += `\nPlease share official artwork guidelines and turnaround times.`;
+    return siteWhatsAppLink(text);
   };
 
   return (
@@ -369,8 +370,8 @@ export const QuoteModal: React.FC<QuoteModalProps> = ({
               <label className="block text-xs font-mono font-bold uppercase mb-2">
                 Batch Production Quantity
               </label>
-              <div className="grid grid-cols-4 gap-2">
-                {[100, 250, 500, 1000].map((q) => (
+              <div className="grid grid-cols-3 gap-2">
+                {[250, 500, 1000].map((q) => (
                   <button
                     key={q}
                     type="button"
@@ -385,6 +386,9 @@ export const QuoteModal: React.FC<QuoteModalProps> = ({
                   </button>
                 ))}
               </div>
+              <p className="mt-2 text-[11px] leading-relaxed text-neutral-500">
+                250 plates is an indicative estimate starting quantity, not a guaranteed minimum. The actual minimum is confirmed with your quote.
+              </p>
             </div>
           </div>
         )}

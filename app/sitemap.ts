@@ -1,42 +1,35 @@
-import { MetadataRoute } from 'next';
+import type { MetadataRoute } from 'next';
+import { absoluteUrl } from '@/lib/site';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = process.env.APP_URL || 'https://impactdesigns.co.ke';
-
   return [
     {
-      url: baseUrl,
-      lastModified: new Date(),
+      url: absoluteUrl('/'),
       changeFrequency: 'weekly',
       priority: 1.0,
     },
     {
-      url: `${baseUrl}/branded-tapes`,
-      lastModified: new Date(),
+      url: absoluteUrl('/branded-tapes'),
       changeFrequency: 'weekly',
       priority: 0.95,
     },
     {
-      url: `${baseUrl}/custom-tags`,
-      lastModified: new Date(),
+      url: absoluteUrl('/custom-tags'),
       changeFrequency: 'weekly',
       priority: 0.95,
     },
     {
-      url: `${baseUrl}/our-work`,
-      lastModified: new Date(),
+      url: absoluteUrl('/our-work'),
       changeFrequency: 'monthly',
       priority: 0.8,
     },
     {
-      url: `${baseUrl}/quote`,
-      lastModified: new Date(),
+      url: absoluteUrl('/quote'),
       changeFrequency: 'monthly',
       priority: 0.85,
     },
     {
-      url: `${baseUrl}/contact`,
-      lastModified: new Date(),
+      url: absoluteUrl('/contact'),
       changeFrequency: 'yearly',
       priority: 0.7,
     },
