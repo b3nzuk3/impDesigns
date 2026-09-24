@@ -40,7 +40,7 @@ export function OurWorkPortfolio() {
             </h1>
             <p className="mt-5 max-w-3xl text-base leading-relaxed text-neutral-700 sm:text-lg">
               See actual custom printed tape and barcode asset tags produced by Impact Creative Designs.
-              These Cloudflare R2 production photos show work for Kenyan businesses and institutions
+              These production photos showcase work for Kenyan businesses and institutions
               including Kenya Revenue Authority, Kenya Pipeline Company, Equity Bank, KCB Foundation,
               Pumwani Hospital and other organizations.
             </p>
