@@ -2,6 +2,8 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
+import { portfolioProjects } from '@/lib/portfolio';
 import { TapeStrip } from '@/components/TapeStrip';
 import { HeroCarousel } from '@/components/HeroCarousel';
 import { ManufacturingVideoSection } from '@/components/ManufacturingVideoSection';
@@ -13,6 +15,10 @@ import { ProcessTapeFlow } from '@/components/ProcessTapeFlow';
 import { QuoteModal } from '@/components/QuoteModal';
 import { MessageCircle, ArrowRight, ShieldCheck, Box, Tag, Truck, Sparkles, CheckCircle2 } from 'lucide-react';
 import { SITE_NAME, SITE_PHONE_DISPLAY, siteWhatsAppLink } from '@/lib/site-contact';
+
+const homepageProjects = portfolioProjects.filter((project) =>
+  ['adhi-pharmacy-branded-tape', 'kitui-green-run-event-tape', 'kcb-foundation-asset-tag'].includes(project.slug),
+);
 
 export default function HomePage() {
   const [quoteOpen, setQuoteOpen] = useState(false);
@@ -589,7 +595,7 @@ export default function HomePage() {
               SEE YOUR BRAND LIKE THIS.
             </h2>
             <p className="mt-3 text-base text-neutral-600 leading-relaxed font-sans">
-              Completed work for leading Kenyan retailers, coffee roasteries, courier delivery fleets, and e-commerce merchants.
+              Real branded tape and aluminium asset-tag examples from our existing client portfolio.
             </p>
           </div>
 
@@ -602,214 +608,39 @@ export default function HomePage() {
           </Link>
         </div>
 
-        {/* Editorial Masonry / Showcase Cards */}
+        {/* Existing client work, matched to the shared portfolio catalog. */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {/* Work 1: Savannah Coffee Roasters */}
-          <div className="bg-white border-2 border-neutral-900 p-6 shadow-[4px_4px_0px_#111111] flex flex-col justify-between">
-            <div>
-              {/* Physical Object Presentation Mockup: Branded Tape Seam + Rounded Roll + Tag */}
-              <div className="bg-[#bfa588] p-4 border border-[#a28666] relative flex flex-col justify-between min-h-[250px] mb-5 overflow-hidden">
-                <div className="relative z-10 flex items-center justify-between text-[9px] font-mono text-[#422c15] uppercase font-bold tracking-wider mb-1">
-                  <span>SEALED TAPE SEAM</span>
-                  <span>ROLL: SAVANNAH 48MM</span>
-                </div>
-
-                {/* Real branded tape product reference */}
-                <div className="relative z-10 my-1 shadow-sm">
-                  <RealTapeProductPhoto
-                    image={2}
-                    alt="A real branded tape product photographed as a packaging reference"
-                    label="REAL TAPE"
-                    caption="Branded tape photo reference"
-                    aspect="aspect-[2.5/1]"
+          {homepageProjects.map((project) => (
+            <article key={project.slug} className="bg-white border-2 border-neutral-900 p-6 shadow-[4px_4px_0px_#111111] flex flex-col justify-between">
+              <div>
+                <div className="relative aspect-[4/3] mb-5 overflow-hidden border border-neutral-300 bg-neutral-100">
+                  <Image
+                    src={project.image}
+                    alt={project.imageAlt}
+                    fill
+                    loading="lazy"
+                    sizes="(max-width: 767px) 100vw, 33vw"
+                    className="object-contain p-3"
                   />
                 </div>
-
-                {/* Rounded Tape Roll together with Kraft Tag */}
-                <div className="relative z-20 flex items-end justify-between pt-2">
-                  <div className="flex flex-col items-center">
-                    <div className="w-24 drop-shadow-md">
-                      <RealTapeProductPhoto
-                        image={7}
-                        alt="A group of real branded tape samples photographed together"
-                        label="TAPE SAMPLE"
-                        aspect="aspect-square"
-                      />
-                    </div>
-                    <span className="font-mono text-[8px] font-bold uppercase tracking-wider text-black bg-white/90 px-1.5 py-0.5 border border-neutral-400 mt-1 shadow-xs">
-                      ROUNDED TAPE ROLL
-                    </span>
-                  </div>
-
-                  <div className="flex flex-col items-end">
-                    <RealAluminiumTagPhoto
-                      image={26}
-                      alt="R2 aluminium tag design sample shown as a general product reference"
-                      label="R2 TAG SAMPLE"
-                      aspect="aspect-[2/1]"
-                      className="w-24 sm:w-28"
-                    />
-                    <span className="font-mono text-[8px] font-bold uppercase tracking-wider text-black bg-white/90 px-1.5 py-0.5 border border-neutral-400 mt-1 shadow-xs">
-                      ALUMINIUM TAG REFERENCE
-                    </span>
-                  </div>
+                <div className="font-mono text-xs text-orange-600 font-bold mb-1 uppercase">
+                  {project.productLabel}
                 </div>
+                <h3 className="text-xl font-bold font-mono uppercase text-neutral-950">
+                  {project.title}
+                </h3>
+                <p className="mt-2 text-sm text-neutral-600 leading-relaxed font-sans">
+                  {project.description}
+                </p>
               </div>
-
-              <div className="font-mono text-xs text-orange-600 font-bold mb-1">
-                SPECIALTY COFFEE • ROASTERY PACKAGING
+              <div className="mt-6 pt-3 border-t border-neutral-200 flex justify-between items-center gap-3 text-xs font-mono">
+                <span className="text-neutral-500">Real client work</span>
+                <Link href="/our-work" className="inline-flex items-center gap-1 font-bold text-neutral-900 hover:text-orange-600">
+                  View portfolio <ArrowRight className="w-3.5 h-3.5" />
+                </Link>
               </div>
-              <h3 className="text-xl font-bold font-mono uppercase text-neutral-950">
-                Savannah Roasters Nairobi
-              </h3>
-              <p className="mt-2 text-xs text-neutral-600 leading-relaxed font-sans">
-                Full packaging suite: 48mm heavy-tack black tape sealing wholesale shipping crates, paired with durable anodized aluminium product tags for 1kg burlap bags.
-              </p>
-            </div>
-
-            <div className="mt-6 pt-3 border-t border-neutral-200 flex justify-between items-center text-xs font-mono text-neutral-500">
-              <span>Nairobi Westlands</span>
-              <span className="font-bold text-neutral-900">48mm Tape + Tags</span>
-            </div>
-          </div>
-
-          {/* Work 2: Kilima Apparel */}
-          <div className="bg-white border-2 border-neutral-900 p-6 shadow-[4px_4px_0px_#111111] flex flex-col justify-between">
-            <div>
-              {/* Physical Object Presentation Mockup: Branded Tape Seam + Rounded Roll + Tag */}
-              <div className="bg-[#1f1f1f] p-4 border border-neutral-800 relative flex flex-col justify-between min-h-[250px] mb-5 overflow-hidden text-white">
-                <div className="relative z-10 flex items-center justify-between text-[9px] font-mono text-neutral-400 uppercase font-bold tracking-wider mb-1">
-                  <span>EXPRESS DISPATCH SEAM</span>
-                  <span>ROLL: KILIMA 48MM</span>
-                </div>
-
-                {/* Real branded tape product reference */}
-                <div className="relative z-10 my-1 shadow-sm">
-                  <RealTapeProductPhoto
-                    image={12}
-                    alt="A group of real branded tape products photographed as a reference"
-                    label="REAL TAPE"
-                    caption="Branded tape photo reference"
-                    aspect="aspect-[2.5/1]"
-                  />
-                </div>
-
-                {/* Rounded Tape Roll together with Garment Tag */}
-                <div className="relative z-20 flex items-end justify-between pt-2">
-                  <div className="flex flex-col items-center">
-                    <div className="w-24 drop-shadow-md">
-                      <RealTapeProductPhoto
-                        image={9}
-                        alt="A real branded tape product displayed upright"
-                        label="TAPE SAMPLE"
-                        aspect="aspect-square"
-                      />
-                    </div>
-                    <span className="font-mono text-[8px] font-bold uppercase tracking-wider text-white bg-neutral-900 px-1.5 py-0.5 border border-neutral-700 mt-1 shadow-xs">
-                      ROUNDED TAPE ROLL
-                    </span>
-                  </div>
-
-                  <div className="flex flex-col items-end">
-                    <RealAluminiumTagPhoto
-                      image={28}
-                      alt="R2 aluminium tag design sample shown as a general product reference"
-                      label="R2 TAG SAMPLE"
-                      aspect="aspect-[2/1]"
-                      className="w-24 sm:w-28"
-                    />
-                    <span className="font-mono text-[8px] font-bold uppercase tracking-wider text-white bg-neutral-900 px-1.5 py-0.5 border border-neutral-700 mt-1 shadow-xs">
-                      ALUMINIUM TAG REFERENCE
-                    </span>
-                  </div>
-                </div>
-              </div>
-
-              <div className="font-mono text-xs text-orange-600 font-bold mb-1">
-                CONTEMPORARY FASHION • E-COMMERCE
-              </div>
-              <h3 className="text-xl font-bold font-mono uppercase text-neutral-950">
-                Kilima Apparel Studio
-              </h3>
-              <p className="mt-2 text-xs text-neutral-600 leading-relaxed font-sans">
-                Custom red & black mailer tape sealing courier parcels across Kenya, combined with serialized aluminium garment tags featuring durable anodic markings and mounting holes.
-              </p>
-            </div>
-
-            <div className="mt-6 pt-3 border-t border-neutral-200 flex justify-between items-center text-xs font-mono text-neutral-500">
-              <span>Nairobi & Kilimani</span>
-              <span className="font-bold text-neutral-900">Branded Mailer Tape</span>
-            </div>
-          </div>
-
-          {/* Work 3: QuickDrop Courier Logistics */}
-          <div className="bg-white border-2 border-neutral-900 p-6 shadow-[4px_4px_0px_#111111] flex flex-col justify-between">
-            <div>
-              {/* Physical Object Presentation Mockup: Branded Tape Seam + Rounded Roll + Tag */}
-              <div className="bg-[#e8decb] p-4 border border-[#c7b99f] relative flex flex-col justify-between min-h-[250px] mb-5 overflow-hidden">
-                <div className="relative z-10 flex items-center justify-between text-[9px] font-mono text-[#523d24] uppercase font-bold tracking-wider mb-1">
-                  <span>SECURITY FREIGHT SEAM</span>
-                  <span>ROLL: 72MM HEAVY</span>
-                </div>
-
-                {/* Real branded tape product reference */}
-                <div className="relative z-10 my-1 shadow-sm">
-                  <RealTapeProductPhoto
-                    image={14}
-                    alt="A group of real branded tape products photographed as a reference"
-                    label="REAL TAPE"
-                    caption="Branded tape photo reference"
-                    aspect="aspect-[2.5/1]"
-                  />
-                </div>
-
-                {/* Rounded Tape Roll together with Inspection Seal */}
-                <div className="relative z-20 flex items-end justify-between pt-2">
-                  <div className="flex flex-col items-center">
-                    <div className="w-24 drop-shadow-md">
-                      <RealTapeProductPhoto
-                        image={10}
-                        alt="A real branded tape product displayed upright"
-                        label="TAPE SAMPLE"
-                        aspect="aspect-square"
-                      />
-                    </div>
-                    <span className="font-mono text-[8px] font-bold uppercase tracking-wider text-black bg-white/90 px-1.5 py-0.5 border border-neutral-400 mt-1 shadow-xs">
-                      ROUNDED TAPE ROLL
-                    </span>
-                  </div>
-
-                  <div className="flex flex-col items-end">
-                    <RealAluminiumTagPhoto
-                      image={31}
-                      alt="R2 aluminium tag design sample shown as a general product reference"
-                      label="R2 TAG SAMPLE"
-                      aspect="aspect-[2/1]"
-                      className="w-24 sm:w-28"
-                    />
-                    <span className="font-mono text-[8px] font-bold uppercase tracking-wider text-black bg-white/90 px-1.5 py-0.5 border border-neutral-400 mt-1 shadow-xs">
-                      ALUMINIUM TAG REFERENCE
-                    </span>
-                  </div>
-                </div>
-              </div>
-
-              <div className="font-mono text-xs text-orange-600 font-bold mb-1">
-                LAST-MILE LOGISTICS • SECURITY
-              </div>
-              <h3 className="text-xl font-bold font-mono uppercase text-neutral-950">
-                QuickDrop East Africa Logistics
-              </h3>
-              <p className="mt-2 text-xs text-neutral-600 leading-relaxed font-sans">
-                High-visibility 72mm tamper-evident security tape printed in bold warning amber and black. Eliminated carton tampering claims on Mombasa-Nairobi haulage routes.
-              </p>
-            </div>
-
-            <div className="mt-6 pt-3 border-t border-neutral-200 flex justify-between items-center text-xs font-mono text-neutral-500">
-              <span>Nationwide Fleet</span>
-              <span className="font-bold text-neutral-900">72mm Security Tape</span>
-            </div>
-          </div>
+            </article>
+          ))}
         </div>
       </section>
 
