@@ -6,6 +6,7 @@ import { NavScrollWrapper } from '@/components/NavScrollWrapper';
 import { Footer } from '@/components/Footer';
 import { MobileStickyBar } from '@/components/MobileStickyBar';
 import { StructuredData } from '@/components/StructuredData';
+import { CatalogueAnalytics } from '@/components/CatalogueAnalytics';
 import { absoluteUrl, SITE_URL } from '@/lib/site';
 import {
   SITE_EMAIL,
@@ -38,17 +39,17 @@ const barlowCondensed = Barlow_Condensed({
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: `Custom Branded Tapes & Aluminium Tags Kenya | ${SITE_NAME}`,
+    default: `Printing, Branding & Signage Kenya | ${SITE_NAME}`,
     template: `%s | ${SITE_NAME}`,
   },
   description:
-    'Custom printed packaging tape and anodized aluminium tags for parcels, cartons, equipment, and products in Nairobi and across Kenya.',
+    'Printing, branding and signage enquiries for Kenyan businesses. Explore real packaging tape and aluminium asset-tag work and request a project quote.',
   alternates: { canonical: '/' },
   robots: { index: true, follow: true },
   openGraph: {
-    title: `Custom Branded Tapes & Aluminium Tags Kenya | ${SITE_NAME}`,
+    title: `Printing, Branding & Signage Kenya | ${SITE_NAME}`,
     description:
-      'Custom printed packaging tape and anodized aluminium tags for parcels, cartons, equipment, and products in Nairobi and across Kenya.',
+      'Explore real packaging tape and aluminium asset-tag work and discuss your next printing, branding or signage project.',
     type: 'website',
     locale: 'en_KE',
     siteName: SITE_NAME,
@@ -56,9 +57,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: `Custom Branded Tapes & Aluminium Tags Kenya | ${SITE_NAME}`,
+    title: `Printing, Branding & Signage Kenya | ${SITE_NAME}`,
     description:
-      'Custom printed packaging tape and anodized aluminium tags for parcels, cartons, equipment, and products in Nairobi and across Kenya.',
+      'Explore real packaging tape and aluminium asset-tag work and discuss your next printing, branding or signage project.',
   },
 };
 
@@ -101,6 +102,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <StructuredData data={jsonLd} />
       </head>
       <body suppressHydrationWarning className={`${inter.variable} ${barlowCondensed.variable} font-sans min-h-screen flex flex-col selection:bg-orange-600 selection:text-white pb-20 md:pb-0`}>
+        <CatalogueAnalytics />
         <NavScrollWrapper>
           <Navbar />
         </NavScrollWrapper>

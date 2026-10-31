@@ -1,8 +1,9 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { MessageCircle, X, Check, ArrowRight } from 'lucide-react';
 import { SITE_NAME, siteWhatsAppLink } from '@/lib/site-contact';
+import Link from 'next/link';
 
 interface QuoteModalProps {
   isOpen: boolean;
@@ -34,6 +35,29 @@ export const QuoteModal: React.FC<QuoteModalProps> = ({
   const [contactName, setContactName] = useState('');
   const [phone, setPhone] = useState('');
   const [location, setLocation] = useState('Nairobi');
+  const [email, setEmail] = useState('');
+  const [requirements, setRequirements] = useState('');
+  const dialogRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (!isOpen) return;
+
+    const previous = document.activeElement as HTMLElement | null;
+    const bodyOverflow = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+    const dialog = dialogRef.current;
+    dialog?.querySelector<HTMLButtonElement>('button')?.focus();
+    const handleKey = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') { event.preventDefault(); onClose(); }
+      if (event.key !== 'Tab' || !dialog) return;
+      const elements = Array.from(dialog.querySelectorAll<HTMLElement>('button, a[href], input, textarea, select')).filter((element) => element.getClientRects().length && !element.hasAttribute('disabled'));
+      const first = elements[0]; const last = elements[elements.length - 1];
+      if (event.shiftKey && document.activeElement === first) { event.preventDefault(); last?.focus(); }
+      if (!event.shiftKey && document.activeElement === last) { event.preventDefault(); first?.focus(); }
+    };
+    document.addEventListener('keydown', handleKey);
+    return () => { document.body.style.overflow = bodyOverflow; document.removeEventListener('keydown', handleKey); previous?.focus(); };
+  }, [isOpen, onClose]);
 
   if (!isOpen) return null;
 
@@ -76,6 +100,8 @@ export const QuoteModal: React.FC<QuoteModalProps> = ({
     text += `*Business:* ${businessName || 'Interested Business'}\n`;
     text += `*Contact:* ${contactName || 'Client'} (${phone || 'Via WhatsApp'})\n`;
     text += `*Location:* ${location}\n\n`;
+    text += `*Email:* ${email || 'Not provided'}\n`;
+    text += `*Requirements:* ${requirements || 'To discuss'}\n`;
 
     if (productType === 'tape') {
       text += `*PRODUCT: CUSTOM BRANDED TAPE*\n`;
@@ -103,6 +129,7 @@ export const QuoteModal: React.FC<QuoteModalProps> = ({
       role="dialog"
       aria-modal="true"
       aria-labelledby="quote-modal-title"
+      ref={dialogRef}
     >
       <div className="relative w-full max-w-3xl my-3 sm:my-8 max-h-[calc(100dvh-1.5rem)] sm:max-h-[calc(100vh-4rem)] flex flex-col overflow-hidden bg-[#ffffff] border-2 border-neutral-900 shadow-2xl p-4 sm:p-6 md:p-8 text-neutral-900">
         {/* Close Button */}
@@ -393,40 +420,46 @@ export const QuoteModal: React.FC<QuoteModalProps> = ({
           </div>
         )}
 
+        <label className="mt-6 block text-sm font-bold">Requirements / artwork notes<textarea value={requirements} onChange={(event) => setRequirements(event.target.value)} className="mt-2 block w-full border border-neutral-400 p-3 font-normal" rows={3} /></label>
+        <label className="mt-4 block text-sm font-bold">Email (optional)<input type="email" value={email} onChange={(event) => setEmail(event.target.value)} className="mt-2 block w-full border border-neutral-400 p-3 font-normal" /></label>
+        <label className="mt-4 block text-sm font-bold">Phone / WhatsApp number<input type="tel" value={phone} onChange={(event) => setPhone(event.target.value)} className="mt-2 block w-full border border-neutral-400 p-3 font-normal" /></label>
         {/* Contact Input Fields */}
         <div className="mt-6 pt-4 border-t border-neutral-200">
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
             <div>
-              <label className="block text-[11px] font-mono font-bold uppercase mb-1">
+              <label htmlFor="modal-business" className="block text-[11px] font-mono font-bold uppercase mb-1">
                 Business / Brand Name
               </label>
               <input
                 type="text"
                 placeholder="e.g. Savannah Roasters"
+                id="modal-business"
                 value={businessName}
                 onChange={(e) => setBusinessName(e.target.value)}
                 className="w-full px-3 py-2 border border-neutral-300 text-xs font-mono focus:border-neutral-900 focus:outline-none"
               />
             </div>
             <div>
-              <label className="block text-[11px] font-mono font-bold uppercase mb-1">
+              <label htmlFor="modal-contact" className="block text-[11px] font-mono font-bold uppercase mb-1">
                 Your Name
               </label>
               <input
                 type="text"
                 placeholder="e.g. Brian Otieno"
+                id="modal-contact"
                 value={contactName}
                 onChange={(e) => setContactName(e.target.value)}
                 className="w-full px-3 py-2 border border-neutral-300 text-xs font-mono focus:border-neutral-900 focus:outline-none"
               />
             </div>
             <div>
-              <label className="block text-[11px] font-mono font-bold uppercase mb-1">
+              <label htmlFor="modal-town" className="block text-[11px] font-mono font-bold uppercase mb-1">
                 Delivery County / City
               </label>
               <input
                 type="text"
                 placeholder="e.g. Nairobi, Mombasa, Kisumu"
+                id="modal-town"
                 value={location}
                 onChange={(e) => setLocation(e.target.value)}
                 className="w-full px-3 py-2 border border-neutral-300 text-xs font-mono focus:border-neutral-900 focus:outline-none"
@@ -452,26 +485,19 @@ export const QuoteModal: React.FC<QuoteModalProps> = ({
           <div className="flex items-center gap-3 w-full sm:w-auto">
             <a
               href={generateWhatsAppMessage()}
+              data-product={productType === 'tape' ? 'printed-packaging-tapes' : 'aluminium-barcode-asset-tags'}
               target="_blank"
               rel="noopener noreferrer"
               className="flex-1 sm:flex-none inline-flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#1EBE5D] text-black font-mono font-bold uppercase text-xs md:text-sm py-3 px-6 transition-colors shadow-sm"
             >
               <MessageCircle className="w-4 h-4 fill-black" />
-              <span>Send via WhatsApp</span>
+              <span>Continue on WhatsApp</span>
             </a>
 
-            <button
-              type="button"
-              onClick={() => {
-                alert(`Thank you! Your quote request for ${businessName || 'your business'} has been received. Our Nairobi sales desk will follow up shortly.`);
-                onClose();
-              }}
-              className="inline-flex items-center justify-center gap-2 bg-neutral-900 hover:bg-neutral-800 text-white font-mono font-bold uppercase text-xs md:text-sm py-3 px-6 transition-colors"
-            >
-              <span>Submit Inquiry</span>
-            </button>
+            <Link href="/quote" onClick={onClose} className="underline text-sm">Other products / detailed enquiry</Link>
           </div>
         </div>
+        <p className="mt-4 text-sm text-neutral-700">Review your prepared message and press Send in WhatsApp. Opening WhatsApp does not submit an enquiry.</p>
         </div>
       </div>
     </div>

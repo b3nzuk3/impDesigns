@@ -4,6 +4,7 @@ import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { TapeStrip } from './TapeStrip';
+import { catalogueCategories, getCategoryHref } from '@/lib/catalogue';
 import { LegacyBrandLogo } from './BrandLogo';
 import { MessageCircle, MapPin, Phone, Mail, Clock, ArrowUpRight } from 'lucide-react';
 import {
@@ -22,7 +23,7 @@ export const Footer: React.FC = () => {
       {/* Top Tape Divider running across full width */}
       <TapeStrip
         variant="red"
-        text="IMPACT CREATIVE DESIGNS • KAI PLAZA NAIROBI • CUSTOM BRANDED TAPES • ALUMINIUM TAGS • DOOR TO DOOR DELIVERY KENYA •"
+        text="IMPACT CREATIVE DESIGNS • NAIROBI • PRINTING • BRANDING • SIGNAGE • LET’S DISCUSS YOUR PROJECT •"
         sheen={true}
         shadow={false}
       />
@@ -33,7 +34,7 @@ export const Footer: React.FC = () => {
           <div>
             <div className="flex items-center gap-3 mb-4">
               {/* Legacy SVG lockup — kept for the dark footer */}
-              <div className="h-12 w-[144px] shrink-0 flex items-center justify-center overflow-hidden">
+              <div className="h-12 w-[144px] shrink-0 flex items-center justify-center overflow-hidden bg-white p-1">
                 <LegacyBrandLogo />
               </div>
               <span className="font-mono text-xl font-black uppercase tracking-tight text-white">
@@ -41,7 +42,7 @@ export const Footer: React.FC = () => {
               </span>
             </div>
             <p className="text-xs md:text-sm text-neutral-400 leading-relaxed font-sans">
-              Kenya’s dedicated manufacturer specializing exclusively in custom branded packaging tapes and custom printed retail tags. Built for growing e-commerce brands, industrial manufacturers, and retail shops.
+              Printing, branding and signage enquiries for Kenyan businesses. Explore our real packaging tape and aluminium asset-tag work, or discuss the requirements for your next project.
             </p>
 
             <div className="mt-6 flex items-center gap-3">
@@ -60,45 +61,10 @@ export const Footer: React.FC = () => {
           {/* Core Products */}
           <div>
             <h4 className="font-mono text-xs font-bold uppercase tracking-widest text-neutral-300 mb-4 border-b border-neutral-800 pb-2">
-              SPECIALIZED PRODUCTS
+              PRODUCTS &amp; SERVICES
             </h4>
-            <ul className="space-y-2.5 font-mono text-xs text-neutral-400">
-              <li>
-                <Link href="/branded-tapes" className="hover:text-white transition-colors flex items-center justify-between">
-                  <span>Printed Packaging Tape (48mm)</span>
-                  <ArrowUpRight className="w-3.5 h-3.5" />
-                </Link>
-              </li>
-              <li>
-                <Link href="/branded-tapes" className="hover:text-white transition-colors flex items-center justify-between">
-                  <span>Transparent Logo Tape</span>
-                  <ArrowUpRight className="w-3.5 h-3.5" />
-                </Link>
-              </li>
-              <li>
-                <Link href="/branded-tapes" className="hover:text-white transition-colors flex items-center justify-between">
-                  <span>Eco Kraft Brown Printed Tape</span>
-                  <ArrowUpRight className="w-3.5 h-3.5" />
-                </Link>
-              </li>
-              <li>
-                <Link href="/branded-tapes" className="hover:text-white transition-colors flex items-center justify-between">
-                  <span>Heavy-Duty 72mm Carton Seal</span>
-                  <ArrowUpRight className="w-3.5 h-3.5" />
-                </Link>
-              </li>
-              <li>
-                <Link href="/custom-tags" className="hover:text-white transition-colors flex items-center justify-between">
-                  <span>Custom Aluminium Product Tags</span>
-                  <ArrowUpRight className="w-3.5 h-3.5" />
-                </Link>
-              </li>
-              <li>
-                <Link href="/custom-tags" className="hover:text-white transition-colors flex items-center justify-between">
-                  <span>Heavy 0.8mm Anodized Aluminium Tags</span>
-                  <ArrowUpRight className="w-3.5 h-3.5" />
-                </Link>
-              </li>
+            <ul className="space-y-3 text-sm text-neutral-300">
+              {catalogueCategories.map((category) => <li key={category.slug}><Link href={getCategoryHref(category)} className="hover:text-white">{category.name}</Link></li>)}
             </ul>
           </div>
 
@@ -158,8 +124,8 @@ export const Footer: React.FC = () => {
           <div>
             © {new Date().getFullYear()} {SITE_NAME}. All rights reserved. Nairobi, Kenya.
           </div>
-          <div className="flex items-center gap-6">
-            <span>Specialists in Branded Tapes & Tags</span>
+          <div className="flex flex-wrap items-center justify-center gap-4">
+            <span>Printing • Branding • Signage</span>
             <span className="text-neutral-700">|</span>
             <Link href="/branded-tapes" className="hover:text-white">Tape Specs</Link>
             <Link href="/custom-tags" className="hover:text-white">Tag Specs</Link>

@@ -1,9 +1,9 @@
 import type { Metadata } from 'next';
 import QuotePage from './QuotePage';
 
-const title = 'Request a Branded Tape or Aluminium Tag Quote';
+const title = 'Request a Printing, Branding or Signage Quote';
 const description =
-  'Configure a tape or aluminium tag estimate, then send your specifications to request a project-specific quotation. Calculator results are estimates and require confirmation.';
+  'Prepare a printing, branding or signage enquiry, or configure a tape or aluminium tag estimate. Continue on WhatsApp to review and send your project requirements.';
 
 export const metadata: Metadata = {
   title,
@@ -19,6 +19,7 @@ export const metadata: Metadata = {
   },
 };
 
-export default function Page() {
-  return <QuotePage />;
+export default async function Page({ searchParams }: { searchParams: Promise<{ product?: string | string[] }> }) {
+  const value = (await searchParams).product;
+  return <QuotePage key={typeof value === 'string' ? value : 'general'} initialProduct={typeof value === 'string' ? value : ''} />;
 }

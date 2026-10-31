@@ -1,16 +1,16 @@
 'use client';
 
-import React, { useState } from 'react';
+import React from 'react';
+import Link from 'next/link';
 import { MessageCircle, FileText } from 'lucide-react';
-import { QuoteModal } from './QuoteModal';
+
 import { SITE_NAME, siteWhatsAppLink } from '@/lib/site-contact';
 
 const MOBILE_WHATSAPP_URL = siteWhatsAppLink(
-  `Hello ${SITE_NAME}, I would like a quote for custom branded tapes or tags.`,
+  `Hello ${SITE_NAME}, I would like a quote for a printing, branding or signage project.`,
 );
 
 export const MobileStickyBar: React.FC = () => {
-  const [modalOpen, setModalOpen] = useState(false);
 
   return (
     <>
@@ -25,17 +25,16 @@ export const MobileStickyBar: React.FC = () => {
           <span>WhatsApp</span>
         </a>
 
-        <button
-          type="button"
-          onClick={() => setModalOpen(true)}
+        <Link
+          href="/quote"
           className="flex-1 inline-flex items-center justify-center gap-2 bg-orange-600 text-white font-mono font-bold text-xs uppercase py-3 px-6 shadow-sm select-none"
         >
           <FileText className="w-4 h-4" />
           <span>Get Quote</span>
-        </button>
+        </Link>
       </div>
 
-      <QuoteModal isOpen={modalOpen} onClose={() => setModalOpen(false)} />
+
     </>
   );
 };

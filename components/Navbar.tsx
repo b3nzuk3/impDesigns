@@ -1,29 +1,24 @@
 'use client';
 
 import React, { useState } from 'react';
-import { createPortal } from 'react-dom';
-import Image from 'next/image';
+
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { Menu, X, MessageCircle, ArrowUpRight } from 'lucide-react';
-import { QuoteModal } from './QuoteModal';
+import { catalogueCategories, getCategoryHref } from '@/lib/catalogue';
 import { BrandLogo } from './BrandLogo';
 import { SITE_NAME, SITE_PHONE_DISPLAY, siteWhatsAppLink } from '@/lib/site-contact';
 
 const NAV_WHATSAPP_URL = siteWhatsAppLink(
-  `Hello ${SITE_NAME}, I would like to inquire about custom branded tapes and tags.`,
+  `Hello ${SITE_NAME}, I would like to discuss a printing, branding or signage project.`,
 );
 
 export const Navbar: React.FC = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [quoteModalOpen, setQuoteModalOpen] = useState(false);
   const pathname = usePathname();
 
   const navLinks = [
-    { name: 'Branded Tapes', href: '/branded-tapes' },
-    { name: 'Aluminium Tags', href: '/custom-tags' },
     { name: 'Our Work', href: '/our-work' },
-    { name: 'Quote Calculator', href: '/quote' },
     { name: 'Contact', href: '/contact' },
   ];
 
@@ -46,7 +41,15 @@ export const Navbar: React.FC = () => {
             </Link>
 
             {/* Desktop Navigation Links */}
-            <nav className="hidden md:flex items-center space-x-1 lg:space-x-6">
+            <nav aria-label="Main navigation" className="hidden xl:flex items-center space-x-2">
+              <details className="relative" onKeyDown={(event) => { if (event.key === 'Escape') { event.currentTarget.open = false; event.currentTarget.querySelector('summary')?.focus(); } }}>
+                <summary className="cursor-pointer px-3 py-3 text-sm font-bold uppercase">Products &amp; Services</summary>
+                <div className="absolute left-0 top-full w-96 border-2 border-neutral-900 bg-[#fbfaf7] p-2 shadow-lg">
+                  {catalogueCategories.map((category) => (
+                    <Link key={category.slug} href={getCategoryHref(category)} onClick={(event) => { event.currentTarget.closest('details')?.removeAttribute('open'); }} className="block px-4 py-3 text-sm hover:bg-neutral-200 focus-visible:bg-neutral-200">{category.name}</Link>
+                  ))}
+                </div>
+              </details>
               {navLinks.map((link) => {
                 const isActive = pathname === link.href;
                 return (
@@ -66,7 +69,7 @@ export const Navbar: React.FC = () => {
             </nav>
 
             {/* Desktop Actions */}
-            <div className="hidden md:flex items-center gap-4">
+            <div className="hidden xl:flex items-center gap-4">
               <a
                 href={NAV_WHATSAPP_URL}
                 target="_blank"
@@ -78,30 +81,20 @@ export const Navbar: React.FC = () => {
                 <span className="hidden xl:inline">{SITE_PHONE_DISPLAY}</span>
               </a>
 
-              <button
-                type="button"
-                onClick={() => setQuoteModalOpen(true)}
-                className="inline-flex items-center justify-center bg-neutral-900 hover:bg-orange-600 text-white font-mono text-sm font-bold uppercase tracking-wide py-3 px-4 lg:px-6 border-2 border-neutral-900 transition-all shadow-[2px_2px_0px_#111111]"
-              >
-                <span>GET A QUOTE</span>
-              </button>
+              <Link href="/quote" className="inline-flex items-center justify-center bg-neutral-900 hover:bg-orange-600 text-white font-mono text-sm font-bold uppercase tracking-wide py-3 px-6 border-2 border-neutral-900 transition-colors">GET A QUOTE</Link>
             </div>
 
             {/* Mobile Menu Trigger */}
-            <div className="flex md:hidden items-center gap-2 shrink-0">
-              <button
-                type="button"
-                onClick={() => setQuoteModalOpen(true)}
-                className="bg-neutral-900 text-white font-mono text-xs font-bold uppercase py-2 px-3"
-              >
-                QUOTE
-              </button>
+            <div className="flex xl:hidden items-center gap-2 shrink-0">
+              <Link href="/quote" className="bg-neutral-900 text-white font-mono text-xs font-bold uppercase py-2 px-3">QUOTE</Link>
 
               <button
                 type="button"
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
                 className="p-2 text-neutral-900 hover:bg-neutral-200 transition-colors"
                 aria-label="Toggle navigation menu"
+                aria-expanded={mobileMenuOpen}
+                aria-controls="mobile-navigation"
               >
                 {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
               </button>
@@ -111,8 +104,14 @@ export const Navbar: React.FC = () => {
 
         {/* Mobile Navigation Dropdown */}
         {mobileMenuOpen && (
-          <div className="md:hidden border-t-2 border-neutral-900 bg-[#fbfaf7] p-6 space-y-4">
-            <nav className="flex flex-col space-y-3 font-mono text-sm uppercase">
+          <div id="mobile-navigation" className="xl:hidden max-h-[calc(100dvh-5rem)] overflow-y-auto border-t-2 border-neutral-900 bg-[#fbfaf7] p-6 space-y-4">
+            <nav aria-label="Mobile navigation" className="flex flex-col space-y-3 font-mono text-sm uppercase">
+              <details>
+                <summary className="cursor-pointer py-3 font-bold">Products &amp; Services</summary>
+                {catalogueCategories.map((category) => (
+                  <Link key={category.slug} href={getCategoryHref(category)} onClick={() => setMobileMenuOpen(false)} className="block border-b border-neutral-200 py-3 text-sm normal-case">{category.name}</Link>
+                ))}
+              </details>
               {navLinks.map((link) => (
                 <Link
                   key={link.name}
@@ -137,28 +136,13 @@ export const Navbar: React.FC = () => {
                 <span>WhatsApp ({SITE_PHONE_DISPLAY})</span>
               </a>
 
-              <button
-                type="button"
-                onClick={() => {
-                  setMobileMenuOpen(false);
-                  setQuoteModalOpen(true);
-                }}
-                className="w-full bg-neutral-900 text-white font-mono font-bold text-xs uppercase py-3 px-6 text-center"
-              >
-                GET A QUOTE
-              </button>
+              <Link href="/quote" onClick={() => setMobileMenuOpen(false)} className="w-full bg-neutral-900 text-white font-mono font-bold text-xs uppercase py-3 px-6 text-center">GET A QUOTE</Link>
             </div>
           </div>
         )}
       </header>
 
-      {/* Global Quote Modal */}
-      {quoteModalOpen && typeof document !== 'undefined'
-        ? createPortal(
-            <QuoteModal isOpen={quoteModalOpen} onClose={() => setQuoteModalOpen(false)} />,
-            document.body,
-          )
-        : null}
+
     </>
   );
 };

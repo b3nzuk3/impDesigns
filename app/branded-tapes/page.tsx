@@ -51,6 +51,7 @@ export default function Page() {
   return (
     <>
       <StructuredData data={structuredData} />
+      <StructuredData data={{ '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Home', item: absoluteUrl('/') }, { '@type': 'ListItem', position: 2, name: 'Branded Tapes', item: absoluteUrl('/branded-tapes') }] }} />
       <BrandedTapesPage />
     </>
   );

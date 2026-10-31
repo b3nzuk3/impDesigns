@@ -11,7 +11,7 @@ import React from 'react';
  * Assets are cropped from the client artwork (impact/logo.svg) at 2x:
  *   /images/impact-logo-paint-drops-160.png  — blue, magenta, yellow, black drops
  *   /images/impact-wordmark.png     380x43   — "Impact Creative Designs" line
- *   /images/impact-tagline.png      350x12   — "BRANDED TAPES • ASSET TAGS"
+ * The supporting tagline is live text so it can reflect the broader catalogue.
  *
  * The wordmark is sized to fill the text column's width; the icon strip
  * sits beside the vertically stacked wordmark and tagline.
@@ -53,14 +53,7 @@ export const BrandLogo: React.FC<{
           sizes="(max-width: 640px) 140px, (max-width: 1024px) 170px, 190px"
           className="h-auto w-full"
         />
-        <Image
-          src="/images/impact-tagline.png"
-          alt="Branded Tapes • Asset Tags"
-          width={350}
-          height={12}
-          sizes="(max-width: 640px) 130px, (max-width: 1024px) 155px, 175px"
-          className="mt-[4%] h-auto w-[92%]"
-        />
+        <span className="mt-[4%] text-[7px] sm:text-[9px] font-bold uppercase tracking-wide text-neutral-800">Printing • Branding • Signage</span>
       </div>
     </div>
   );
@@ -77,7 +70,7 @@ export const LegacyBrandLogo: React.FC<{ className?: string; priority?: boolean 
 }) => (
   <Image
     src="/images/impact-designs-logo-v2.svg"
-    alt="Impact Creative Designs — Branded Tapes • Asset Tags"
+    alt="Impact Creative Designs — Printing, Branding and Signage"
     width={360}
     height={100}
     priority={priority}

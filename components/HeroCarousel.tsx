@@ -14,8 +14,8 @@ interface HeroSlide {
 
 const SLIDES: HeroSlide[] = [
   {
-    src: tapePhoto(16),
-    alt: 'A collection of real printed branded packaging tape rolls produced by Impact Creative Designs in Nairobi',
+    src: '/images/branded-tape-rolls.jpg',
+    alt: 'Real printed branded packaging tape rolls from Impact Creative Designs',
     position: '70% 50%',
   },
   {
@@ -24,8 +24,8 @@ const SLIDES: HeroSlide[] = [
     position: '65% 50%',
   },
   {
-    src: '/images/branded-tape-rolls.jpg',
-    alt: 'Finished printed tape rolls stacked as production samples at the Impact Creative Designs factory',
+    src: tapePhoto(16),
+    alt: 'A collection of real printed branded packaging tape rolls produced by Impact Creative Designs in Nairobi',
     position: '60% 50%',
   },
   {

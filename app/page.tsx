@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { portfolioProjects } from '@/lib/portfolio';
+import { catalogueCategories, getCategoryHref, getPublishedProducts } from '@/lib/catalogue';
 import { TapeStrip } from '@/components/TapeStrip';
 import { HeroCarousel } from '@/components/HeroCarousel';
 import { ManufacturingVideoSection } from '@/components/ManufacturingVideoSection';
@@ -43,27 +44,22 @@ export default function HomePage() {
           {/* Left Column: Bold Editorial Headline & Conversion (over the darker gradient side) */}
           <div className="max-w-2xl space-y-6 pointer-events-auto">
             <h1 className="text-4xl sm:text-6xl lg:text-7xl font-black font-mono tracking-tight text-white uppercase leading-[0.95] drop-shadow-[0_2px_12px_rgba(0,0,0,0.55)]">
-              YOUR BRAND.
-              <br />
-              <span className="text-orange-500">ON EVERY</span>
-              <br />
-              PACKAGE.
+              Printing, branding <span className="text-orange-400">&amp; signage</span> for Kenyan businesses
             </h1>
 
             <p className="text-base sm:text-lg text-neutral-100 font-sans max-w-xl leading-relaxed drop-shadow-[0_1px_8px_rgba(0,0,0,0.65)]">
-              Custom branded packaging tapes and durable aluminium tags made for Kenyan businesses. Elevate your unboxing, prevent carton tampering, and give every product a permanent branded identifier.
+              Explore our real packaging and identification work, or discuss your next print project. Tell us about your materials, quantities and preferred finish.
             </p>
 
             {/* Conversion Buttons (No pill capsules; architectural 2x padding) */}
             <div className="pt-2 flex flex-col items-start sm:flex-row sm:items-center gap-3 sm:gap-4">
-              <button
-                type="button"
-                onClick={() => openQuoteFor('tape')}
-                className="inline-flex sm:w-auto items-center justify-center whitespace-nowrap bg-orange-600 hover:bg-orange-500 text-white font-mono text-sm font-bold uppercase tracking-wider py-3 px-6 sm:py-4 sm:px-8 border-2 border-orange-600 shadow-[4px_4px_0px_#111111] transition-all"
+              <Link
+                href="/quote"
+                className="inline-flex sm:w-auto items-center justify-center whitespace-nowrap bg-orange-700 hover:bg-orange-800 text-white font-mono text-sm font-bold uppercase tracking-wider py-3 px-6 sm:py-4 sm:px-8 border-2 border-orange-700 shadow-[4px_4px_0px_#111111] transition-colors"
               >
                 <span>GET A QUOTE</span>
                 <ArrowRight className="w-4 h-4 ml-2" />
-              </button>
+              </Link>
 
               <Link
                 href="/our-work"
@@ -76,29 +72,29 @@ export default function HomePage() {
             {/* Instant WhatsApp Quick Link */}
             <div className="pt-2 flex items-center gap-3 text-xs font-mono text-neutral-200">
               <a
-                href={siteWhatsAppLink(`Hello ${SITE_NAME}! I would like a quote for custom branded tapes or tags.`)}
+                href={siteWhatsAppLink(`Hello ${SITE_NAME}! I would like to discuss a printing, branding or signage project.`)}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 text-white hover:text-green-300 font-bold border-b border-white/50 pb-0.5"
               >
                 <MessageCircle className="w-4 h-4 text-green-400 fill-green-400" />
-                <span>Chat with Nairobi factory desk on WhatsApp ({SITE_PHONE_DISPLAY})</span>
+                <span>Talk to our Nairobi team on WhatsApp ({SITE_PHONE_DISPLAY})</span>
               </a>
             </div>
 
             {/* Key Industrial Specs (Pure facts, no badges) */}
             <div className="pt-4 grid grid-cols-3 gap-4 border-t border-white/30 text-neutral-100 font-mono text-xs">
               <div>
-                <div className="font-black text-white text-base">360 ROLLS</div>
-                <div className="text-neutral-300 text-[11px]">Factory MOQ</div>
+                <div className="font-black text-white text-base">YOUR BRIEF</div>
+                <div className="text-neutral-300 text-[11px]">Project-led quotes</div>
               </div>
               <div>
-                <div className="font-black text-white text-base">3-5 DAYS</div>
-                <div className="text-neutral-300 text-[11px]">Nairobi Turnaround</div>
+                <div className="font-black text-white text-base">REAL WORK</div>
+                <div className="text-neutral-300 text-[11px]">Explore our portfolio</div>
               </div>
               <div>
-                <div className="font-black text-white text-base">47 COUNTIES</div>
-                <div className="text-neutral-300 text-[11px]">Door Dispatch</div>
+                <div className="font-black text-white text-base">LET’S TALK</div>
+                <div className="text-neutral-300 text-[11px]">WhatsApp enquiries</div>
               </div>
             </div>
           </div>
@@ -108,6 +104,15 @@ export default function HomePage() {
       {/* ------------------------------------------------------------- */}
       {/* REAL PRINTED TAPE REFERENCE STRIP                              */}
       {/* ------------------------------------------------------------- */}
+      <section id="products-services" className="mx-auto max-w-[88rem] px-4 py-16 sm:px-6 lg:px-8">
+        <h2 className="text-3xl sm:text-5xl font-black font-mono uppercase">Products &amp; services</h2>
+        <p className="mt-4 max-w-2xl text-neutral-700 leading-relaxed">Browse our packaging and identification work, or tell us about another branding project. Availability, specifications and delivery timing are confirmed with your quote.</p>
+        <div className="mt-8 grid gap-x-10 md:grid-cols-2">
+          {catalogueCategories.map((category) => <Link key={category.slug} href={getCategoryHref(category)} className="group flex items-start justify-between gap-4 border-b-2 border-neutral-300 py-6 hover:border-orange-600">
+            <div><h3 className="font-bold text-xl group-hover:text-orange-700">{category.name}</h3><p className="mt-2 text-sm text-neutral-700">{category.description}</p><span className="mt-3 block text-sm font-bold text-orange-800">{getPublishedProducts(category.slug).length ? 'Explore products' : 'Discuss your project'}</span></div><ArrowRight className="mt-1 h-5 w-5 shrink-0" />
+          </Link>)}
+        </div>
+      </section>
       <div className="px-4 py-10 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-[88rem]">
           <RealTapeShowcase id="reference-real-tape-showcase" compact />
@@ -134,7 +139,7 @@ export default function HomePage() {
             <span className="text-orange-600">ON THE THINGS</span> PEOPLE NOTICE.
           </h2>
           <p className="mt-4 text-base sm:text-lg text-neutral-600 leading-relaxed font-sans">
-            Generic boxes and blank packaging waste your most valuable customer touchpoint. We specialize strictly in the two physical products that seal and identify your inventory.
+            Start with our featured packaging tapes and aluminium asset tags. See real examples and explore the options before requesting a project-specific quote.
           </p>
         </div>
 
@@ -532,7 +537,7 @@ export default function HomePage() {
                 Anodized Aluminium Barcode Asset Tags
               </h3>
               <p className="text-xs sm:text-sm text-neutral-300 leading-relaxed mt-3 font-sans">
-                Heavy-duty 0.5mm & 0.8mm metallic aluminium nameplates with laser-etched/photo-anodized scannable barcodes. Designed for Kenyan enterprise asset registers, IT server racks, vehicle fleets, and industrial plant machinery. Resistant to heat (450°C), solvents, and UV exposure.
+                Aluminium nameplates with logos, serial numbers and barcode identification for business asset registers, equipment and inventory. Discuss dimensions, marking, mounting and suitability for your intended environment with our team.
               </p>
               <div className="flex flex-wrap gap-4 mt-6 pt-4 border-t border-neutral-800 text-xs font-mono text-neutral-400">
                 <div>
@@ -651,24 +656,23 @@ export default function HomePage() {
         <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8">
           <div className="space-y-2 text-center md:text-left">
             <h2 className="text-2xl sm:text-4xl font-black font-mono uppercase tracking-tight text-white">
-              READY TO BRAND EVERY SHIPMENT?
+              WHAT’S YOUR NEXT BRANDING PROJECT?
             </h2>
             <p className="text-sm text-neutral-400 font-sans max-w-lg">
-              Send your logo or specifications today. We will send back a free digital scale proof and factory quote within 2 hours.
+              Tell us what you need, your quantity and delivery town. Our team will confirm available options, artwork requirements and your project quotation.
             </p>
           </div>
 
           <div className="flex flex-col sm:flex-row items-center gap-4 shrink-0">
-            <button
-              type="button"
-              onClick={() => openQuoteFor('tape')}
-              className="w-full sm:w-auto bg-orange-600 hover:bg-orange-500 text-white font-mono font-bold text-xs uppercase py-4 px-8 border border-orange-400 shadow-md transition-colors"
+            <Link
+              href="/quote"
+              className="w-full sm:w-auto bg-orange-700 hover:bg-orange-800 text-white font-mono font-bold text-xs uppercase py-4 px-8 border border-orange-400 shadow-md transition-colors"
             >
-              REQUEST A FACTORY QUOTE
-            </button>
+              GET A PROJECT QUOTE
+            </Link>
 
             <a
-              href={siteWhatsAppLink(`Hello ${SITE_NAME}, I would like a quote for packaging tape.`)}
+              href={siteWhatsAppLink(`Hello ${SITE_NAME}, I would like to discuss my next branding project.`)}
               target="_blank"
               rel="noopener noreferrer"
               className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#25D366] text-black font-mono font-bold text-xs uppercase py-4 px-8 transition-colors"
@@ -682,6 +686,7 @@ export default function HomePage() {
 
       {/* Global Quote Modal */}
       <QuoteModal
+        key={`${quoteProduct}-${quoteOpen}`}
         isOpen={quoteOpen}
         onClose={() => setQuoteOpen(false)}
         defaultProduct={quoteProduct}

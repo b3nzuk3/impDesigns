@@ -4,9 +4,11 @@ import React, { useState } from 'react';
 import { TapeStrip } from '@/components/TapeStrip';
 import { MessageCircle, ArrowRight, CheckCircle2, ShieldCheck, Box, Tag, Calculator } from 'lucide-react';
 import { SITE_NAME, siteWhatsAppLink } from '@/lib/site-contact';
+import { GeneralEnquiryForm } from '@/components/GeneralEnquiryForm';
+import { resolveEnquiryProduct } from '@/lib/catalogue';
 
-export default function QuotePage() {
-  const [productType, setProductType] = useState<'tape' | 'aluminium'>('tape');
+export default function QuotePage({ initialProduct = '' }: { initialProduct?: string }) {
+  const [productType, setProductType] = useState<'tape' | 'aluminium'>(resolveEnquiryProduct(initialProduct)?.slug === 'aluminium-barcode-asset-tags' ? 'aluminium' : 'tape');
 
   // Tape parameters
   const [tapeWidth, setTapeWidth] = useState<'48mm' | '72mm' | '24mm'>('48mm');
@@ -26,7 +28,7 @@ export default function QuotePage() {
   const [phone, setPhone] = useState('');
   const [email, setEmail] = useState('');
   const [county, setCounty] = useState('Nairobi');
-  const [submitted, setSubmitted] = useState(false);
+  const [requirements, setRequirements] = useState('');
 
   // Pricing calculations
   const calculateTape = () => {
@@ -59,6 +61,8 @@ export default function QuotePage() {
     let msg = `Hello ${SITE_NAME}! I would like to place an order inquiry:\n\n`;
     msg += `*Business:* ${businessName || 'My Business'}\n`;
     msg += `*Contact:* ${contactName || 'Client'} (${phone || 'Via WhatsApp'})\n`;
+    msg += `*Email:* ${email || 'Not provided'}\n`;
+    msg += `*Requirements:* ${requirements || 'To discuss'}\n`;
     msg += `*Delivery County:* ${county}\n\n`;
 
     if (productType === 'tape') {
@@ -94,20 +98,22 @@ export default function QuotePage() {
         <div className="max-w-[88rem] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl space-y-4">
             <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black font-mono tracking-tight uppercase text-neutral-950 leading-tight">
-              FACTORY QUOTE CALCULATOR
+              GET A PROJECT QUOTE
             </h1>
             <p className="text-base sm:text-lg text-neutral-700 font-sans leading-relaxed">
-              Configure your packaging tape or anodized aluminium tag specifications below for immediate estimated pricing in Kenyan Shillings (KES). Export directly to WhatsApp for rapid proofing.
+              Prepare a general enquiry below, or use the existing tape and aluminium tag calculators for indicative KES estimates. Final pricing and availability require confirmation.
             </p>
           </div>
         </div>
       </section>
 
-      <section className="py-16 max-w-[88rem] mx-auto px-4 sm:px-6 lg:px-8">
+      <GeneralEnquiryForm initialProduct={initialProduct} />
+      <section aria-label="Tape and tag calculators" className="py-16 max-w-[88rem] mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
           {/* Left / Main Configurator (Col 8) */}
           <div className="lg:col-span-8 bg-white border-2 border-neutral-900 p-6 sm:p-8 shadow-[6px_6px_0px_#111111] space-y-8">
             {/* Step 1: Select Specialty Product */}
+            <h2 className="text-2xl font-black">Tape &amp; tag estimate calculators</h2>
             <div>
               <label className="block font-mono text-xs font-bold uppercase tracking-wider text-neutral-500 mb-3">
                 STEP 1: SELECT SPECIALTY PRODUCT
@@ -370,6 +376,8 @@ export default function QuotePage() {
               </div>
             )}
 
+            <label className="block font-bold">Requirements / artwork notes<textarea value={requirements} onChange={(event) => setRequirements(event.target.value)} className="mt-2 block w-full border border-neutral-400 p-3" rows={3} /></label>
+            <label className="block font-bold">Email (optional)<input type="email" value={email} onChange={(event) => setEmail(event.target.value)} className="mt-2 block w-full border border-neutral-400 p-3" /></label>
             {/* Step 3: Contact & Delivery Location */}
             <div className="pt-6 border-t border-neutral-200 space-y-4">
               <label className="block font-mono text-xs font-bold uppercase tracking-wider text-neutral-500">
@@ -378,11 +386,12 @@ export default function QuotePage() {
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-xs font-mono font-bold uppercase mb-1">
+                  <label htmlFor="calculator-business" className="block text-xs font-mono font-bold uppercase mb-1">
                     Company / Brand Name
                   </label>
                   <input
                     type="text"
+                    id="calculator-business"
                     value={businessName}
                     onChange={(e) => setBusinessName(e.target.value)}
                     placeholder="e.g. Savannah Roasters"
@@ -390,11 +399,12 @@ export default function QuotePage() {
                   />
                 </div>
                 <div>
-                  <label className="block text-xs font-mono font-bold uppercase mb-1">
+                  <label htmlFor="calculator-contact" className="block text-xs font-mono font-bold uppercase mb-1">
                     Contact Person Name
                   </label>
                   <input
                     type="text"
+                    id="calculator-contact"
                     value={contactName}
                     onChange={(e) => setContactName(e.target.value)}
                     placeholder="e.g. Eric Mwangi"
@@ -402,11 +412,12 @@ export default function QuotePage() {
                   />
                 </div>
                 <div>
-                  <label className="block text-xs font-mono font-bold uppercase mb-1">
+                  <label htmlFor="calculator-phone" className="block text-xs font-mono font-bold uppercase mb-1">
                     Phone / WhatsApp Number
                   </label>
                   <input
                     type="text"
+                    id="calculator-phone"
                     value={phone}
                     onChange={(e) => setPhone(e.target.value)}
                     placeholder="e.g. 0712 345 678"
@@ -414,11 +425,12 @@ export default function QuotePage() {
                   />
                 </div>
                 <div>
-                  <label className="block text-xs font-mono font-bold uppercase mb-1">
+                  <label htmlFor="calculator-town" className="block text-xs font-mono font-bold uppercase mb-1">
                     Delivery County / Town
                   </label>
                   <input
                     type="text"
+                    id="calculator-town"
                     value={county}
                     onChange={(e) => setCounty(e.target.value)}
                     placeholder="e.g. Nairobi, Mombasa, Kisumu"
@@ -486,24 +498,16 @@ export default function QuotePage() {
             <div className="space-y-3 pt-2">
               <a
                 href={getWhatsAppUrl()}
+                data-product={productType === 'tape' ? 'printed-packaging-tapes' : 'aluminium-barcode-asset-tags'}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-full inline-flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#1EBE5D] text-black font-mono font-bold text-xs uppercase py-3.5 px-6 shadow-md transition-colors text-center"
               >
                 <MessageCircle className="w-4 h-4 fill-black" />
-                <span>Send via WhatsApp</span>
+                <span>Continue on WhatsApp</span>
               </a>
 
-              <button
-                type="button"
-                onClick={() => {
-                  setSubmitted(true);
-                  alert(`Thank you ${contactName || 'Valued Client'}! Your quote inquiry has been submitted. Our Nairobi desk will get back to you immediately.`);
-                }}
-                className="w-full bg-white hover:bg-neutral-200 text-black font-mono font-bold text-xs uppercase py-3.5 px-6 transition-colors text-center"
-              >
-                Submit Factory Inquiry
-              </button>
+              <p className="text-sm text-neutral-300">Opening WhatsApp does not submit an enquiry. Review your message and press Send in WhatsApp.</p>
             </div>
 
             <div className="text-[11px] font-mono text-neutral-400 text-center">
