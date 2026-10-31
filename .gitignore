@@ -7,3 +7,4 @@ coverage/
 !.env.example
 impact/
 *.mp4:Zone.Identifier
+/HANDOFF.md
